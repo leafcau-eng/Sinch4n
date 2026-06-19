@@ -10,8 +10,8 @@ const ParticleBackground = dynamic(
   { ssr: false }
 );
 
-const ScrollMorphScene = dynamic(
-  () => import("@/components/ScrollMorphScene"),
+const ScrollMorphScen3e = dynamic(
+  () => import("@/components/ScrollMorphScen3e"),
   {
     ssr: false,
     loading: () => (
@@ -39,7 +39,7 @@ export default function PortfolioPage() {
       <Navbar />
 
       <Suspense fallback={null}>
-        <ScrollMorphScene
+        <ScrollMorphScen3e
           textureAUrl={PHOTO_ONE_URL}
           textureBUrl={PHOTO_TWO_URL}
         />
