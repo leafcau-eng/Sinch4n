@@ -1,65 +1,128 @@
-import Image from "next/image";
+"use client";
 
+import dynamic from "next/dynamic";
+import { Suspense, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import HeroText from "@/components/HeroText";
+import EnterButton from "@/components/EnterButton";
+import { useWebGLSupport } from "@/hooks/useWebGLSupport";
+
+const ParticleBackground = dynamic(
+  () => import("@/components/ParticleBackground"),
+  { ssr: false }
+);
+
+const HeroPhotoCard = dynamic(
+  () => import("@/components/HeroPhotoCard"),
+  { ssr: false }
+);
+
+const PHOTO_ONE_URL =
+  "https://i.ibb.co.com/ksf232R1/file-0000000066d071f58ad62c9d9efd993f.png";
+const PHOTO_TWO_URL =
+  "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
+
+/**
+ * ================================================================
+ * Home — "Entering a 3D creative dimension"
+ * ================================================================
+ * INTRO SEQUENCE TIMELINE (~2.5s total, driven by Framer Motion's
+ * `delay` on each layer rather than a single master timeline —
+ * simpler to reason about per-element, and each layer animates
+ * independently so a slow device doesn't block the others):
+ *
+ *   0.0s -> 0.3s   Pure black, nothing visible yet
+ *   0.3s -> 1.1s   Particle background fades in (depth layer)
+ *   0.8s -> 1.8s   3D hologram card scales/fades in
+ *   1.5s -> 2.3s   "SCH" text reveals letter by letter
+ *   2.2s -> 2.8s   Enter Experience button fades in last
+ *
+ * WEBGL FALLBACK:
+ * If useWebGLSupport() resolves to false, we skip both Canvas-based
+ * components entirely and show a CSS gradient background instead —
+ * this keeps the page from breaking on devices/browsers that can't
+ * run WebGL (some embedded webviews, very old phones).
+ * ================================================================
+ */
 export default function Home() {
+  const webglSupported = useWebGLSupport();
+  const [showParticles, setShowParticles] = useState(false);
+  const [showCard, setShowCard] = useState(false);
+
+  useEffect(() => {
+    // Stagger mounting the heavy Canvas components themselves
+    // (not just their CSS opacity) — this means the GPU work for
+    // the particle field doesn't compete with the photo card's
+    // texture loading at the exact same instant, smoothing out the
+    // intro on slower devices.
+    const particleTimer = setTimeout(() => setShowParticles(true), 300);
+    const cardTimer = setTimeout(() => setShowCard(true), 800);
+    return () => {
+      clearTimeout(particleTimer);
+      clearTimeout(cardTimer);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="relative h-screen w-full overflow-hidden bg-[#020408]">
+      {/* Layer 0: pure black base, always present so there's never
+          a flash of white before anything else loads. */}
+      <div className="absolute inset-0 bg-[#020408]" />
+
+      {/* Layer 1: particle depth field, fades in starting at 0.3s.
+          Skipped entirely if WebGL isn't supported. */}
+      {webglSupported !== false && showParticles && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
+        >
+          <Suspense fallback={null}>
+            <ParticleBackground />
+          </Suspense>
+        </motion.div>
+      )}
+
+      {/* CSS fallback glow, used both as a base ambient layer and
+          as the sole background if WebGL is unavailable. */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 40%, rgba(0,128,255,0.12), transparent 60%)",
+        }}
+      />
+
+      <Navbar />
+
+      {/* Layer 2: the hologram 3D card, scales + fades in starting
+          at 0.8s. Skipped if WebGL isn't supported. */}
+      {webglSupported !== false && showCard && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute inset-0 z-[5]"
+        >
+          <Suspense fallback={null}>
+            <HeroPhotoCard
+              colorMapUrl={PHOTO_ONE_URL}
+              depthMapUrl={PHOTO_TWO_URL}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </Suspense>
+        </motion.div>
+      )}
+
+      {/* Layer 3: text + CTA, sits above everything */}
+      <section className="relative z-10 flex h-screen w-full flex-col items-center justify-center px-6 text-center">
+        <HeroText />
+
+        <div className="mt-8">
+          <EnterButton href="/portfolio" />
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
