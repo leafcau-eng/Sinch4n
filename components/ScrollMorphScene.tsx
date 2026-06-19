@@ -1,194 +1,212 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import * as THREE from "three";
 import { gsap, registerGsap, ScrollTrigger } from "@/lib/gsapConfig";
 
-// ─── Vertex Shader ────────────────────────────────────────────────
-// Displacement tetap sama — scroll morph dari foto A ke B
-const vertexShader = `
-  uniform sampler2D uTextureB;
-  uniform float uProgress;
-  uniform float uDisplacementStrength;
+const PHOTO_PORTRAIT =
+  "https://i.ibb.co.com/ksf232R1/file-0000000066d071f58ad62c9d9efd993f.png";
+const PHOTO_CODING =
+  "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
 
-  varying vec2 vUv;
-
-  void main() {
-    vUv = uv;
-
-    vec4 depthSample = texture2D(uTextureB, uv);
-    float depth = depthSample.r;
-
-    vec3 displaced = position + normal * depth * uProgress * uDisplacementStrength;
-
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(displaced, 1.0);
-  }
-`;
-
-// ─── Fragment Shader ──────────────────────────────────────────────
-// Alpha berdasarkan brightness — area gelap jadi transparan
-// Efek: background shader/particle keliatan di balik foto
-// mix-blend-mode screen dikerjain di level CSS
-const fragmentShader = `
-  uniform sampler2D uTextureA;
-  uniform sampler2D uTextureB;
-  uniform float uProgress;
-  uniform float uAlphaThreshold;
-  uniform float uEdgeSoftness;
-
-  varying vec2 vUv;
-
-  void main() {
-    vec4 colorA = texture2D(uTextureA, vUv);
-    vec4 colorB = texture2D(uTextureB, vUv);
-
-    // Mix warna antara 2 foto berdasarkan scroll progress
-    vec4 finalColor = mix(colorA, colorB, uProgress);
-
-    // Luminance (brightness) pixel
-    float luma = dot(finalColor.rgb, vec3(0.299, 0.587, 0.114));
-
-    // Alpha = 0 di area gelap, 1 di area terang
-    // Threshold bisa di-tune — sekarang 0.08 = area sangat gelap hilang
-    float alpha = smoothstep(uAlphaThreshold, uAlphaThreshold + uEdgeSoftness, luma);
-
-    // Edge vignette — tepi foto fade out biar tidak kotak
-    vec2 center = vUv - 0.5;
-    float edgeDist = length(center * vec2(1.0, 0.75));
-    float edgeFade = smoothstep(0.52, 0.28, edgeDist);
-
-    // Sedikit boost warna biar tidak pudar
-    vec3 boosted = finalColor.rgb * 1.15;
-
-    // Cyan tint subtle di highlight — efek hologram
-    float highlightMask = smoothstep(0.7, 1.0, luma);
-    boosted = mix(boosted, boosted + vec3(0.0, 0.08, 0.12), highlightMask * (1.0 - uProgress));
-    boosted = mix(boosted, boosted + vec3(0.04, 0.02, 0.10), highlightMask * uProgress);
-
-    gl_FragColor = vec4(boosted, alpha * edgeFade);
-  }
-`;
-
-// ─── Morph Plane ──────────────────────────────────────────────────
-function MorphPlane({
-  textureAUrl,
-  textureBUrl,
-  progressRef,
-}: {
-  textureAUrl: string;
-  textureBUrl: string;
-  progressRef: { current: number };
-}) {
-  const materialRef = useRef<THREE.ShaderMaterial>(null);
-
-  const [textureA, textureB] = useLoader(THREE.TextureLoader, [
-    textureAUrl,
-    textureBUrl,
-  ]);
-
-  useFrame(() => {
-    if (materialRef.current) {
-      materialRef.current.uniforms.uProgress.value = progressRef.current;
-    }
-  });
-
-  return (
-    <mesh>
-      <planeGeometry args={[3.2, 4.2, 256, 256]} />
-      <shaderMaterial
-        ref={materialRef}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-        uniforms={{
-          uTextureA: { value: textureA },
-          uTextureB: { value: textureB },
-          uProgress: { value: 0 },
-          uDisplacementStrength: { value: 1.4 },
-          uAlphaThreshold: { value: 0.08 },
-          uEdgeSoftness: { value: 0.35 },
-        }}
-        transparent={true}
-        depthWrite={false}
-      />
-    </mesh>
-  );
-}
-
-// ─── Scene Lights ─────────────────────────────────────────────────
-function SceneLights() {
-  return (
-    <>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[3, 3, 3]} intensity={1.0} color="#ffffff" />
-      <pointLight position={[-3, -2, -3]} intensity={0.4} color="#00f5ff" />
-      <pointLight position={[0, 0, 4]} intensity={0.3} color="#7b2fff" />
-    </>
-  );
-}
-
-// ─── Export ───────────────────────────────────────────────────────
 export default function ScrollMorphScene({
   textureAUrl,
   textureBUrl,
 }: {
-  textureAUrl: string;
-  textureBUrl: string;
+  textureAUrl?: string;
+  textureBUrl?: string;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const progressRef = useRef({ current: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const photoARef = useRef<HTMLImageElement>(null);
+  const photoBRef = useRef<HTMLImageElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
+  const scanRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     registerGsap();
-    if (!sectionRef.current) return;
+    if (!sectionRef.current || !containerRef.current) return;
 
-    const trigger = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "top top",
-      end: "+=100%",
-      pin: true,
-      scrub: true,
-      onUpdate: (self) => {
-        progressRef.current.current = self.progress;
-      },
-    });
+    const ctx = gsap.context(() => {
+      // ── Timeline scroll-driven ──────────────────────────────────
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=200%",
+          pin: true,
+          scrub: 1.2,
+        },
+      });
 
-    return () => {
-      trigger.kill();
-    };
+      // Phase 1 (0% → 40%): Foto A zoom in + drift up
+      tl.fromTo(
+        photoARef.current,
+        { scale: 1.0, y: 0, opacity: 1, filter: "brightness(0.7) saturate(0.8)" },
+        { scale: 1.25, y: -40, opacity: 0, filter: "brightness(1.1) saturate(1.2)", duration: 4 },
+        0
+      );
+
+      // Phase 1: Glow intensify
+      tl.fromTo(
+        glowRef.current,
+        { opacity: 0.3, scale: 0.8 },
+        { opacity: 1, scale: 1.4, duration: 4 },
+        0
+      );
+
+      // Phase 1: Scan line sweep
+      tl.fromTo(
+        scanRef.current,
+        { top: "110%", opacity: 0.8 },
+        { top: "-10%", opacity: 0, duration: 3 },
+        0.5
+      );
+
+      // Phase 2 (40% → 100%): Foto B fade in + zoom in
+      tl.fromTo(
+        photoBRef.current,
+        { scale: 1.1, y: 30, opacity: 0, filter: "brightness(0.6) saturate(0.7)" },
+        { scale: 1.0, y: 0, opacity: 1, filter: "brightness(1.0) saturate(1.1)", duration: 6 },
+        3
+      );
+
+      // Phase 2: Text reveal
+      tl.fromTo(
+        textRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 2 },
+        6
+      );
+
+      // Continuous: container subtle parallax
+      tl.fromTo(
+        containerRef.current,
+        { y: 0 },
+        { y: -30, duration: 10 },
+        0
+      );
+
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative h-screen w-full">
-      {/* Canvas: alpha true + transparent background */}
-      <Canvas
-        camera={{ position: [0, 0, 6], fov: 45 }}
-        gl={{
-          antialias: true,
-          alpha: true,          // background canvas transparan
-          premultipliedAlpha: false,
-        }}
+    <div
+      ref={sectionRef}
+      className="relative h-screen w-full overflow-hidden"
+    >
+      {/* ── Particle-like background dots ── */}
+      <div className="absolute inset-0 pointer-events-none z-0"
         style={{
-          background: "transparent",
-          mixBlendMode: "screen", // area gelap foto = transparan, highlight = visible
+          backgroundImage: "radial-gradient(circle, rgba(0,245,255,0.15) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+          opacity: 0.4,
         }}
-        dpr={[1, 2]}
-      >
-        <SceneLights />
-        <MorphPlane
-          textureAUrl={textureAUrl}
-          textureBUrl={textureBUrl}
-          progressRef={progressRef.current}
-        />
-      </Canvas>
+      />
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-        <span className="font-mono text-xs tracking-widest text-cyan-400/40 uppercase">
+      {/* ── Ambient glow ── */}
+      <div
+        ref={glowRef}
+        className="absolute pointer-events-none z-0"
+        style={{
+          width: "600px",
+          height: "600px",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          background: "radial-gradient(circle, rgba(0,128,255,0.18) 0%, rgba(123,47,255,0.10) 50%, transparent 70%)",
+          borderRadius: "50%",
+        }}
+      />
+
+      {/* ── Photo container ── */}
+      <div
+        ref={containerRef}
+        className="absolute inset-0 flex items-center justify-center z-10"
+      >
+        {/* Foto A — portrait */}
+        <img
+          ref={photoARef}
+          src={PHOTO_PORTRAIT}
+          alt="Rian Riyandi"
+          className="absolute"
+          style={{
+            height: "85vh",
+            width: "auto",
+            objectFit: "cover",
+            objectPosition: "center top",
+            maskImage: "radial-gradient(ellipse 70% 90% at 50% 45%, black 55%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse 70% 90% at 50% 45%, black 55%, transparent 100%)",
+            willChange: "transform, opacity",
+          }}
+        />
+
+        {/* Foto B — coding */}
+        <img
+          ref={photoBRef}
+          src={PHOTO_CODING}
+          alt="Rian coding"
+          className="absolute"
+          style={{
+            height: "85vh",
+            width: "auto",
+            objectFit: "cover",
+            objectPosition: "center top",
+            opacity: 0,
+            maskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
+            willChange: "transform, opacity",
+          }}
+        />
+      </div>
+
+      {/* ── Scan line effect ── */}
+      <div
+        ref={scanRef}
+        className="absolute left-0 right-0 pointer-events-none z-20"
+        style={{
+          top: "110%",
+          height: "2px",
+          background: "linear-gradient(90deg, transparent, rgba(0,245,255,0.8), rgba(123,47,255,0.6), transparent)",
+          boxShadow: "0 0 20px rgba(0,245,255,0.5), 0 0 40px rgba(0,245,255,0.2)",
+        }}
+      />
+
+      {/* ── Bottom text reveal ── */}
+      <div
+        ref={textRef}
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 text-center opacity-0"
+      >
+        <p className="font-mono text-xs tracking-[0.4em] text-cyan-400/60 uppercase mb-2">
+          Creative Developer
+        </p>
+        <p className="font-mono text-sm tracking-widest text-neutral-500 uppercase">
+          Rian Riyandi
+        </p>
+      </div>
+
+      {/* ── Scroll hint ── */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-30">
+        <span className="font-mono text-[10px] tracking-widest text-cyan-400/30 uppercase">
           Scroll
         </span>
-        <div className="w-px h-8 bg-gradient-to-b from-cyan-400/40 to-transparent animate-pulse" />
+        <div className="w-px h-6 bg-gradient-to-b from-cyan-400/30 to-transparent animate-pulse" />
       </div>
+
+      {/* ── Corner frame accents ── */}
+      {[
+        "top-8 left-8 border-t border-l",
+        "top-8 right-8 border-t border-r",
+        "bottom-8 left-8 border-b border-l",
+        "bottom-8 right-8 border-b border-r",
+      ].map((cls, i) => (
+        <div
+          key={i}
+          className={`absolute ${cls} w-6 h-6 border-cyan-400/20 pointer-events-none z-30`}
+        />
+      ))}
     </div>
   );
 }
