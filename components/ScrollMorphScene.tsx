@@ -5,8 +5,6 @@ import { gsap, registerGsap, ScrollTrigger } from "@/lib/gsapConfig";
 
 const PHOTO_PORTRAIT =
   "https://i.ibb.co.com/ksf232R1/file-0000000066d071f58ad62c9d9efd993f.png";
-const PHOTO_CODING =
-  "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
 
 export default function ScrollMorphScene({
   textureAUrl,
@@ -16,75 +14,80 @@ export default function ScrollMorphScene({
   textureBUrl?: string;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const photoARef = useRef<HTMLImageElement>(null);
-  const photoBRef = useRef<HTMLImageElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const scanRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLDivElement>(null);
+  const scrollHintRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     registerGsap();
-    if (!sectionRef.current || !containerRef.current) return;
+    if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // ── Timeline scroll-driven ──────────────────────────────────
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%",
+          end: "+=250%",
           pin: true,
-          scrub: 1.2,
+          scrub: 1.5,
         },
       });
 
-      // Phase 1 (0% → 40%): Foto A zoom in + drift up
-      tl.fromTo(
-        photoARef.current,
-        { scale: 1.0, y: 0, opacity: 1, filter: "brightness(0.7) saturate(0.8)" },
-        { scale: 1.25, y: -40, opacity: 0, filter: "brightness(1.1) saturate(1.2)", duration: 4 },
+      // Phase 1 (0→30%): Foto zoom in dramatis + glow naik
+      tl.fromTo(imgRef.current,
+        { scale: 1.0, filter: "brightness(0.75) saturate(0.9)" },
+        { scale: 1.22, filter: "brightness(1.05) saturate(1.2)", duration: 3 },
+        0
+      );
+      tl.fromTo(glowRef.current,
+        { opacity: 0.2, scale: 0.7 },
+        { opacity: 1.0, scale: 1.6, duration: 3 },
+        0
+      );
+      // Scan line sweep bawah → atas
+      tl.fromTo(scanRef.current,
+        { top: "105%", opacity: 1 },
+        { top: "-5%", opacity: 0.3, duration: 2.5 },
+        0.3
+      );
+      // Scroll hint fade out
+      tl.to(scrollHintRef.current,
+        { opacity: 0, duration: 1 },
         0
       );
 
-      // Phase 1: Glow intensify
-      tl.fromTo(
-        glowRef.current,
-        { opacity: 0.3, scale: 0.8 },
-        { opacity: 1, scale: 1.4, duration: 4 },
-        0
-      );
-
-      // Phase 1: Scan line sweep
-      tl.fromTo(
-        scanRef.current,
-        { top: "110%", opacity: 0.8 },
-        { top: "-10%", opacity: 0, duration: 3 },
-        0.5
-      );
-
-      // Phase 2 (40% → 100%): Foto B fade in + zoom in
-      tl.fromTo(
-        photoBRef.current,
-        { scale: 1.1, y: 30, opacity: 0, filter: "brightness(0.6) saturate(0.7)" },
-        { scale: 1.0, y: 0, opacity: 1, filter: "brightness(1.0) saturate(1.1)", duration: 6 },
+      // Phase 2 (30→70%): Foto mengecil ke kiri atas
+      tl.to(photoRef.current,
+        {
+          top: "24px",
+          left: "24px",
+          width: "120px",
+          height: "120px",
+          borderRadius: "50%",
+          duration: 4,
+          ease: "power2.inOut",
+        },
         3
       );
-
-      // Phase 2: Text reveal
-      tl.fromTo(
-        textRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 2 },
-        6
+      tl.to(imgRef.current,
+        { scale: 1.0, filter: "brightness(0.9) saturate(1.0)", duration: 4 },
+        3
       );
-
-      // Continuous: container subtle parallax
-      tl.fromTo(
-        containerRef.current,
-        { y: 0 },
-        { y: -30, duration: 10 },
-        0
+      // Overlay grid muncul
+      tl.fromTo(overlayRef.current,
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 3 },
+        4.5
+      );
+      // Label nama muncul
+      tl.fromTo(labelRef.current,
+        { opacity: 0, x: -10 },
+        { opacity: 1, x: 0, duration: 2 },
+        5.5
       );
 
     }, sectionRef);
@@ -93,16 +96,15 @@ export default function ScrollMorphScene({
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      className="relative h-screen w-full overflow-hidden"
-    >
-      {/* ── Particle-like background dots ── */}
-      <div className="absolute inset-0 pointer-events-none z-0"
+    <div ref={sectionRef} className="relative h-screen w-full overflow-hidden">
+
+      {/* ── Particle dots background ── */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(0,245,255,0.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          opacity: 0.4,
+          backgroundImage: "radial-gradient(circle, rgba(0,245,255,0.18) 1px, transparent 1px)",
+          backgroundSize: "55px 55px",
+          opacity: 0.35,
         }}
       />
 
@@ -111,102 +113,117 @@ export default function ScrollMorphScene({
         ref={glowRef}
         className="absolute pointer-events-none z-0"
         style={{
-          width: "600px",
-          height: "600px",
+          width: "700px",
+          height: "700px",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background: "radial-gradient(circle, rgba(0,128,255,0.18) 0%, rgba(123,47,255,0.10) 50%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(0,100,255,0.15) 0%, rgba(123,47,255,0.08) 50%, transparent 70%)",
           borderRadius: "50%",
         }}
       />
 
-      {/* ── Photo container ── */}
+      {/* ── Photo ── */}
       <div
-        ref={containerRef}
-        className="absolute inset-0 flex items-center justify-center z-10"
+        ref={photoRef}
+        className="absolute z-20 overflow-hidden"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "min(55vw, 420px)",
+          height: "min(80vh, 560px)",
+          borderRadius: "16px",
+          willChange: "top, left, width, height, border-radius",
+          boxShadow: "0 0 60px rgba(0,245,255,0.15), 0 0 120px rgba(123,47,255,0.08)",
+        }}
       >
-        {/* Foto A — portrait */}
         <img
-          ref={photoARef}
+          ref={imgRef}
           src={PHOTO_PORTRAIT}
           alt="Rian Riyandi"
-          className="absolute"
+          className="w-full h-full object-cover object-top"
           style={{
-            height: "85vh",
-            width: "auto",
-            objectFit: "cover",
-            objectPosition: "center top",
-            maskImage: "radial-gradient(ellipse 70% 90% at 50% 45%, black 55%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(ellipse 70% 90% at 50% 45%, black 55%, transparent 100%)",
-            willChange: "transform, opacity",
+            maskImage:
+              "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
+            willChange: "transform, filter",
           }}
         />
 
-        {/* Foto B — coding */}
-        <img
-          ref={photoBRef}
-          src={PHOTO_CODING}
-          alt="Rian coding"
-          className="absolute"
+        {/* Inner glow border */}
+        <div
+          className="absolute inset-0 pointer-events-none"
           style={{
-            height: "85vh",
-            width: "auto",
-            objectFit: "cover",
-            objectPosition: "center top",
-            opacity: 0,
-            maskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
-            willChange: "transform, opacity",
+            boxShadow: "inset 0 0 40px rgba(0,245,255,0.08)",
+            borderRadius: "inherit",
           }}
         />
       </div>
 
-      {/* ── Scan line effect ── */}
+      {/* ── Nama label (muncul saat foto mengecil) ── */}
       <div
-        ref={scanRef}
-        className="absolute left-0 right-0 pointer-events-none z-20"
-        style={{
-          top: "110%",
-          height: "2px",
-          background: "linear-gradient(90deg, transparent, rgba(0,245,255,0.8), rgba(123,47,255,0.6), transparent)",
-          boxShadow: "0 0 20px rgba(0,245,255,0.5), 0 0 40px rgba(0,245,255,0.2)",
-        }}
-      />
-
-      {/* ── Bottom text reveal ── */}
-      <div
-        ref={textRef}
-        className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 text-center opacity-0"
+        ref={labelRef}
+        className="absolute z-30 pointer-events-none"
+        style={{ top: "32px", left: "156px", opacity: 0 }}
       >
-        <p className="font-mono text-xs tracking-[0.4em] text-cyan-400/60 uppercase mb-2">
+        <p className="font-mono text-[10px] tracking-[0.3em] text-cyan-400/60 uppercase">
           Creative Developer
         </p>
-        <p className="font-mono text-sm tracking-widest text-neutral-500 uppercase">
+        <p className="font-mono text-xs tracking-widest text-white/80 uppercase mt-0.5">
           Rian Riyandi
         </p>
       </div>
 
-      {/* ── Scroll hint ── */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-30">
-        <span className="font-mono text-[10px] tracking-widest text-cyan-400/30 uppercase">
-          Scroll
-        </span>
-        <div className="w-px h-6 bg-gradient-to-b from-cyan-400/30 to-transparent animate-pulse" />
+      {/* ── "Projects" overlay text (muncul saat scroll) ── */}
+      <div
+        ref={overlayRef}
+        className="absolute z-10 pointer-events-none"
+        style={{ opacity: 0, bottom: "15%", left: "50%", transform: "translateX(-50%)" }}
+      >
+        <p className="font-mono text-[10px] tracking-[0.5em] text-cyan-400/40 uppercase text-center">
+          Scroll to explore projects ↓
+        </p>
       </div>
 
-      {/* ── Corner frame accents ── */}
+      {/* ── Scan line ── */}
+      <div
+        ref={scanRef}
+        className="absolute left-0 right-0 pointer-events-none z-30"
+        style={{
+          top: "105%",
+          height: "1.5px",
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(0,245,255,0.9) 30%, rgba(123,47,255,0.7) 70%, transparent 100%)",
+          boxShadow: "0 0 16px rgba(0,245,255,0.5)",
+        }}
+      />
+
+      {/* ── Corner accents ── */}
       {[
-        "top-8 left-8 border-t border-l",
-        "top-8 right-8 border-t border-r",
-        "bottom-8 left-8 border-b border-l",
-        "bottom-8 right-8 border-b border-r",
+        "top-6 left-6 border-t border-l",
+        "top-6 right-6 border-t border-r",
+        "bottom-6 left-6 border-b border-l",
+        "bottom-6 right-6 border-b border-r",
       ].map((cls, i) => (
         <div
           key={i}
-          className={`absolute ${cls} w-6 h-6 border-cyan-400/20 pointer-events-none z-30`}
+          className={`absolute ${cls} w-5 h-5 border-cyan-400/25 pointer-events-none z-30`}
         />
       ))}
+
+      {/* ── Scroll hint ── */}
+      <div
+        ref={scrollHintRef}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-30"
+      >
+        <span className="font-mono text-[10px] tracking-widest text-cyan-400/35 uppercase">
+          Scroll
+        </span>
+        <div className="w-px h-6 bg-gradient-to-b from-cyan-400/35 to-transparent animate-pulse" />
+      </div>
     </div>
   );
 }
