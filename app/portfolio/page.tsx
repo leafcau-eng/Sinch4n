@@ -1,56 +1,81 @@
-"use client";
+// app/portfolio/page.tsx
+//
+// REVISI 2 (fix build error):
+// Sebelumnya file ini memanggil dynamic(..., { ssr: false }) langsung
+// di Server Component, yang TIDAK DIIZINKAN oleh Next.js 16. Errornya:
+//   "ssr: false is not allowed with next/dynamic in Server Components.
+//    Please move it into a Client Component."
+//
+// Fix: ParticleBackground & ScrollMorphScen3e (dan logic dynamic-nya)
+// dipindahkan ke components/PortfolioClientScene.tsx (Client Component
+// terpisah). File ini sekarang HANYA mengimport komponen client itu
+// secara biasa, tanpa next/dynamic sama sekali.
+//
+// Sisanya sama seperti revisi sebelumnya: Server Component, fetch
+// ecosystem_status, pass sebagai props ke ProjectNodeGraph. AIEcosystem
+// tetap statis.
 
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ProjectGrid from "@/components/ProjectGrid";
 import HeroIntro from "@/components/HeroIntro";
-import ProjectNodeGraph from "@/components/ProjectNodeGraph";
+import ProjectNodeGraph, {
+  EcosystemNode,
+} from "@/components/ProjectNodeGraph";
 import AIEcosystem from "@/components/AIEcosystem";
-
-const ParticleBackground = dynamic(
-  () => import("@/components/ParticleBackground"),
-  { ssr: false }
-);
-
-const ScrollMorphScen3e = dynamic(
-  () => import("@/components/ScrollMorphScen3e"),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex h-screen w-full items-center justify-center bg-[#0a0a0a]">
-        <span className="text-sm tracking-widest text-neutral-500">
-          LOADING SCENE...
-        </span>
-      </div>
-    ),
-  }
-);
+import { createClient } from "@/lib/supabase-server";
+import {
+  PortfolioParticles,
+  PortfolioScene,
+} from "@/components/PortfolioClientScene";
 
 const PHOTO_TWO_URL =
   "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
 const PHOTO_ONE_URL = PHOTO_TWO_URL;
 
-export default function PortfolioPage() {
+// ============================================================
+// Fetch ecosystem_status di server, sebelum render.
+//
+// - Public read (RLS sudah mengizinkan anon SELECT, lihat Migration 002)
+// - Tidak ada auth/session, tidak ada realtime
+// - Kalau fetch gagal (mis. env var belum diisi, network error),
+//   return array kosong → ProjectNodeGraph akan return null
+//   (lihat guard clause di komponennya), BUKAN bikin halaman crash.
+// ============================================================
+async function getEcosystemStatus(): Promise<EcosystemNode[]> {
+  try {
+    const supabase = createClient();
+    const { data, error } = await supabase
+      .from("ecosystem_status")
+      .select("product_key, display_name, status, url, display_order")
+      .order("display_order", { ascending: true });
+
+    if (error) {
+      console.error("Failed to fetch ecosystem_status:", error.message);
+      return [];
+    }
+
+    return data ?? [];
+  } catch (err) {
+    console.error("Unexpected error fetching ecosystem_status:", err);
+    return [];
+  }
+}
+
+export default async function PortfolioPage() {
+  const ecosystemNodes = await getEcosystemStatus();
+
   return (
     <main className="relative w-full overflow-hidden bg-[#0a0a0a]">
-      <Suspense fallback={null}>
-        <ParticleBackground />
-      </Suspense>
+      <PortfolioParticles />
 
       <Navbar />
 
       <div className="relative">
-        <Suspense fallback={null}>
-          <ScrollMorphScen3e
-            textureAUrl={PHOTO_ONE_URL}
-            textureBUrl={PHOTO_TWO_URL}
-          />
-        </Suspense>
+        <PortfolioScene textureAUrl={PHOTO_ONE_URL} textureBUrl={PHOTO_TWO_URL} />
         <HeroIntro />
       </div>
 
-      <ProjectNodeGraph />
+      <ProjectNodeGraph nodes={ecosystemNodes} />
       <AIEcosystem />
 
       <div id="projects">
