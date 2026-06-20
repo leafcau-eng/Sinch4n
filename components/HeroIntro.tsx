@@ -2,9 +2,50 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 
 const ROLES = ["AI Automation Engineer", "Web Developer", "Freelancer"];
+
+function GithubIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.46-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.4 9.4 0 0 1 12 6.84c.85 0 1.71.12 2.5.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.42.2 2.47.1 2.73.64.71 1.03 1.61 1.03 2.72 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49C19.13 20.57 22 16.75 22 12.25 22 6.58 17.52 2 12 2Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5S1 4.6 1 3.5 1.9 1.5 3 1.5s1.98.9 1.98 2ZM1.5 8.25h3v12.75h-3V8.25Zm6 0h2.88v1.74h.04c.4-.76 1.4-1.74 2.88-1.74 3.08 0 3.65 2.03 3.65 4.66v7.09h-3v-6.29c0-1.5-.03-3.43-2.1-3.43-2.1 0-2.42 1.64-2.42 3.32v6.4h-3V8.25Z" />
+    </svg>
+  );
+}
+
+function TwitterXIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M18.9 2H22l-7.6 8.68L23 22h-6.9l-5.4-7.06L4.4 22H1.3l8.13-9.3L1 2h7.06l4.9 6.47L18.9 2Zm-2.42 18h1.9L8.66 4h-2L16.48 20Z" />
+    </svg>
+  );
+}
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -31,12 +72,12 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 const SOCIALS = [
-  { name: "GitHub", href: "https://github.com/Leaf-cau-eng", icon: Github },
+  { name: "GitHub", href: "https://github.com/Leaf-cau-eng", icon: GithubIcon },
   { name: "TikTok", href: "https://www.tiktok.com/@shinch4n86", icon: TikTokIcon },
-  { name: "Instagram", href: "#", icon: Instagram },
-  { name: "Facebook", href: "#", icon: Facebook },
-  { name: "LinkedIn", href: "#", icon: Linkedin },
-  { name: "Twitter", href: "#", icon: Twitter },
+  { name: "Instagram", href: "#", icon: InstagramIcon },
+  { name: "Facebook", href: "#", icon: FacebookIcon },
+  { name: "LinkedIn", href: "#", icon: LinkedinIcon },
+  { name: "Twitter", href: "#", icon: TwitterXIcon },
   { name: "Discord", href: "#", icon: DiscordIcon },
   { name: "Telegram", href: "#", icon: TelegramIcon },
 ];
@@ -57,7 +98,6 @@ export default function HeroIntro() {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-6 py-24 bg-[#0a0a0a]">
-      {/* Background gradient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -65,7 +105,6 @@ export default function HeroIntro() {
             "radial-gradient(circle at 30% 30%, rgba(0,245,255,0.08) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(123,47,255,0.08) 0%, transparent 50%)",
         }}
       />
-      {/* Subtle particle dots */}
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
