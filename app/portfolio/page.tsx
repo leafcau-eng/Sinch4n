@@ -24,10 +24,9 @@ const ScrollMorphScen3e = dynamic(
   }
 );
 
-const PHOTO_ONE_URL =
-  "https://i.ibb.co.com/ksf232R1/file-0000000066d071f58ad62c9d9efd993f.png";
 const PHOTO_TWO_URL =
   "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
+const PHOTO_ONE_URL = PHOTO_TWO_URL;
 
 export default function PortfolioPage() {
   return (
