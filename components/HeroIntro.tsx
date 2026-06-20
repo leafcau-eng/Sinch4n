@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectNodeGraph from "@/components/ProjectNodeGraph";
+import AIEcosystem from "@/components/AIEcosystem";
 
 const ROLES = ["AI Automation Engineer", "Web Developer", "Freelancer"];
 
@@ -182,6 +183,7 @@ export default function HeroIntro() {
       </motion.div>
 
       <ProjectNodeGraph />
+      <AIEcosystem />
     </div>
   );
 }
