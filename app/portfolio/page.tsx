@@ -1,19 +1,11 @@
 // app/portfolio/page.tsx
 //
-// REVISI 2 (fix build error):
-// Sebelumnya file ini memanggil dynamic(..., { ssr: false }) langsung
-// di Server Component, yang TIDAK DIIZINKAN oleh Next.js 16. Errornya:
-//   "ssr: false is not allowed with next/dynamic in Server Components.
-//    Please move it into a Client Component."
-//
-// Fix: ParticleBackground & ScrollMorphScen3e (dan logic dynamic-nya)
-// dipindahkan ke components/PortfolioClientScene.tsx (Client Component
-// terpisah). File ini sekarang HANYA mengimport komponen client itu
-// secara biasa, tanpa next/dynamic sama sekali.
-//
-// Sisanya sama seperti revisi sebelumnya: Server Component, fetch
-// ecosystem_status, pass sebagai props ke ProjectNodeGraph. AIEcosystem
-// tetap statis.
+// REVISI 3: menambahkan RadarFeedPanel (Live Radar Feed) di atas
+// ProjectNodeGraph. Berbeda dengan ecosystem_status (fetch sama
+// seperti sebelumnya) dan counter (lihat hooks/useEcosystemCounts —
+// polling tiap 5 menit), data untuk RadarFeedPanel di-fetch SEKALI
+// di sini (Server Component), sesuai decision log: "cukup fetch
+// sekali saat halaman dibuka, statis sampai reload".
 
 import Navbar from "@/components/Navbar";
 import ProjectGrid from "@/components/ProjectGrid";
@@ -22,6 +14,7 @@ import ProjectNodeGraph, {
   EcosystemNode,
 } from "@/components/ProjectNodeGraph";
 import AIEcosystem from "@/components/AIEcosystem";
+import RadarFeedPanel, { RadarFeedData } from "@/components/RadarFeedPanel";
 import { createClient } from "@/lib/supabase-server";
 import {
   PortfolioParticles,
@@ -32,15 +25,8 @@ const PHOTO_TWO_URL =
   "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
 const PHOTO_ONE_URL = PHOTO_TWO_URL;
 
-// ============================================================
-// Fetch ecosystem_status di server, sebelum render.
-//
-// - Public read (RLS sudah mengizinkan anon SELECT, lihat Migration 002)
-// - Tidak ada auth/session, tidak ada realtime
-// - Kalau fetch gagal (mis. env var belum diisi, network error),
-//   return array kosong → ProjectNodeGraph akan return null
-//   (lihat guard clause di komponennya), BUKAN bikin halaman crash.
-// ============================================================
+const FEED_ITEM_LIMIT = 10;
+
 async function getEcosystemStatus(): Promise<EcosystemNode[]> {
   try {
     const supabase = createClient();
@@ -61,8 +47,84 @@ async function getEcosystemStatus(): Promise<EcosystemNode[]> {
   }
 }
 
+// ============================================================
+// Fetch data untuk RadarFeedPanel: 10 item terbaru + total count +
+// count 24 jam terakhir, untuk ai_news dan jobs. Fetch SEKALI saat
+// page di-render (tidak polling), sesuai keputusan.
+// ============================================================
+async function getRadarFeedData(): Promise<RadarFeedData | null> {
+  try {
+    const supabase = createClient();
+    const since24h = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+
+    const [
+      aiNewsItemsRes,
+      aiNewsTotalRes,
+      aiNewsTodayRes,
+      jobsItemsRes,
+      jobsTotalRes,
+      jobsTodayRes,
+    ] = await Promise.all([
+      supabase
+        .from("ai_news")
+        .select("id, title, source_name, source_url")
+        .order("ingested_at", { ascending: false })
+        .limit(FEED_ITEM_LIMIT),
+      supabase.from("ai_news").select("*", { count: "exact", head: true }),
+      supabase
+        .from("ai_news")
+        .select("*", { count: "exact", head: true })
+        .gte("ingested_at", since24h),
+      supabase
+        .from("jobs")
+        .select("id, title, source_name, source_url")
+        .eq("status", "active")
+        .order("created_at", { ascending: false })
+        .limit(FEED_ITEM_LIMIT),
+      supabase
+        .from("jobs")
+        .select("*", { count: "exact", head: true })
+        .eq("status", "active"),
+      supabase
+        .from("jobs")
+        .select("*", { count: "exact", head: true })
+        .eq("status", "active")
+        .gte("created_at", since24h),
+    ]);
+
+    if (aiNewsItemsRes.error || jobsItemsRes.error) {
+      console.error(
+        "Failed to fetch radar feed:",
+        aiNewsItemsRes.error?.message,
+        jobsItemsRes.error?.message
+      );
+      return null;
+    }
+
+    return {
+      aiNews: {
+        items: aiNewsItemsRes.data ?? [],
+        totalCount: aiNewsTotalRes.count ?? 0,
+        todayCount: aiNewsTodayRes.count ?? 0,
+      },
+      jobs: {
+        items: jobsItemsRes.data ?? [],
+        totalCount: jobsTotalRes.count ?? 0,
+        todayCount: jobsTodayRes.count ?? 0,
+      },
+      fetchedAt: new Date().toISOString(),
+    };
+  } catch (err) {
+    console.error("Unexpected error fetching radar feed:", err);
+    return null;
+  }
+}
+
 export default async function PortfolioPage() {
-  const ecosystemNodes = await getEcosystemStatus();
+  const [ecosystemNodes, radarFeedData] = await Promise.all([
+    getEcosystemStatus(),
+    getRadarFeedData(),
+  ]);
 
   return (
     <main className="relative w-full overflow-hidden bg-[#0a0a0a]">
@@ -75,6 +137,7 @@ export default async function PortfolioPage() {
         <HeroIntro />
       </div>
 
+      <RadarFeedPanel data={radarFeedData} />
       <ProjectNodeGraph nodes={ecosystemNodes} />
       <AIEcosystem />
 
