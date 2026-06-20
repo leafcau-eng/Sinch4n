@@ -5,6 +5,8 @@ import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ProjectGrid from "@/components/ProjectGrid";
 import HeroIntro from "@/components/HeroIntro";
+import ProjectNodeGraph from "@/components/ProjectNodeGraph";
+import AIEcosystem from "@/components/AIEcosystem";
 
 const ParticleBackground = dynamic(
   () => import("@/components/ParticleBackground"),
@@ -47,6 +49,9 @@ export default function PortfolioPage() {
         </Suspense>
         <HeroIntro />
       </div>
+
+      <ProjectNodeGraph />
+      <AIEcosystem />
 
       <div id="projects">
         <ProjectGrid />
