@@ -27,16 +27,8 @@ export default function ScrollMorphScene({
     if (!sectionRef.current || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // ── Timeline scroll-driven ──────────────────────────────────
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=200%",
-          pin: true,
-          scrub: 1.2,
-        },
-      });
+      // ── Timeline animasi sekali jalan (tanpa pin/scroll) ──────────
+      const tl = gsap.timeline();
 
       // Phase 1: Glow intensify
       tl.fromTo(
