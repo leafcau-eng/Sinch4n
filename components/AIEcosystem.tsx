@@ -3,6 +3,26 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, scale: 0.5, y: 16 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
 function Node({
   label,
   sub,
@@ -13,7 +33,8 @@ function Node({
   highlight?: boolean;
 }) {
   return (
-    <div
+    <motion.div
+      variants={itemVariant}
       className={`sch-eco-glow relative z-10 flex flex-col items-center justify-center rounded-xl border backdrop-blur-md px-4 py-2.5 text-center transition-transform duration-300 hover:scale-105 ${
         highlight
           ? "border-cyan-400/60 bg-cyan-400/[0.06] w-28 h-16"
@@ -39,13 +60,14 @@ function Node({
           {sub}
         </span>
       )}
-    </div>
+    </motion.div>
   );
 }
 
 function VLine({ h = 24 }: { h?: number }) {
   return (
-    <div
+    <motion.div
+      variants={itemVariant}
       className="sch-eco-vline w-px"
       style={{ height: h, background: "linear-gradient(#22d3ee, #a78bfa)" }}
     />
@@ -55,7 +77,12 @@ function VLine({ h = 24 }: { h?: number }) {
 function BranchConnector({ count }: { count: number }) {
   const positions = Array.from({ length: count }, (_, i) => ((i + 1) / (count + 1)) * 100);
   return (
-    <svg viewBox="0 0 100 20" className="w-full h-5 overflow-visible" preserveAspectRatio="none">
+    <motion.svg
+      variants={itemVariant}
+      viewBox="0 0 100 20"
+      className="w-full h-5 overflow-visible"
+      preserveAspectRatio="none"
+    >
       {positions.map((x, i) => (
         <path
           key={i}
@@ -73,7 +100,7 @@ function BranchConnector({ count }: { count: number }) {
           <stop offset="100%" stopColor="#a78bfa" />
         </linearGradient>
       </defs>
-    </svg>
+    </motion.svg>
   );
 }
 
@@ -83,13 +110,7 @@ function Branch({ children }: { children: ReactNode }) {
 
 export default function AIEcosystem() {
   return (
-    <motion.section
-      initial={{ opacity: 0, scale: 0.75, y: 40 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="relative z-10 w-full max-w-4xl mx-auto px-4 py-16 pointer-events-auto"
-    >
+    <section className="relative z-10 w-full max-w-4xl mx-auto px-4 py-16 pointer-events-auto">
       <style>{`
         @keyframes sch-eco-pulse {
           0%, 100% { box-shadow: 0 0 8px 2px var(--glow-color, rgba(167,139,250,0.35)); }
@@ -109,13 +130,25 @@ export default function AIEcosystem() {
         .sch-eco-vline { animation: sch-eco-vline-flow 2s ease-in-out infinite; }
       `}</style>
 
-      <div className="text-center mb-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-10"
+      >
         <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] text-purple-300/80 uppercase border border-purple-400/20 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.02]">
           AI Ecosystem
         </span>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col items-center">
+      <motion.div
+        variants={containerVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="flex flex-col items-center"
+      >
         <Node label="USER" />
         <VLine />
         <Node label="Next.js" />
@@ -169,7 +202,7 @@ export default function AIEcosystem() {
             </div>
           </Branch>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
