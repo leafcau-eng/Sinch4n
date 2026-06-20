@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ProjectNodeGraph from "@/components/ProjectNodeGraph";
 
 const ROLES = ["AI Automation Engineer", "Web Developer", "Freelancer"];
 
@@ -179,6 +180,8 @@ export default function HeroIntro() {
           ))}
         </div>
       </motion.div>
+
+      <ProjectNodeGraph />
     </div>
   );
 }
