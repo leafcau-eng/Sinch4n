@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useEcosystemCounts } from "@/hooks/useEcosystemCounts";
 
 // ============================================================
 // Tipe data — sekarang merefleksikan lifecycle ecosystem_status
@@ -55,6 +56,18 @@ const CREATOR_HUB_COLOR = "#22d3ee";
 // Sesuai data seed: 'ai-creator-hub'.
 const CENTER_PRODUCT_KEY = "ai-creator-hub";
 
+// product_key yang menampilkan live counter (lihat useEcosystemCounts).
+// Hanya AI Radar & Job Radar yang punya data count real dari Supabase
+// (ai_news, jobs) — node lain tidak punya sumber count yang relevan.
+const AI_RADAR_KEY = "ai-radar";
+const JOB_RADAR_KEY = "job-radar";
+
+// Format angka ringkas, mis. 1953 -> "1.953" (locale id-ID, titik
+// sebagai pemisah ribuan, sesuai konvensi angka Indonesia).
+function formatCount(n: number): string {
+  return n.toLocaleString("id-ID");
+}
+
 const LINE_DURATION = 0.6;
 const LINE_STAGGER = 0.15;
 const NODE_STAGGER = 0.1;
@@ -75,6 +88,43 @@ function computeRadialPositions(count: number) {
     positions.push({ x, y });
   }
   return positions;
+}
+
+// ============================================================
+// Subtitle live counter, khusus node AI Radar & Job Radar.
+// Tampil di bawah label status (mis. "Active" + "1.953 Articles · +1.953 Today").
+// Return null untuk node lain / saat data belum tersedia (masih
+// fetch pertama kali) — tidak menampilkan placeholder kosong yang
+// bikin layout "lompat" begitu data datang.
+// ============================================================
+function RadarSubtitle({
+  productKey,
+  counts,
+}: {
+  productKey: string;
+  counts: ReturnType<typeof useEcosystemCounts>["counts"];
+}) {
+  if (!counts) return null;
+
+  if (productKey === AI_RADAR_KEY) {
+    return (
+      <span className="mt-0.5 font-mono text-[7px] text-neutral-400 text-center leading-tight">
+        {formatCount(counts.aiRadar.total)} Articles
+        <br />+{formatCount(counts.aiRadar.today)} Today
+      </span>
+    );
+  }
+
+  if (productKey === JOB_RADAR_KEY) {
+    return (
+      <span className="mt-0.5 font-mono text-[7px] text-neutral-400 text-center leading-tight">
+        {formatCount(counts.jobRadar.total)} Jobs
+        <br />+{formatCount(counts.jobRadar.today)} New
+      </span>
+    );
+  }
+
+  return null;
 }
 
 function CenterCard({
@@ -167,6 +217,8 @@ function CenterCard({
 }
 
 export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
+  const { counts } = useEcosystemCounts();
+
   // Tidak ada data — render apa-apa daripada bikin diagram kosong aneh.
   if (!nodes || nodes.length === 0) {
     return null;
@@ -350,6 +402,7 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
                 >
                   {STATUS_LABEL[n.status]}
                 </span>
+                <RadarSubtitle productKey={n.product_key} counts={counts} />
               </motion.div>
             </motion.div>
           );
@@ -450,6 +503,7 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
                       >
                         {STATUS_LABEL[n.status]}
                       </p>
+                      <RadarSubtitle productKey={n.product_key} counts={counts} />
                     </div>
                   </div>
                 )}
