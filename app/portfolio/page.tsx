@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ProjectGrid from "@/components/ProjectGrid";
+import HeroIntro from "@/components/HeroIntro";
 
 const ParticleBackground = dynamic(
   () => import("@/components/ParticleBackground"),
@@ -37,6 +38,8 @@ export default function PortfolioPage() {
 
       <Navbar />
 
+      <HeroIntro />
+
       <Suspense fallback={null}>
         <ScrollMorphScen3e
           textureAUrl={PHOTO_ONE_URL}
@@ -44,7 +47,30 @@ export default function PortfolioPage() {
         />
       </Suspense>
 
-      <ProjectGrid />
+      <div id="projects">
+        <ProjectGrid />
+      </div>
+
+      <section
+        id="contact"
+        className="relative w-full py-24 px-6 flex flex-col items-center justify-center text-center bg-[#0a0a0a]"
+      >
+        <p className="font-mono text-xs tracking-[0.4em] text-cyan-400/70 uppercase mb-4">
+          Get In Touch
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          Hubungi Saya
+        </h2>
+        <p className="text-neutral-400 text-sm max-w-md mb-8">
+          Punya project atau ide? Yuk diskusikan bareng.
+        </p>
+        <a
+          href="mailto:youremail@example.com"
+          className="px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase transition-transform hover:scale-105"
+        >
+          Kirim Email
+        </a>
+      </section>
     </main>
   );
 }
