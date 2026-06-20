@@ -84,10 +84,10 @@ function Branch({ children }: { children: ReactNode }) {
 export default function AIEcosystem() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.75, y: 40 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.9 }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       className="relative z-10 w-full max-w-4xl mx-auto px-4 py-16 pointer-events-auto"
     >
       <style>{`
