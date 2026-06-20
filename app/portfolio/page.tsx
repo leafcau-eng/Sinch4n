@@ -38,14 +38,15 @@ export default function PortfolioPage() {
 
       <Navbar />
 
-      <HeroIntro />
-
-      <Suspense fallback={null}>
-        <ScrollMorphScen3e
-          textureAUrl={PHOTO_ONE_URL}
-          textureBUrl={PHOTO_TWO_URL}
-        />
-      </Suspense>
+      <div className="relative">
+        <Suspense fallback={null}>
+          <ScrollMorphScen3e
+            textureAUrl={PHOTO_ONE_URL}
+            textureBUrl={PHOTO_TWO_URL}
+          />
+        </Suspense>
+        <HeroIntro />
+      </div>
 
       <div id="projects">
         <ProjectGrid />

@@ -97,7 +97,7 @@ export default function HeroIntro() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-6 py-24 bg-[#0a0a0a]">
+    <div className="absolute inset-0 z-40 flex items-center justify-center overflow-hidden px-6 pointer-events-none">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -118,7 +118,7 @@ export default function HeroIntro() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 w-full max-w-2xl mx-auto text-center backdrop-blur-xl bg-white/[0.03] border border-white/10 rounded-3xl px-6 py-12 sm:px-12 sm:py-16 shadow-2xl"
+        className="relative z-10 w-full max-w-2xl mx-auto text-center backdrop-blur-xl bg-white/[0.03] border border-white/10 rounded-3xl px-6 py-12 sm:px-12 sm:py-16 shadow-2xl pointer-events-auto"
       >
         <p className="font-mono text-xs tracking-[0.4em] text-cyan-400/70 uppercase mb-4">
           Hello, I&apos;m
@@ -179,6 +179,6 @@ export default function HeroIntro() {
           ))}
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }
