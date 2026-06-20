@@ -121,8 +121,8 @@ export default function ScrollMorphScene({
             objectFit: "cover",
             objectPosition: "center top",
             opacity: 1,
-            maskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
+            maskImage: "radial-gradient(ellipse 100% 110% at 50% 45%, black 35%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse 100% 110% at 50% 45%, black 35%, transparent 100%)",
             willChange: "transform, opacity",
           }}
         />
