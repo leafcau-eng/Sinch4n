@@ -38,14 +38,6 @@ export default function ScrollMorphScene({
         },
       });
 
-      // Phase 1 (0% → 40%): Foto A zoom in + drift up
-      tl.fromTo(
-        photoARef.current,
-        { scale: 1.0, y: 0, opacity: 1, filter: "brightness(0.7) saturate(0.8)" },
-        { scale: 1.25, y: -40, opacity: 0, filter: "brightness(1.1) saturate(1.2)", duration: 4 },
-        0
-      );
-
       // Phase 1: Glow intensify
       tl.fromTo(
         glowRef.current,
@@ -60,14 +52,6 @@ export default function ScrollMorphScene({
         { top: "110%", opacity: 0.8 },
         { top: "-10%", opacity: 0, duration: 3 },
         0.5
-      );
-
-      // Phase 2 (40% → 100%): Foto B fade in + zoom in
-      tl.fromTo(
-        photoBRef.current,
-        { scale: 1.1, y: 30, opacity: 0, filter: "brightness(0.6) saturate(0.7)" },
-        { scale: 1.0, y: 0, opacity: 1, filter: "brightness(1.0) saturate(1.1)", duration: 6 },
-        3
       );
 
       // Phase 2: Text reveal
@@ -125,23 +109,6 @@ export default function ScrollMorphScene({
         ref={containerRef}
         className="absolute inset-0 flex items-center justify-center z-10"
       >
-        {/* Foto A — portrait */}
-        <img
-          ref={photoARef}
-          src={PHOTO_PORTRAIT}
-          alt="Rian Riyandi"
-          className="absolute"
-          style={{
-            height: "85vh",
-            width: "auto",
-            objectFit: "cover",
-            objectPosition: "center top",
-            maskImage: "radial-gradient(ellipse 70% 90% at 50% 45%, black 55%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(ellipse 70% 90% at 50% 45%, black 55%, transparent 100%)",
-            willChange: "transform, opacity",
-          }}
-        />
-
         {/* Foto B — coding */}
         <img
           ref={photoBRef}
@@ -153,7 +120,7 @@ export default function ScrollMorphScene({
             width: "auto",
             objectFit: "cover",
             objectPosition: "center top",
-            opacity: 0,
+            opacity: 1,
             maskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
             WebkitMaskImage: "radial-gradient(ellipse 80% 90% at 50% 45%, black 50%, transparent 100%)",
             willChange: "transform, opacity",
