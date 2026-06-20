@@ -3,10 +3,9 @@
 import { useEffect, useRef } from "react";
 import { gsap, registerGsap, ScrollTrigger } from "@/lib/gsapConfig";
 
-const PHOTO_PORTRAIT =
-  "https://i.ibb.co.com/ksf232R1/file-0000000066d071f58ad62c9d9efd993f.png";
 const PHOTO_CODING =
   "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
+const PHOTO_PORTRAIT = PHOTO_CODING;
 
 export default function ScrollMorphScene({
   textureAUrl,
