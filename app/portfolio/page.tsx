@@ -146,23 +146,29 @@ export default async function PortfolioPage() {
       </div>
 
       <section
-        id="contact"
+        id="ebook"
         className="relative w-full py-24 px-6 flex flex-col items-center justify-center text-center bg-[#0a0a0a]"
       >
-        <p className="font-mono text-xs tracking-[0.4em] text-cyan-400/70 uppercase mb-4">
-          Get In Touch
+        <p className="font-mono text-xs tracking-[0.4em] text-pink-400/70 uppercase mb-4">
+          Produk Digital
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Hubungi Saya
+          Koleksi Ebook Self-Dev &amp; Bisnis
         </h2>
-        <p className="text-neutral-400 text-sm max-w-md mb-8">
-          Punya project atau ide? Yuk diskusikan bareng.
+        <p className="text-neutral-400 text-sm max-w-md mb-3">
+          1000+ ebook pilihan — mindset, bisnis, finansial, hingga trading. Bayar sekali, akses selamanya.
         </p>
+        <div className="flex items-center gap-3 mb-8">
+          <span className="text-sm text-neutral-500 line-through">Rp2.500.000+</span>
+          <span className="text-2xl font-bold text-cyan-400">Rp79.000</span>
+        </div>
         <a
-          href="mailto:youremail@example.com"
-          className="px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase transition-transform hover:scale-105"
+          href="https://ebook-selfdev.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-3 rounded-full bg-pink-400 text-black font-mono text-sm tracking-wide uppercase transition-transform hover:scale-105"
         >
-          Kirim Email
+          Lihat &amp; Beli Sekarang
         </a>
       </section>
     </main>
