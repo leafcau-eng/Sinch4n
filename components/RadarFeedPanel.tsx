@@ -184,34 +184,35 @@ export default function RadarFeedPanel({ data }: RadarFeedPanelProps) {
         fetchedAt={data.fetchedAt}
       />
 
-      {/* Connector turun ke arah ProjectNodeGraph di bawahnya */}
-      <div className="relative max-w-[460px] mx-auto h-12">
-        <svg
-          viewBox="0 0 460 48"
-          preserveAspectRatio="none"
-          className="w-full h-full overflow-visible"
-        >
-          <style>{`
-            .sch-feed-connector { stroke-dasharray: 6 6; animation: sch-feed-dash 1.2s linear infinite; }
-            @keyframes sch-feed-dash { to { stroke-dashoffset: -24; } }
-          `}</style>
-          <path
-            d="M 130 0 C 130 24, 230 24, 230 48"
-            fill="none"
-            stroke="#4ade80"
-            strokeWidth="1.2"
-            opacity="0.6"
-            className="sch-feed-connector"
-          />
-          <path
-            d="M 330 0 C 330 24, 230 24, 230 48"
-            fill="none"
-            stroke="#22d3ee"
-            strokeWidth="1.2"
-            opacity="0.6"
-            className="sch-feed-connector"
-          />
-        </svg>
+      {/* ============================================================
+          Connector menyambung ke ProjectNodeGraph di bawahnya.
+          Pakai garis vertikal kontinu (CSS gradient + animasi),
+          BUKAN SVG path dengan koordinat node tertentu — supaya
+          otomatis menyesuaikan tinggi di semua device (mobile,
+          tablet, desktop) tanpa perlu mengukur posisi elemen via
+          JavaScript. Lihat decision log "UI/Desain — Connector
+          responsive" untuk alasan lengkap.
+      ============================================================ */}
+      <div className="relative flex justify-center h-16 sm:h-20 md:h-24">
+        <div
+          className="sch-feed-connector-line w-px h-full"
+          style={{
+            background:
+              "linear-gradient(to bottom, #4ade80 0%, #22d3ee 50%, #a78bfa 100%)",
+          }}
+        />
+        <style>{`
+          .sch-feed-connector-line {
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            animation: sch-feed-flow 2.4s linear infinite;
+            background-size: 100% 200%;
+          }
+          @keyframes sch-feed-flow {
+            0% { background-position: 0 -100%; }
+            100% { background-position: 0 100%; }
+          }
+        `}</style>
       </div>
     </section>
   );
