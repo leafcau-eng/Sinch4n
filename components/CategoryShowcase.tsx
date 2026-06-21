@@ -114,7 +114,7 @@ export default function CategoryShowcase({
               Bikin demo website custom dalam hitungan menit — tinggal isi data calon klien, langsung jadi. Cocok buat yang mau jualan jasa website tanpa ribet ngoding.
             </p>
             <div className="flex flex-wrap gap-2 mb-1">
-              {demos.map((demo) => (
+              {demos.slice(0, 5).map((demo) => (
                 <a
                   key={demo.prospect_id}
                   href={`https://sch-demo.vercel.app/demo/${demo.slug}`}
@@ -130,6 +130,15 @@ export default function CategoryShowcase({
                   {demo.business_name} →
                 </a>
               ))}
+              {demos.length > 5 && (
+                <Link
+                  href="/portfolio/demo-generator"
+                  className="font-mono text-[11px] px-3 py-1.5 rounded-full border font-bold transition-all hover:scale-[1.03]"
+                  style={{ borderColor: "#facc15", background: "#facc15", color: "#000" }}
+                >
+                  Lihat Semua ({demos.length}) →
+                </Link>
+              )}
             </div>
           </div>
         </motion.div>
