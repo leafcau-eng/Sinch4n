@@ -64,32 +64,34 @@ function ProjectCard({
             {project.name}
           </div>
         </div>
-
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[rgba(2,4,8,0.92)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        >
-          <button
-            data-cursor-hover="true"
-            onClick={() => onPreview(project)}
-            className="border border-cyan-400 bg-cyan-400/10 px-5 py-2 font-mono text-[0.6rem] tracking-wider text-cyan-400 transition-all hover:scale-105 hover:bg-cyan-400/25"
-          >
-            🔍 Live Preview
-          </button>
-          {project.url && (
-            <a
-              data-cursor-hover="true"
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-purple-500 bg-purple-500/10 px-5 py-2 font-mono text-[0.6rem] tracking-wider text-purple-400 transition-all hover:scale-105 hover:bg-purple-500/25"
-            >
-              🌐 Visit Site
-            </a>
-          )}
-        </div>
       </div>
 
-      <div className="p-6">
+      {/* Tombol aksi SELALU terlihat (bukan muncul saat hover) —
+          fix untuk mobile/touchscreen, karena hover tidak ada di
+          touch device, sehingga tombol sebelumnya tidak pernah
+          muncul di HP. */}
+      <div className="flex gap-2.5 px-6 pt-4 pb-1 bg-[rgba(2,4,8,0.4)] border-t border-cyan-400/10">
+        <button
+          data-cursor-hover="true"
+          onClick={() => onPreview(project)}
+          className="flex-1 border border-cyan-400 bg-cyan-400/10 px-3 py-2 font-mono text-[0.6rem] tracking-wider text-cyan-400 transition-all hover:scale-[1.02] hover:bg-cyan-400/25 active:scale-95"
+        >
+          🔍 Live Preview
+        </button>
+        {project.url && (
+          <a
+            data-cursor-hover="true"
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 border border-purple-500 bg-purple-500/10 px-3 py-2 font-mono text-[0.6rem] tracking-wider text-purple-400 transition-all hover:scale-[1.02] hover:bg-purple-500/25 active:scale-95 text-center"
+          >
+            🌐 Visit Site
+          </a>
+        )}
+      </div>
+
+      <div className="p-6 pt-4">
         <div className="mb-2 font-mono text-[0.6rem] tracking-wider text-cyan-400 uppercase">
           {project.category.replace("-", " ")}
         </div>
