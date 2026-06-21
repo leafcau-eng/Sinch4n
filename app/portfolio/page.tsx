@@ -16,6 +16,7 @@ import ProjectNodeGraph, {
 import AIEcosystem from "@/components/AIEcosystem";
 import RadarFeedPanel, { RadarFeedData } from "@/components/RadarFeedPanel";
 import { createClient } from "@/lib/supabase-server";
+import { getDemoProjects } from "@/lib/getDemoProjects";
 import {
   PortfolioParticles,
   PortfolioScene,
@@ -121,9 +122,10 @@ async function getRadarFeedData(): Promise<RadarFeedData | null> {
 }
 
 export default async function PortfolioPage() {
-  const [ecosystemNodes, radarFeedData] = await Promise.all([
+  const [ecosystemNodes, radarFeedData, demoProjects] = await Promise.all([
     getEcosystemStatus(),
     getRadarFeedData(),
+    getDemoProjects(),
   ]);
 
   return (
@@ -142,7 +144,7 @@ export default async function PortfolioPage() {
       <AIEcosystem />
 
       <div id="projects">
-        <CategoryShowcase />
+        <CategoryShowcase demos={demoProjects} />
       </div>
 
       <section
