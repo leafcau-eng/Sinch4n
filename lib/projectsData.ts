@@ -7,6 +7,7 @@ export type Project = {
   url: string;
   thumb: string;
   color: string;
+  thumbnailUrl?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -19,6 +20,7 @@ export const PROJECTS: Project[] = [
     url: "https://laundry-spesialist.vercel.app/",
     thumb: "🧺",
     color: "linear-gradient(135deg,#0d3c2f,#0d1f3c)",
+    thumbnailUrl: "https://api.microlink.io/?url=https://laundry-spesialist.vercel.app&screenshot=true&meta=false&embed=screenshot.url",
   },
 ];
 
