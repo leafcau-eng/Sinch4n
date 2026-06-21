@@ -174,7 +174,76 @@ export default function CategoryShowcase({
         </motion.div>
       )}
 
-      <div className="grid gap-5 max-w-md mx-auto [grid-template-columns:1fr] sm:max-w-2xl sm:[grid-template-columns:repeat(2,1fr)]">
+      {/* ============================================================
+          Circuit connector: garis sirkuit mengalir di belakang grid
+          kartu kategori. PURE CSS (stroke-dashoffset + @keyframes),
+          TIDAK ada JavaScript loop atau Framer Motion untuk animasi
+          ini — posisi path statis (tidak menghitung posisi real
+          kartu via JS), demi performa & menghindari layout-shift.
+          ============================================================ */}
+      <style>{`
+        .sch-circuit-line {
+          fill: none;
+          stroke-width: 1.5;
+          stroke-linecap: round;
+          stroke-dasharray: 8 6;
+          animation: sch-circuit-flow 3s linear infinite;
+          opacity: 0.45;
+        }
+        @keyframes sch-circuit-flow { to { stroke-dashoffset: -28; } }
+        .sch-circuit-node {
+          fill: #4ade80;
+          animation: sch-circuit-pulse 2.4s ease-in-out infinite;
+        }
+        @keyframes sch-circuit-pulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+
+        /* Card Reactor: hover (desktop) & active (mobile tap-hold),
+           pure CSS transition, warna per-kartu via custom property
+           --sch-glow yang di-set inline per kartu (lihat di bawah). */
+        .sch-category-card {
+          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                      box-shadow 0.3s ease,
+                      border-color 0.3s ease;
+        }
+        .sch-category-card:hover,
+        .sch-category-card:active {
+          transform: scale(1.04) translateY(-2px);
+          border-color: rgba(var(--sch-glow), 0.7) !important;
+          box-shadow: 0 0 0 1px rgba(var(--sch-glow), 0.3),
+                      0 0 28px 5px rgba(var(--sch-glow), 0.35),
+                      0 10px 32px rgba(var(--sch-glow), 0.2) !important;
+          z-index: 5;
+        }
+        .sch-category-cta {
+          transition: box-shadow 0.3s ease;
+        }
+        .sch-category-card:hover .sch-category-cta,
+        .sch-category-card:active .sch-category-cta {
+          box-shadow: 0 0 12px 2px rgba(var(--sch-glow), 0.7);
+        }
+      `}</style>
+
+      <div className="relative max-w-md mx-auto sm:max-w-2xl">
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-0"
+          viewBox="0 0 400 560"
+          preserveAspectRatio="none"
+        >
+          <path className="sch-circuit-line" stroke="#4ade80" d="M 20 0 L 20 100 Q 20 120 40 120 L 80 120 Q 100 120 100 140 L 100 220 Q 100 240 80 240 L 40 240 Q 20 240 20 260 L 20 460" />
+          <path className="sch-circuit-line" stroke="#a78bfa" d="M 380 0 L 380 100 Q 380 120 360 120 L 320 120 Q 300 120 300 140 L 300 220 Q 300 240 320 240 L 360 240 Q 380 240 380 260 L 380 460" />
+          <path className="sch-circuit-line" stroke="#22d3ee" d="M 20 460 Q 20 500 60 500 L 340 500 Q 380 500 380 460" />
+          <path className="sch-circuit-line" stroke="#22d3ee" d="M 200 500 L 200 560" />
+          <circle className="sch-circuit-node" cx="20" cy="120" r="2.5" />
+          <circle className="sch-circuit-node" cx="380" cy="120" r="2.5" style={{ animationDelay: "0.5s" }} />
+          <circle className="sch-circuit-node" cx="20" cy="240" r="2.5" style={{ animationDelay: "1s" }} />
+          <circle className="sch-circuit-node" cx="380" cy="240" r="2.5" style={{ animationDelay: "1.5s" }} />
+          <circle className="sch-circuit-node" cx="200" cy="500" r="2.5" style={{ animationDelay: "2s" }} />
+        </svg>
+
+        <div className="relative z-[1] grid gap-5 [grid-template-columns:1fr] sm:[grid-template-columns:repeat(2,1fr)]">
         {categories.map(([categoryValue, count]) => {
           const meta = CATEGORY_META[categoryValue] ?? {
             ...DEFAULT_META,
@@ -184,17 +253,19 @@ export default function CategoryShowcase({
           return (
             <Link key={categoryValue} href={`/portfolio/${categoryValue}`}>
               <motion.div
-                whileTap={{ scale: 0.98 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4 }}
-                className="relative rounded-[20px] p-7 overflow-hidden cursor-pointer border"
-                style={{
-                  background: meta.gradient,
-                  borderColor: `rgba(${meta.glowColor},0.25)`,
-                  boxShadow: `0 8px 32px rgba(${meta.glowColor},0.12)`,
-                }}
+                className="sch-category-card relative rounded-[20px] p-7 overflow-hidden cursor-pointer border"
+                style={
+                  {
+                    "--sch-glow": meta.glowColor,
+                    background: meta.gradient,
+                    borderColor: `rgba(${meta.glowColor},0.25)`,
+                    boxShadow: `0 8px 32px rgba(${meta.glowColor},0.12)`,
+                  } as React.CSSProperties
+                }
               >
                 {/* Ikon raksasa transparan di pojok */}
                 <span
@@ -233,7 +304,7 @@ export default function CategoryShowcase({
                     {count} {count === 1 ? "template tersedia" : "template tersedia"}
                   </div>
                   <span
-                    className="inline-flex items-center gap-1.5 text-[11px] font-bold px-4 py-2 rounded-full text-black"
+                    className="sch-category-cta inline-flex items-center gap-1.5 text-[11px] font-bold px-4 py-2 rounded-full text-black"
                     style={{ background: `rgb(${meta.glowColor})` }}
                   >
                     Lihat Project →
@@ -243,6 +314,7 @@ export default function CategoryShowcase({
             </Link>
           );
         })}
+        </div>
       </div>
     </section>
   );
