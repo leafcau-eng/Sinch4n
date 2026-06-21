@@ -1,5 +1,19 @@
 "use client";
 
+// components/ProjectGrid.tsx
+//
+// REVISI: ditambah 2 props OPSIONAL supaya komponen ini bisa dipakai
+// di dua tempat:
+//   1. Portfolio utama (TANPA props) — behavior SAMA PERSIS seperti
+//      sebelumnya: tombol filter ALL/LAUNDRY/dst muncul, default "all".
+//   2. Halaman kategori app/portfolio/[category]/page.tsx (DENGAN
+//      props lockedCategory + hideFilters) — grid langsung ke-filter
+//      ke 1 kategori, tombol filter disembunyikan karena sudah di
+//      halaman khusus.
+//
+// Tidak ada perubahan pada logic/tampilan lama jika props baru ini
+// tidak diisi (default value menjaga behavior asli).
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS, FILTERS, type Project } from "@/lib/projectsData";
@@ -151,8 +165,27 @@ function PreviewModal({
   );
 }
 
-export default function ProjectGrid() {
-  const [activeFilter, setActiveFilter] = useState("all");
+interface ProjectGridProps {
+  // Jika diisi, grid langsung terkunci ke kategori ini (dipakai oleh
+  // halaman app/portfolio/[category]/page.tsx). Jika tidak diisi
+  // (undefined), behavior default = "all", sama seperti sebelumnya.
+  lockedCategory?: string;
+  // Jika true, tombol filter ALL/LAUNDRY/dst disembunyikan. Dipakai
+  // bersamaan dengan lockedCategory di halaman kategori, karena
+  // user sudah eksplisit memilih kategori sebelum sampai di sini.
+  hideFilters?: boolean;
+  // Jika true, judul section "Projects" disembunyikan (halaman
+  // kategori biasanya sudah punya judulnya sendiri di luar komponen
+  // ini, lihat app/portfolio/[category]/page.tsx).
+  hideTitle?: boolean;
+}
+
+export default function ProjectGrid({
+  lockedCategory,
+  hideFilters = false,
+  hideTitle = false,
+}: ProjectGridProps = {}) {
+  const [activeFilter, setActiveFilter] = useState(lockedCategory ?? "all");
   const [previewProject, setPreviewProject] = useState<Project | null>(null);
 
   const filteredProjects =
@@ -162,28 +195,32 @@ export default function ProjectGrid() {
 
   return (
     <section id="projects" className="relative z-10 px-6 py-24 text-center md:px-12">
-      <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
-        Projects
-      </h2>
+      {!hideTitle && (
+        <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
+          Projects
+        </h2>
+      )}
 
-      <div className="my-10 flex flex-wrap justify-center gap-3">
-        {FILTERS.map((filter) => (
-          <button
-            key={filter.value}
-            data-cursor-hover="true"
-            onClick={() => setActiveFilter(filter.value)}
-            className={`border px-5 py-2 font-mono text-[0.65rem] tracking-wider uppercase transition-all ${
-              activeFilter === filter.value
-                ? "border-cyan-400 bg-cyan-400/10 text-cyan-400 shadow-[0_0_20px_rgba(0,245,255,0.15)]"
-                : "border-cyan-400/20 text-neutral-400 hover:border-cyan-400 hover:text-cyan-400"
-            }`}
-          >
-            {filter.label}
-          </button>
-        ))}
-      </div>
+      {!hideFilters && (
+        <div className="my-10 flex flex-wrap justify-center gap-3">
+          {FILTERS.map((filter) => (
+            <button
+              key={filter.value}
+              data-cursor-hover="true"
+              onClick={() => setActiveFilter(filter.value)}
+              className={`border px-5 py-2 font-mono text-[0.65rem] tracking-wider uppercase transition-all ${
+                activeFilter === filter.value
+                  ? "border-cyan-400 bg-cyan-400/10 text-cyan-400 shadow-[0_0_20px_rgba(0,245,255,0.15)]"
+                  : "border-cyan-400/20 text-neutral-400 hover:border-cyan-400 hover:text-cyan-400"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+      )}
 
-      <div className="grid gap-6 text-left [grid-template-columns:repeat(auto-fill,minmax(340px,1fr))]">
+      <div className={`grid gap-6 text-left [grid-template-columns:repeat(auto-fill,minmax(340px,1fr))] ${hideFilters ? "mt-10" : ""}`}>
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}

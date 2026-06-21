@@ -1,14 +1,14 @@
 // app/portfolio/page.tsx
 //
-// REVISI 3: menambahkan RadarFeedPanel (Live Radar Feed) di atas
-// ProjectNodeGraph. Berbeda dengan ecosystem_status (fetch sama
-// seperti sebelumnya) dan counter (lihat hooks/useEcosystemCounts —
-// polling tiap 5 menit), data untuk RadarFeedPanel di-fetch SEKALI
-// di sini (Server Component), sesuai decision log: "cukup fetch
-// sekali saat halaman dibuka, statis sampai reload".
+// REVISI 4: ProjectGrid (grid detail + filter) diganti dengan
+// CategoryShowcase (kartu kategori ringkas). Grid detail per
+// kategori sekarang ada di app/portfolio/[category]/page.tsx,
+// diakses lewat klik kartu kategori. Keputusan: ganti TOTAL,
+// bukan ditambah berdampingan — menghindari duplikasi tampilan
+// project yang sama di 2 tempat sekaligus.
 
 import Navbar from "@/components/Navbar";
-import ProjectGrid from "@/components/ProjectGrid";
+import CategoryShowcase from "@/components/CategoryShowcase";
 import HeroIntro from "@/components/HeroIntro";
 import ProjectNodeGraph, {
   EcosystemNode,
@@ -142,7 +142,7 @@ export default async function PortfolioPage() {
       <AIEcosystem />
 
       <div id="projects">
-        <ProjectGrid />
+        <CategoryShowcase />
       </div>
 
       <section
