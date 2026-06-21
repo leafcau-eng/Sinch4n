@@ -40,6 +40,36 @@ const CATEGORY_META: Record<
     gradient: "linear-gradient(135deg, #3c0d2f 0%, #1f0a3c 60%, #0d1a3c 100%)",
     glowColor: "244,114,182",
   },
+  parfum: {
+    emoji: "🌸",
+    label: "Parfum Premium",
+    gradient: "linear-gradient(135deg, #3c0d2f 0%, #1a0d3c 60%, #0d0d3c 100%)",
+    glowColor: "232,121,249",
+  },
+  petshop: {
+    emoji: "🐾",
+    label: "Petshop Premium",
+    gradient: "linear-gradient(135deg, #0d3c1f 0%, #0d2137 60%, #0d3c2f 100%)",
+    glowColor: "134,239,172",
+  },
+  "toko-umkm": {
+    emoji: "🛒",
+    label: "Toko UMKM",
+    gradient: "linear-gradient(135deg, #3c2f0d 0%, #1a0d37 60%, #0d1f3c 100%)",
+    glowColor: "250,204,21",
+  },
+  "car-showroom": {
+    emoji: "🏎️",
+    label: "Car Showroom Elite",
+    gradient: "linear-gradient(135deg, #0d1f3c 0%, #1a0d0d 60%, #0d0d0d 100%)",
+    glowColor: "239,68,68",
+  },
+  property: {
+    emoji: "🏙️",
+    label: "Property Elite",
+    gradient: "linear-gradient(135deg, #0d2137 0%, #0d3c3c 60%, #0d1f3c 100%)",
+    glowColor: "45,212,191",
+  },
 };
 
 const DEFAULT_META = {
