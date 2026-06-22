@@ -72,14 +72,14 @@ function TelegramIcon({ className }: { className?: string }) {
 }
 
 const SOCIALS = [
-  { name: "GitHub", href: "https://github.com/Leaf-cau-eng", icon: GithubIcon },
+  { name: "GitHub", href: "https://github.com/leafcau-eng", icon: GithubIcon },
   { name: "TikTok", href: "https://www.tiktok.com/@shinch4n86", icon: TikTokIcon },
   { name: "Instagram", href: "#", icon: InstagramIcon },
-  { name: "Facebook", href: "#", icon: FacebookIcon },
-  { name: "LinkedIn", href: "#", icon: LinkedinIcon },
-  { name: "Twitter", href: "#", icon: TwitterXIcon },
-  { name: "Discord", href: "#", icon: DiscordIcon },
-  { name: "Telegram", href: "#", icon: TelegramIcon },
+  { name: "Facebook", href: "https://www.facebook.com/share/17JZnTYF3b/", icon: FacebookIcon },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/rian-r-1a9a30418", icon: LinkedinIcon },
+  { name: "Twitter", href: "https://x.com/rianri0308", icon: TwitterXIcon },
+  { name: "Discord", href: "https://discord.gg/p86zCrQVc", icon: DiscordIcon },
+  { name: "Telegram", href: "https://t.me/Bsinch4n61", icon: TelegramIcon },
 ];
 
 function scrollToId(id: string) {
