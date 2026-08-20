@@ -87,7 +87,7 @@ export default function ScrollScrubVideo({
           muted
           playsInline
           preload="auto"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
         />
         {/* Vignette tipis biar nyatu sama tema gelap */}
         <div

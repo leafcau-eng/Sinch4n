@@ -66,7 +66,7 @@ function HeroPhoto() {
     // FIX #6: cursor-none dihapus
     <motion.div
       ref={containerRef}
-      className="relative w-full max-w-[320px] md:max-w-[380px]"
+      className="relative w-full max-w-[200px] sm:max-w-[280px] md:max-w-[380px]"
       style={{ perspective: 1000 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -90,7 +90,7 @@ function HeroPhoto() {
         />
 
         {/* Foto: next/image, host lokal */}
-        <div className="relative h-[460px] w-full overflow-hidden rounded-2xl">
+        <div className="relative h-[260px] sm:h-[360px] md:h-[460px] w-full overflow-hidden rounded-2xl">
           <Image
             src={PHOTO_PORTRAIT}
             alt="Rian Riyandi"
@@ -142,7 +142,7 @@ function HeroLeft() {
   });
 
   return (
-    <div className="z-10 flex flex-col gap-5">
+    <div className="z-10 flex flex-col gap-3 md:gap-5">
       <motion.p
         {...fade(0.1)}
         className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/60"
@@ -151,7 +151,7 @@ function HeroLeft() {
       </motion.p>
 
       <h1
-        className="text-8xl font-black leading-none tracking-tight md:text-[110px]"
+        className="text-6xl sm:text-7xl font-black leading-none tracking-tight md:text-[110px]"
         style={{
           background:
             "linear-gradient(135deg, #fff 0%, #00f5ff 40%, #0080ff 70%, #7b2fff 100%)",
@@ -268,7 +268,7 @@ export default function Home() {
         />
 
         <div className="relative z-10 flex h-full w-full items-center justify-center px-6 md:px-16">
-          <div className="flex w-full max-w-6xl flex-col items-center justify-between gap-10 md:flex-row">
+          <div className="flex w-full max-w-6xl flex-col items-center justify-between gap-6 md:flex-row md:gap-10">
             <HeroLeft />
             <HeroPhoto />
           </div>
