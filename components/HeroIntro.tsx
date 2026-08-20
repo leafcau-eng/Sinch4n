@@ -150,7 +150,7 @@ export default function HeroIntro() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <a
-            href="https://www.schlabz.com/dashboard/new"
+            href="https://sch-demo.vercel.app/dashboard/new"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase overflow-hidden transition-transform hover:scale-105"

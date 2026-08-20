@@ -53,7 +53,7 @@ const BUSINESS_WEBSITE_SYSTEM_CARD: AggregateCard = {
   // entry point publik yang disengaja. Residual: nav di halaman
   // itu sendiri masih link ke schlabz.com/portfolio (admin panel,
   // SECURITY FOLLOW-UP terpisah, belum ditutup).
-  href: "https://www.schlabz.com/dashboard/new",
+  href: "https://sch-demo.vercel.app/dashboard/new",
   ctaLabel: "Explore Templates →",
 };
 
