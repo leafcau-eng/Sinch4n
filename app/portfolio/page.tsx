@@ -20,7 +20,6 @@ import HowIBuild from "@/components/HowIBuild";
 import ProjectNodeGraph, {
   EcosystemNode,
 } from "@/components/ProjectNodeGraph";
-import AIEcosystem from "@/components/AIEcosystem";
 import RadarFeedPanel, { RadarFeedData } from "@/components/RadarFeedPanel";
 import { createClient } from "@/lib/supabase-server";
 import {
@@ -157,6 +156,21 @@ export default async function PortfolioPage() {
 
       <HowIBuild />
 
+      {/* #systems: anchor untuk Navbar "Systems". Supporting Proof --
+          AI Radar + satu diagram sistem (ProjectNodeGraph), sesuai IA
+          final. AIEcosystem (tree diagram statis, hardcoded) dilepas
+          dari homepage -- file TIDAK dihapus dari project, cuma tidak
+          di-render di sini. ProjectNodeGraph dipertahankan: data-driven
+          (Supabase ecosystem_status), terhubung ke nama sistem yang
+          sama di Selected Work. */}
+      <div id="systems" className="relative w-full">
+        <p className="text-center font-mono text-[10px] tracking-[0.4em] text-neutral-600 uppercase pt-16 pb-2">
+          Supporting Proof
+        </p>
+        <RadarFeedPanel data={radarFeedData} />
+        <ProjectNodeGraph nodes={ecosystemNodes} />
+      </div>
+
       {/* About copy sengaja tidak klaim tahun pengalaman, jumlah
           client, atau revenue — belum ada datanya. */}
       <section
@@ -177,80 +191,8 @@ export default async function PortfolioPage() {
         </p>
       </section>
 
-      {/* #systems: anchor target untuk Navbar "Systems" — wrapper doang,
-          visual/urutan ProjectNodeGraph + AIEcosystem tidak berubah. */}
-      <div id="systems">
-        <ProjectNodeGraph nodes={ecosystemNodes} />
-        <AIEcosystem />
-      </div>
-
-      <RadarFeedPanel data={radarFeedData} />
-
-      <section
-        id="ebook"
-        className="relative w-full py-24 px-4 flex flex-col items-center justify-center text-center bg-[#0a0a0a]"
-      >
-        <p className="font-mono text-xs tracking-[0.4em] text-pink-400/70 uppercase mb-4">
-          Produk Digital
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Koleksi Ebook Self-Dev &amp; Bisnis
-        </h2>
-        <p className="text-neutral-400 text-sm max-w-md mx-auto mb-10">
-          1000+ ebook pilihan — mindset, bisnis, finansial, hingga trading. Bayar sekali, akses selamanya.
-        </p>
-
-        <div
-          className="relative w-full max-w-md mx-auto rounded-[20px] p-8 overflow-hidden border"
-          style={{
-            background: "linear-gradient(135deg, #3c0d2f 0%, #1f0a3c 60%, #0d1a3c 100%)",
-            borderColor: "rgba(244,114,182,0.25)",
-            boxShadow: "0 8px 32px rgba(244,114,182,0.15)",
-          }}
-        >
-          <span
-            className="absolute pointer-events-none select-none"
-            style={{ fontSize: "110px", opacity: 0.12, right: "-20px", top: "-20px", transform: "rotate(-15deg)" }}
-          >
-            📚
-          </span>
-          <span
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
-              backgroundSize: "16px 16px",
-              opacity: 0.5,
-            }}
-          />
-
-          <div className="relative z-[2] text-left">
-            <div className="flex flex-wrap gap-2 mb-5">
-              <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-pink-400/15 text-pink-300 border border-pink-400/30">
-                🔥 1.200+ Pembeli Puas
-              </span>
-              <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-cyan-400/15 text-cyan-300 border border-cyan-400/30">
-                ⚡ 23 orang lihat sekarang
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3 mb-1">
-              <span className="text-sm text-neutral-400 line-through">Rp2.500.000+</span>
-              <span className="text-3xl font-bold text-white">Rp79.000</span>
-            </div>
-            <p className="text-[11px] text-pink-300 mb-6">Bayar sekali · Akses selamanya</p>
-
-            <a
-              href="https://ebook-selfdev.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center px-6 py-3 rounded-full bg-pink-400 text-black font-mono text-sm tracking-wide uppercase font-bold transition-transform hover:scale-[1.02]"
-            >
-              🛒 Lihat &amp; Beli Sekarang
-            </a>
-          </div>
-        </div>
-      </section>
-
+      
+      
       {/* Nomor WhatsApp sama persis dengan yang sudah dipakai di
           HeroIntro.tsx — tidak ada URL baru yang diasumsikan. */}
       <section
@@ -258,10 +200,10 @@ export default async function PortfolioPage() {
         className="relative w-full py-24 px-6 flex flex-col items-center justify-center text-center bg-[#0a0a0a]"
       >
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Ready to build something?
+          Have a system in mind?
         </h2>
         <p className="text-neutral-400 max-w-md mx-auto mb-10">
-          Tell me what you&apos;re trying to automate.
+          Tell me what you&apos;re trying to build.
         </p>
         <a
           href="https://wa.me/6283870880997"
@@ -269,7 +211,7 @@ export default async function PortfolioPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase font-bold transition-transform hover:scale-105"
         >
-          WhatsApp Me
+          Start a Project →
         </a>
       </section>
     </main>

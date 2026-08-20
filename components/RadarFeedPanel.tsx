@@ -163,7 +163,7 @@ export default function RadarFeedPanel({ data }: RadarFeedPanelProps) {
       <FeedSection
         icon="🤖"
         title="SCH AI Radar Update"
-        items={data.aiNews.items}
+        items={data.aiNews.items.slice(0, 5)}
         totalCount={data.aiNews.totalCount}
         todayCount={data.aiNews.todayCount}
         unitLabel="artikel"
@@ -175,7 +175,7 @@ export default function RadarFeedPanel({ data }: RadarFeedPanelProps) {
       <FeedSection
         icon="💼"
         title="SCH Job Radar Update"
-        items={data.jobs.items}
+        items={data.jobs.items.slice(0, 5)}
         totalCount={data.jobs.totalCount}
         todayCount={data.jobs.todayCount}
         unitLabel="lowongan"
