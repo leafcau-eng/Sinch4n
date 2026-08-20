@@ -76,6 +76,15 @@ function TelegramIcon({ className }: { className?: string }) {
   );
 }
 
+function EmailIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m2 7 10 6 10-6" />
+    </svg>
+  );
+}
+
 const SOCIALS = [
   { name: "GitHub", href: "https://github.com/leafcau-eng", icon: GithubIcon },
   { name: "TikTok", href: "https://www.tiktok.com/@shinch4n86", icon: TikTokIcon },
@@ -86,11 +95,8 @@ const SOCIALS = [
   { name: "Discord", href: "https://discord.gg/p86zCrQVc", icon: DiscordIcon },
   { name: "Telegram", href: "https://t.me/Bsinch4n61", icon: TelegramIcon },
   { name: "Dev.to", href: "https://dev.to/sinch4n", icon: DevToIcon },
+  { name: "Email", href: "mailto:Leafcau@gmail.com", icon: EmailIcon },
 ];
-
-function scrollToId(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-}
 
 export default function HeroIntro() {
   return (
@@ -143,19 +149,23 @@ export default function HeroIntro() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-          <button
-            onClick={() => scrollToId("projects")}
+          <a
+            href="https://www.schlabz.com/dashboard/new"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase overflow-hidden transition-transform hover:scale-105"
           >
             <span className="relative z-10">Lihat Project</span>
             <span className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
-          <button
-            onClick={() => scrollToId("contact")}
+          </a>
+          <a
+            href="https://wa.me/6283870880997"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 rounded-full border border-cyan-400/40 text-cyan-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-cyan-400/10 hover:border-cyan-400"
           >
             Hubungi Saya
-          </button>
+          </a>
         </div>
 
         <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -173,15 +183,6 @@ export default function HeroIntro() {
           ))}
         </div>
       </motion.div>
-
-      <div id="contact" className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="https://wa.me/6283870880997" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 rounded-full border border-green-400/40 text-green-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-green-400/10 hover:border-green-400">
-          WhatsApp
-        </a>
-        <a href="mailto:Leafcau@gmail.com" className="flex items-center gap-2 px-6 py-2 rounded-full border border-cyan-400/40 text-cyan-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-cyan-400/10 hover:border-cyan-400">
-          Email
-        </a>
-      </div>
     </div>
   );
 }
