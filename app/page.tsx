@@ -274,40 +274,48 @@ export default function Home() {
           </div>
         </div>
 
-        <ScrollCue />
+        {isMobile === false && <ScrollCue />}
       </section>
 
-      {/* ============ SECTION 2: SCROLL SCRUB VIDEO (280vh) ============ */}
-      {/* Transisi dari foto ke "dimensi berikutnya" — frame ikut scroll */}
-      <ScrollScrubVideo
-        src={VIDEO_SCRUB}
-        poster={VIDEO_POSTER}
-        scrubHeight={280}
-      >
-        <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400/70">
-          Entering the dimension
-        </p>
-      </ScrollScrubVideo>
+      {/* Section 2 (video scroll-scrub) + Section 3 (teaser) DIHILANGKAN
+          total di mobile -- bukan disembunyikan visual, tidak di-render
+          sama sekali. Hero jadi satu-satunya konten, halaman = 1 viewport,
+          otomatis tidak ada yang bisa di-scroll. Desktop tidak berubah. */}
+      {isMobile === false && (
+        <>
+          {/* ============ SECTION 2: SCROLL SCRUB VIDEO (280vh) ============ */}
+          {/* Transisi dari foto ke "dimensi berikutnya" — frame ikut scroll */}
+          <ScrollScrubVideo
+            src={VIDEO_SCRUB}
+            poster={VIDEO_POSTER}
+            scrubHeight={280}
+          >
+            <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400/70">
+              Entering the dimension
+            </p>
+          </ScrollScrubVideo>
 
-      {/* ============ SECTION 3: SETELAH VIDEO ============ */}
-      <section
-        id="work"
-        className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 px-6 py-24 md:px-16"
-      >
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/60">
-          Selected Work
-        </p>
-        <h2 className="max-w-2xl text-center text-4xl font-black tracking-tight text-white md:text-6xl">
-          You made it through.
-          <br />
-          Now see what I build.
-        </h2>
-        <p className="max-w-md text-center text-neutral-400">
-          Motion graphics, interactive web experiences, and automation
-          pipelines — crafted end to end.
-        </p>
-        <EnterButton href="/portfolio" />
-      </section>
+          {/* ============ SECTION 3: SETELAH VIDEO ============ */}
+          <section
+            id="work"
+            className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 px-6 py-24 md:px-16"
+          >
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/60">
+              Selected Work
+            </p>
+            <h2 className="max-w-2xl text-center text-4xl font-black tracking-tight text-white md:text-6xl">
+              You made it through.
+              <br />
+              Now see what I build.
+            </h2>
+            <p className="max-w-md text-center text-neutral-400">
+              Motion graphics, interactive web experiences, and automation
+              pipelines — crafted end to end.
+            </p>
+            <EnterButton href="/portfolio" />
+          </section>
+        </>
+      )}
     </main>
   );
 }
