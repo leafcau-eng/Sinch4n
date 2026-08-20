@@ -1,15 +1,23 @@
 // app/portfolio/page.tsx
 //
-// REVISI 4: ProjectGrid (grid detail + filter) diganti dengan
-// CategoryShowcase (kartu kategori ringkas). Grid detail per
-// kategori sekarang ada di app/portfolio/[category]/page.tsx,
-// diakses lewat klik kartu kategori. Keputusan: ganti TOTAL,
-// bukan ditambah berdampingan — menghindari duplikasi tampilan
-// project yang sama di 2 tempat sekaligus.
+// Assembles /portfolio. Urutan section saat ini (Phase 12B):
+// Hero -> Selected Work -> What I Build -> How I Build -> About ->
+// Technical Ecosystem (#systems: ProjectNodeGraph + AIEcosystem) ->
+// Radar Feed -> Business Website demos (#projects: CategoryShowcase) ->
+// Ebook -> CTA (#cta).
+//
+// Catatan routing kategori: halaman per-kategori dulu ada di
+// app/portfolio/[category]/page.tsx. Folder itu sudah dikonsolidasi ke
+// app/portfolio/[slug]/page.tsx (cek ProjectV2 dulu, fallback ke grid
+// kategori PROJECTS/FILTERS) — file ini cuma link ke situ lewat
+// CategoryShowcase, tidak ada yang berubah di sini akibat konsolidasi itu.
 
 import Navbar from "@/components/Navbar";
 import CategoryShowcase from "@/components/CategoryShowcase";
 import HeroIntro from "@/components/HeroIntro";
+import SelectedWork from "@/components/SelectedWork";
+import WhatIBuild from "@/components/WhatIBuild";
+import HowIBuild from "@/components/HowIBuild";
 import ProjectNodeGraph, {
   EcosystemNode,
 } from "@/components/ProjectNodeGraph";
@@ -21,6 +29,13 @@ import {
   PortfolioParticles,
   PortfolioScene,
 } from "@/components/PortfolioClientScene";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Selected work, systems, and business websites built by Rian Riyandi -- AI automation, prospecting, and conversion-focused websites, built end to end.",
+};
 
 const PHOTO_TWO_URL =
   "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
@@ -139,9 +154,40 @@ export default async function PortfolioPage() {
         <HeroIntro />
       </div>
 
+      <SelectedWork />
+
+      <WhatIBuild />
+
+      <HowIBuild />
+
+      {/* About copy sengaja tidak klaim tahun pengalaman, jumlah
+          client, atau revenue — belum ada datanya. */}
+      <section
+        id="about"
+        className="relative w-full py-24 px-6 flex flex-col items-center justify-center text-center bg-[#0a0a0a]"
+      >
+        <p className="font-mono text-xs tracking-[0.4em] text-cyan-400/60 uppercase mb-4">
+          About
+        </p>
+        <p className="max-w-xl text-lg sm:text-xl text-neutral-200 leading-relaxed mb-3">
+          I build software systems that connect AI, automation, data, and business workflows.
+        </p>
+        <p className="max-w-xl text-neutral-400 leading-relaxed mb-6">
+          My work ranges from business websites to AI-powered internal tools and automated prospecting systems.
+        </p>
+        <p className="font-mono text-xs tracking-widest text-neutral-500 uppercase">
+          Based in Indonesia · Available for freelance / project work
+        </p>
+      </section>
+
+      {/* #systems: anchor target untuk Navbar "Systems" — wrapper doang,
+          visual/urutan ProjectNodeGraph + AIEcosystem tidak berubah. */}
+      <div id="systems">
+        <ProjectNodeGraph nodes={ecosystemNodes} />
+        <AIEcosystem />
+      </div>
+
       <RadarFeedPanel data={radarFeedData} />
-      <ProjectNodeGraph nodes={ecosystemNodes} />
-      <AIEcosystem />
 
       <div id="projects">
         <CategoryShowcase demos={demoProjects} />
@@ -210,6 +256,28 @@ export default async function PortfolioPage() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Nomor WhatsApp sama persis dengan yang sudah dipakai di
+          HeroIntro.tsx — tidak ada URL baru yang diasumsikan. */}
+      <section
+        id="cta"
+        className="relative w-full py-24 px-6 flex flex-col items-center justify-center text-center bg-[#0a0a0a]"
+      >
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          Ready to build something?
+        </h2>
+        <p className="text-neutral-400 max-w-md mx-auto mb-10">
+          Tell me what you&apos;re trying to automate.
+        </p>
+        <a
+          href="https://wa.me/6283870880997"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase font-bold transition-transform hover:scale-105"
+        >
+          WhatsApp Me
+        </a>
       </section>
     </main>
   );

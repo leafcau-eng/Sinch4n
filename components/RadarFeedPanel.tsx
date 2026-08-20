@@ -117,7 +117,7 @@ function FeedSection({
             href={item.source_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block font-mono text-[10.5px] leading-snug text-neutral-300 px-2 py-1 rounded-md border-l-2 border-transparent hover:bg-white/[0.04] transition-colors"
+            className="block font-mono text-[10.5px] leading-snug text-neutral-300 px-2 py-2 rounded-md border-l-2 border-transparent hover:bg-white/[0.04] transition-colors"
             style={
               {
                 "--hover-border": accentColor,

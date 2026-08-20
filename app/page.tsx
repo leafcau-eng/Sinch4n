@@ -147,7 +147,7 @@ function HeroLeft() {
         {...fade(0.1)}
         className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/60"
       >
-        Creative Developer
+        Websites • Automation • AI • Data
       </motion.p>
 
       <h1

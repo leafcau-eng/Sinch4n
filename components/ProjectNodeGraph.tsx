@@ -4,19 +4,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useEcosystemCounts } from "@/hooks/useEcosystemCounts";
 
-// ============================================================
-// Tipe data — sekarang merefleksikan lifecycle ecosystem_status
-// (lihat Migration 003): planned | building | active | offline
-// + 2 value lama yang dipertahankan untuk kompatibilitas:
-// development | online
-// ============================================================
 export type EcosystemStatus =
   | "active"
   | "building"
   | "planned"
   | "offline"
-  | "development" // legacy, dipertahankan untuk kompatibilitas
-  | "online"; // legacy, dipertahankan untuk kompatibilitas
+  | "development"
+  | "online";
 
 export interface EcosystemNode {
   product_key: string;
@@ -30,15 +24,13 @@ interface ProjectNodeGraphProps {
   nodes: EcosystemNode[];
 }
 
-// Warna per status. Key huruf kecil karena data dari Supabase
-// disimpan lowercase (lihat schema ecosystem_status.status).
 const STATUS_COLOR: Record<EcosystemStatus, string> = {
   active: "#22d3ee",
   building: "#fbbf24",
   planned: "#a78bfa",
   offline: "#6b7280",
-  development: "#a78bfa", // legacy, warna sama dengan planned
-  online: "#34d399", // legacy
+  development: "#a78bfa",
+  online: "#34d399",
 };
 
 const STATUS_LABEL: Record<EcosystemStatus, string> = {
@@ -51,19 +43,10 @@ const STATUS_LABEL: Record<EcosystemStatus, string> = {
 };
 
 const CREATOR_HUB_COLOR = "#22d3ee";
-
-// product_key yang dianggap sebagai pusat ekosistem (center node).
-// Sesuai data seed: 'ai-creator-hub'.
 const CENTER_PRODUCT_KEY = "ai-creator-hub";
-
-// product_key yang menampilkan live counter (lihat useEcosystemCounts).
-// Hanya AI Radar & Job Radar yang punya data count real dari Supabase
-// (ai_news, jobs) — node lain tidak punya sumber count yang relevan.
 const AI_RADAR_KEY = "ai-radar";
 const JOB_RADAR_KEY = "job-radar";
 
-// Format angka ringkas, mis. 1953 -> "1.953" (locale id-ID, titik
-// sebagai pemisah ribuan, sesuai konvensi angka Indonesia).
 function formatCount(n: number): string {
   return n.toLocaleString("id-ID");
 }
@@ -72,31 +55,18 @@ const LINE_DURATION = 0.6;
 const LINE_STAGGER = 0.15;
 const NODE_STAGGER = 0.1;
 
-// ============================================================
-// Helper: hitung posisi radial (x, y dalam persen) untuk N node
-// mengelilingi pusat, menggantikan koordinat x/y hardcoded yang
-// dulu ada di NODES[]. Pusat selalu di (50, 50).
-// ============================================================
 function computeRadialPositions(count: number) {
-  const radius = 38; // persen, jarak dari pusat
+  const radius = 38;
   const positions: { x: number; y: number }[] = [];
   for (let i = 0; i < count; i++) {
-    // mulai dari atas (-90deg / -PI/2), searah jarum jam
     const angle = (i / count) * 2 * Math.PI - Math.PI / 2;
     const x = 50 + radius * Math.cos(angle);
-    const y = 50 + radius * Math.sin(angle) * 1.1; // sedikit elips, biar pas di card portrait
+    const y = 50 + radius * Math.sin(angle) * 1.1;
     positions.push({ x, y });
   }
   return positions;
 }
 
-// ============================================================
-// Subtitle live counter, khusus node AI Radar & Job Radar.
-// Tampil di bawah label status (mis. "Active" + "1.953 Articles · +1.953 Today").
-// Return null untuk node lain / saat data belum tersedia (masih
-// fetch pertama kali) — tidak menampilkan placeholder kosong yang
-// bikin layout "lompat" begitu data datang.
-// ============================================================
 function RadarSubtitle({
   productKey,
   counts,
@@ -127,13 +97,7 @@ function RadarSubtitle({
   return null;
 }
 
-function CenterCard({
-  node,
-  delay,
-}: {
-  node: EcosystemNode;
-  delay: number;
-}) {
+function CenterCard({ node, delay }: { node: EcosystemNode; delay: number }) {
   const [open, setOpen] = useState(false);
   const hasUrl = Boolean(node.url);
 
@@ -219,22 +183,15 @@ function CenterCard({
 export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
   const { counts } = useEcosystemCounts();
 
-  // Tidak ada data — render apa-apa daripada bikin diagram kosong aneh.
   if (!nodes || nodes.length === 0) {
     return null;
   }
 
-  // Urutkan sesuai display_order (sudah seharusnya terurut dari query,
-  // tapi dijaga di sini juga supaya komponen tidak bergantung pada
-  // urutan caller).
   const sorted = [...nodes].sort((a, b) => a.display_order - b.display_order);
-
   const centerNode = sorted.find((n) => n.product_key === CENTER_PRODUCT_KEY);
   const orbitNodes = sorted.filter((n) => n.product_key !== CENTER_PRODUCT_KEY);
-
   const positions = computeRadialPositions(orbitNodes.length);
-  const NODES_START =
-    LINE_DURATION + orbitNodes.length * LINE_STAGGER + 0.15;
+  const NODES_START = LINE_DURATION + orbitNodes.length * LINE_STAGGER + 0.15;
 
   return (
     <motion.div
@@ -252,7 +209,6 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
         }
         .sch-node-glow { animation: sch-glow-pulse 2.4s ease-in-out infinite; }
         .sch-flow-line { stroke-dasharray: 6 6; animation: sch-dash 1.2s linear infinite; }
-
         .sch-creator-hub-glow {
           border-color: rgba(34,211,238,0.5);
           box-shadow: 0 0 10px 3px rgba(34,211,238,0.5);
@@ -278,7 +234,6 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
         </span>
       </div>
 
-      {/* Desktop radial layout */}
       <div className="hidden md:block relative w-full aspect-square max-w-xl mx-auto">
         <svg
           viewBox="0 0 100 100"
@@ -339,13 +294,9 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
           })}
         </svg>
 
-        {/* Center node */}
         {centerNode ? (
           <CenterCard node={centerNode} delay={NODES_START} />
         ) : (
-          // Fallback: kalau product 'ai-creator-hub' tidak ditemukan
-          // di data (mis. belum di-seed), tetap render label generik
-          // alih-alih merender kosong/error.
           <motion.div
             initial={{ opacity: 0, scale: 0.3 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -363,10 +314,42 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
           </motion.div>
         )}
 
-        {/* Orbit nodes */}
+        {/* Orbit nodes — REVISI Phase 12A: sekarang dibungkus <a> kalau
+            n.url tersedia (pola persis sama dengan CenterCard di atas).
+            Visual/animasi tidak berubah sama sekali kalau url kosong. */}
         {orbitNodes.map((n, i) => {
           const nodeDelay = NODES_START + 0.15 + i * NODE_STAGGER;
           const pos = positions[i];
+          const hasUrl = Boolean(n.url);
+          const nodeCard = (
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{
+                duration: 3 + (i % 3),
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.3,
+              }}
+              className="sch-node-glow flex flex-col items-center justify-center w-20 sm:w-24 px-2 py-2 rounded-xl border bg-white/[0.04] backdrop-blur-md transition-transform duration-300 group-hover:scale-110 cursor-default"
+              style={
+                {
+                  borderColor: `${STATUS_COLOR[n.status]}55`,
+                  "--glow-color": `${STATUS_COLOR[n.status]}66`,
+                } as React.CSSProperties
+              }
+            >
+              <span className="font-mono text-[10px] text-neutral-200 text-center leading-tight">
+                {n.display_name}
+              </span>
+              <span
+                className="mt-1 font-mono text-[8px] uppercase tracking-wider"
+                style={{ color: STATUS_COLOR[n.status] }}
+              >
+                {STATUS_LABEL[n.status]}
+              </span>
+              <RadarSubtitle productKey={n.product_key} counts={counts} />
+            </motion.div>
+          );
           return (
             <motion.div
               key={n.product_key}
@@ -377,39 +360,18 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
               className="group absolute z-10 -translate-x-1/2 -translate-y-1/2"
               style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
             >
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{
-                  duration: 3 + (i % 3),
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.3,
-                }}
-                className="sch-node-glow flex flex-col items-center justify-center w-20 sm:w-24 px-2 py-2 rounded-xl border bg-white/[0.04] backdrop-blur-md transition-transform duration-300 group-hover:scale-110 cursor-default"
-                style={
-                  {
-                    borderColor: `${STATUS_COLOR[n.status]}55`,
-                    "--glow-color": `${STATUS_COLOR[n.status]}66`,
-                  } as React.CSSProperties
-                }
-              >
-                <span className="font-mono text-[10px] text-neutral-200 text-center leading-tight">
-                  {n.display_name}
-                </span>
-                <span
-                  className="mt-1 font-mono text-[8px] uppercase tracking-wider"
-                  style={{ color: STATUS_COLOR[n.status] }}
-                >
-                  {STATUS_LABEL[n.status]}
-                </span>
-                <RadarSubtitle productKey={n.product_key} counts={counts} />
-              </motion.div>
+              {hasUrl ? (
+                <a href={n.url!} target="_blank" rel="noopener noreferrer" className="block">
+                  {nodeCard}
+                </a>
+              ) : (
+                nodeCard
+              )}
             </motion.div>
           );
         })}
       </div>
 
-      {/* Mobile vertical flow */}
       <div className="md:hidden flex flex-col items-center gap-0">
         <motion.div
           initial={{ opacity: 0, scale: 0.3 }}
@@ -426,7 +388,7 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
         </motion.div>
 
         {sorted
-          .filter((n) => n.product_key !== CENTER_PRODUCT_KEY || true) // tampilkan semua termasuk center, urutan asli
+          .filter((n) => n.product_key !== CENTER_PRODUCT_KEY || true)
           .map((n, i) => {
             const isCenter = n.product_key === CENTER_PRODUCT_KEY;
             const hasUrl = Boolean(n.url);
@@ -439,9 +401,7 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.25 }}
                   className="w-px h-6 origin-top"
                   style={{
-                    background: isCenter
-                      ? CREATOR_HUB_COLOR
-                      : STATUS_COLOR[n.status],
+                    background: isCenter ? CREATOR_HUB_COLOR : STATUS_COLOR[n.status],
                   }}
                 />
                 {isCenter ? (
@@ -456,9 +416,7 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
                         <span className="absolute inset-0 rounded-full bg-emerald-400 sch-blink-dot" />
                       </span>
                       <div className="text-left">
-                        <p className="font-mono text-xs text-neutral-200">
-                          {n.display_name}
-                        </p>
+                        <p className="font-mono text-xs text-neutral-200">{n.display_name}</p>
                         <p className="font-mono text-[9px] uppercase tracking-wider text-emerald-400">
                           {STATUS_LABEL[n.status]} · Tap to Launch →
                         </p>
@@ -470,15 +428,42 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
                         <span className="absolute inset-0 rounded-full bg-emerald-400 sch-blink-dot" />
                       </span>
                       <div className="text-left">
-                        <p className="font-mono text-xs text-neutral-200">
-                          {n.display_name}
-                        </p>
+                        <p className="font-mono text-xs text-neutral-200">{n.display_name}</p>
                         <p className="font-mono text-[9px] uppercase tracking-wider text-emerald-400">
                           {STATUS_LABEL[n.status]}
                         </p>
                       </div>
                     </div>
                   )
+                ) : hasUrl ? (
+                  /* REVISI Phase 12A: orbit node mobile, sekarang <a> kalau ada url */
+                  <a
+                    href={n.url!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 px-4 py-2.5 rounded-xl border bg-white/[0.04] backdrop-blur-md transition-transform active:scale-95"
+                    style={{ borderColor: `${STATUS_COLOR[n.status]}55` }}
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full sch-node-glow"
+                      style={
+                        {
+                          backgroundColor: STATUS_COLOR[n.status],
+                          "--glow-color": `${STATUS_COLOR[n.status]}aa`,
+                        } as React.CSSProperties
+                      }
+                    />
+                    <div className="text-left">
+                      <p className="font-mono text-xs text-neutral-200">{n.display_name}</p>
+                      <p
+                        className="font-mono text-[9px] uppercase tracking-wider"
+                        style={{ color: STATUS_COLOR[n.status] }}
+                      >
+                        {STATUS_LABEL[n.status]}
+                      </p>
+                      <RadarSubtitle productKey={n.product_key} counts={counts} />
+                    </div>
+                  </a>
                 ) : (
                   <div
                     className="group flex items-center gap-3 px-4 py-2.5 rounded-xl border bg-white/[0.04] backdrop-blur-md transition-transform active:scale-95"
@@ -494,9 +479,7 @@ export default function ProjectNodeGraph({ nodes }: ProjectNodeGraphProps) {
                       }
                     />
                     <div className="text-left">
-                      <p className="font-mono text-xs text-neutral-200">
-                        {n.display_name}
-                      </p>
+                      <p className="font-mono text-xs text-neutral-200">{n.display_name}</p>
                       <p
                         className="font-mono text-[9px] uppercase tracking-wider"
                         style={{ color: STATUS_COLOR[n.status] }}

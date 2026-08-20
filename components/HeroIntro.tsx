@@ -1,9 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const ROLES = ["AI Automation Engineer", "Web Developer", "Freelancer"];
+import { motion } from "framer-motion";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -96,15 +93,6 @@ function scrollToId(id: string) {
 }
 
 export default function HeroIntro() {
-  const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleIndex((prev) => (prev + 1) % ROLES.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="absolute inset-0 z-40 flex items-center justify-center overflow-hidden px-6 pointer-events-none">
       <div
@@ -137,19 +125,16 @@ export default function HeroIntro() {
           SCH
         </h1>
 
-        <div className="h-8 mb-6 flex items-center justify-center">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={ROLES[roleIndex]}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.4 }}
-              className="font-mono text-sm sm:text-base tracking-widest text-neutral-300 uppercase"
-            >
-              {ROLES[roleIndex]}
-            </motion.p>
-          </AnimatePresence>
+        {/* Positioning tunggal — REVISI Phase 12A: sebelumnya rotasi 3 label
+            (AI Automation Engineer / Web Developer / Freelancer), sekarang
+            satu klaim tetap sesuai keputusan strategis. */}
+        <div className="mb-6 flex flex-col items-center gap-2">
+          <p className="font-mono text-sm sm:text-base font-bold tracking-wide text-neutral-100 text-center">
+            I BUILD AI-POWERED SYSTEMS FOR BUSINESS.
+          </p>
+          <p className="font-mono text-[11px] sm:text-xs tracking-[0.3em] text-cyan-400/70 uppercase">
+            Websites • Automation • AI • Data
+          </p>
         </div>
 
         <p className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-10">
@@ -189,14 +174,14 @@ export default function HeroIntro() {
         </div>
       </motion.div>
 
-        <div id="contact" className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="https://wa.me/6283870880997" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 rounded-full border border-green-400/40 text-green-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-green-400/10 hover:border-green-400">
-            WhatsApp
-          </a>
-          <a href="mailto:Leafcau@gmail.com" className="flex items-center gap-2 px-6 py-2 rounded-full border border-cyan-400/40 text-cyan-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-cyan-400/10 hover:border-cyan-400">
-            Email
-          </a>
-        </div>
+      <div id="contact" className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://wa.me/6283870880997" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 rounded-full border border-green-400/40 text-green-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-green-400/10 hover:border-green-400">
+          WhatsApp
+        </a>
+        <a href="mailto:Leafcau@gmail.com" className="flex items-center gap-2 px-6 py-2 rounded-full border border-cyan-400/40 text-cyan-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-cyan-400/10 hover:border-cyan-400">
+          Email
+        </a>
+      </div>
     </div>
   );
 }

@@ -101,6 +101,10 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+// RESTORED Phase 12A (revisi): dihapus turn sebelumnya berdasarkan
+// pengecekan yang nggak lengkap — ternyata dipakai oleh
+// components/ProjectGrid.tsx dan app/portfolio/[category]/page.tsx.
+// Dikembalikan PERSIS seperti versi asli, tanpa perubahan isi.
 export const FILTERS = [
   { label: "All", value: "all" },
   { label: "Laundry", value: "laundry" },
