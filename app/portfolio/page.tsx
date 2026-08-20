@@ -13,7 +13,6 @@
 // CategoryShowcase, tidak ada yang berubah di sini akibat konsolidasi itu.
 
 import Navbar from "@/components/Navbar";
-import CategoryShowcase from "@/components/CategoryShowcase";
 import HeroIntro from "@/components/HeroIntro";
 import SelectedWork from "@/components/SelectedWork";
 import WhatIBuild from "@/components/WhatIBuild";
@@ -24,7 +23,6 @@ import ProjectNodeGraph, {
 import AIEcosystem from "@/components/AIEcosystem";
 import RadarFeedPanel, { RadarFeedData } from "@/components/RadarFeedPanel";
 import { createClient } from "@/lib/supabase-server";
-import { getDemoProjects } from "@/lib/getDemoProjects";
 import {
   PortfolioParticles,
   PortfolioScene,
@@ -137,10 +135,9 @@ async function getRadarFeedData(): Promise<RadarFeedData | null> {
 }
 
 export default async function PortfolioPage() {
-  const [ecosystemNodes, radarFeedData, demoProjects] = await Promise.all([
+  const [ecosystemNodes, radarFeedData] = await Promise.all([
     getEcosystemStatus(),
     getRadarFeedData(),
-    getDemoProjects(),
   ]);
 
   return (
@@ -188,10 +185,6 @@ export default async function PortfolioPage() {
       </div>
 
       <RadarFeedPanel data={radarFeedData} />
-
-      <div id="projects">
-        <CategoryShowcase demos={demoProjects} />
-      </div>
 
       <section
         id="ebook"

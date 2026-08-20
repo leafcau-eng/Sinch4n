@@ -159,7 +159,7 @@ export default function SelectedWork() {
   ];
 
   return (
-    <section className="relative z-10 w-full max-w-5xl mx-auto px-4 py-20">
+    <section id="work" className="relative z-10 w-full max-w-5xl mx-auto px-4 py-20">
       <div className="text-center mb-10">
         <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] text-cyan-400/70 uppercase border border-cyan-400/20 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.02]">
           Selected Work

@@ -12,7 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Work", href: "/portfolio#projects" },
+  { label: "Work", href: "/portfolio#work" },
   { label: "Systems", href: "/portfolio#systems" },
   { label: "About", href: "/portfolio#about" },
   { label: "Contact", href: "/portfolio#cta" },
