@@ -176,20 +176,13 @@ function HeroLeft() {
 
       <motion.p
         {...fade(0.5)}
-        className="max-w-sm text-base leading-relaxed text-neutral-400"
+        className="max-w-sm text-2xl sm:text-3xl font-bold leading-snug text-white"
       >
-        Sinchan — scroll down and step into the next dimension.
-      </motion.p>
-
-      <motion.p
-        {...fade(0.6)}
-        className="font-mono text-sm uppercase tracking-widest text-cyan-400/80"
-      >
-        By Rian Riyandi
+        I BUILD DIGITAL SYSTEMS FOR BUSINESSES.
       </motion.p>
 
       <motion.div {...fade(0.7)}>
-        <EnterButton href="/portfolio" />
+        <EnterButton href="/portfolio" label="START A PROJECT →" />
       </motion.div>
     </div>
   );

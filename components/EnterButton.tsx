@@ -10,7 +10,13 @@ import { motion } from "framer-motion";
  *   2. A "light sweep" — a thin bright gradient that slides across
  *      the button on hover, like a scan line passing through.
  */
-export default function EnterButton({ href }: { href: string }) {
+export default function EnterButton({
+  href,
+  label = "ENTER EXPERIENCE →",
+}: {
+  href: string;
+  label?: string;
+}) {
   return (
     <motion.a
       data-cursor-hover="true"
@@ -38,7 +44,7 @@ export default function EnterButton({ href }: { href: string }) {
         className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full"
         aria-hidden="true"
       />
-      <span className="relative z-10">ENTER EXPERIENCE →</span>
+      <span className="relative z-10">{label}</span>
     </motion.a>
   );
 }
