@@ -85,9 +85,16 @@ function WorkCardView({ card }: { card: WorkCard }) {
       transition={{ duration: 0.4 }}
       className="relative rounded-[20px] p-7 border border-cyan-400/20 bg-white/[0.03] backdrop-blur-md flex flex-col"
     >
-      <span className="font-mono text-[10px] tracking-[0.3em] text-cyan-400/60 uppercase mb-3">
-        {label}
-      </span>
+      <div className="flex items-center gap-2 mb-3 flex-wrap">
+        <span className="font-mono text-[10px] tracking-[0.3em] text-cyan-400/60 uppercase">
+          {label}
+        </span>
+        {!aggregate && card.status === "draft" && (
+          <span className="font-mono text-[10px] tracking-[0.2em] text-amber-400/80 uppercase border border-amber-400/30 rounded px-1.5 py-0.5">
+            🚧 Dalam Pengembangan
+          </span>
+        )}
+      </div>
       <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
       <p className="text-sm text-neutral-400 leading-relaxed mb-6 flex-1">
         {description}

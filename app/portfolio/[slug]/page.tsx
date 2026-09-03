@@ -142,9 +142,16 @@ function ProjectCaseStudy({ project }: { project: ProjectV2 }) {
           ← Kembali ke Portfolio
         </Link>
 
-        <p className="font-mono text-[10px] tracking-[0.4em] text-cyan-400/60 uppercase mb-3">
-          {project.projectType}
-        </p>
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
+          <p className="font-mono text-[10px] tracking-[0.4em] text-cyan-400/60 uppercase">
+            {project.projectType}
+          </p>
+          {project.status === "draft" && (
+            <span className="font-mono text-[10px] tracking-[0.2em] text-amber-400/80 uppercase border border-amber-400/30 rounded px-1.5 py-0.5">
+              🚧 Dalam Pengembangan
+            </span>
+          )}
+        </div>
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-10">
           {project.title}
         </h1>
@@ -212,7 +219,8 @@ function ProjectCaseStudy({ project }: { project: ProjectV2 }) {
 
         {/* 8. Live Demo / GitHub */}
         {hasLiveOrGithub && (
-          <div className="flex gap-4 mt-10">
+          <div className="mt-10">
+          <div className="flex gap-4">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -233,6 +241,12 @@ function ProjectCaseStudy({ project }: { project: ProjectV2 }) {
                 GitHub →
               </a>
             )}
+          </div>
+          {project.status === "draft" && project.liveUrl && (
+            <p className="font-mono text-[10px] text-neutral-500 mt-2">
+              (perlu login Google untuk mengakses)
+            </p>
+          )}
           </div>
         )}
       </div>
