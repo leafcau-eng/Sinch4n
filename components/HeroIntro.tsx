@@ -10,24 +10,6 @@ function GithubIcon({ className }: { className?: string }) {
   );
 }
 
-function InstagramIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function FacebookIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z" />
-    </svg>
-  );
-}
-
 function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -40,14 +22,6 @@ function TwitterXIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M18.9 2H22l-7.6 8.68L23 22h-6.9l-5.4-7.06L4.4 22H1.3l8.13-9.3L1 2h7.06l4.9 6.47L18.9 2Zm-2.42 18h1.9L8.66 4h-2L16.48 20Z" />
-    </svg>
-  );
-}
-
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.43 1.16-2.6 2.6-2.6c.26 0 .51.04.74.11v-3.13a5.78 5.78 0 0 0-.74-.05A5.73 5.73 0 0 0 4 15.39a5.73 5.73 0 0 0 5.73 5.73a5.73 5.73 0 0 0 5.73-5.73v-6.34a8.83 8.83 0 0 0 5.18 1.66V7.65a4.86 4.86 0 0 1-3.04-1.83z" />
     </svg>
   );
 }
@@ -87,9 +61,6 @@ function EmailIcon({ className }: { className?: string }) {
 
 const SOCIALS = [
   { name: "GitHub", href: "https://github.com/leafcau-eng", icon: GithubIcon },
-  { name: "TikTok", href: "https://www.tiktok.com/@shinch4n86", icon: TikTokIcon },
-  { name: "Instagram", href: "#", icon: InstagramIcon },
-  { name: "Facebook", href: "https://www.facebook.com/share/17JZnTYF3b/", icon: FacebookIcon },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/rian-r-1a9a30418", icon: LinkedinIcon },
   { name: "Twitter", href: "https://x.com/rianri0308", icon: TwitterXIcon },
   { name: "Discord", href: "https://discord.gg/p86zCrQVc", icon: DiscordIcon },
@@ -130,6 +101,10 @@ export default function HeroIntro() {
         <h1 className="text-5xl sm:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
           SCH
         </h1>
+
+        <p className="font-mono text-xs sm:text-sm tracking-[0.35em] text-neutral-300 uppercase mb-4">
+          Rian Riyandi
+        </p>
 
         {/* Positioning tunggal — REVISI Phase 12A: sebelumnya rotasi 3 label
             (AI Automation Engineer / Web Developer / Freelancer), sekarang
