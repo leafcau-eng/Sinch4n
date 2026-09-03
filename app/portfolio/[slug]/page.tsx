@@ -34,6 +34,8 @@ import ProjectGrid from "@/components/ProjectGrid";
 import { PROJECTS, FILTERS } from "@/lib/projectsData";
 import type { Metadata } from "next";
 import { getProjectBySlug, PROJECTS_V2, type ProjectV2 } from "@/lib/projects";
+import { getRadarFeedData } from "@/lib/radarFeed";
+import RadarFeedPanel, { RadarFeedData } from "@/components/RadarFeedPanel";
 
 interface SlugPageProps {
   params: Promise<{ slug: string }>;
@@ -88,7 +90,12 @@ export default async function PortfolioSlugPage({ params }: SlugPageProps) {
     if (project.visibility !== "public") {
       notFound();
     }
-    return <ProjectCaseStudy project={project} />;
+    // Radar feed HANYA di-fetch untuk case study "AI Radar" -- sebelumnya
+    // section ini tampil di listing umum (app/portfolio/page.tsx), sekarang
+    // jadi bukti konkret khusus project ini (dipindah 4 Sep 2026).
+    const radarFeedData =
+      project.slug === "ai-radar" ? await getRadarFeedData() : null;
+    return <ProjectCaseStudy project={project} radarFeedData={radarFeedData} />;
   }
 
   // 2) Fallback: kategori lama — behavior sama persis [category]/page.tsx.
@@ -121,7 +128,13 @@ export default async function PortfolioSlugPage({ params }: SlugPageProps) {
   notFound();
 }
 
-function ProjectCaseStudy({ project }: { project: ProjectV2 }) {
+function ProjectCaseStudy({
+  project,
+  radarFeedData,
+}: {
+  project: ProjectV2;
+  radarFeedData?: RadarFeedData | null;
+}) {
   // Overview: pakai description kalau ada; fallback ke shortDescription
   // (field required, selalu ada) supaya section ini tidak hilang total
   // untuk project yang baru punya data minimal. Bukan copy baru — dua
@@ -199,6 +212,14 @@ function ProjectCaseStudy({ project }: { project: ProjectV2 }) {
               ))}
             </div>
           </Section>
+        )}
+
+        {/* 6.5. Live Radar Feed -- KHUSUS case study "AI Radar", bukti
+             konkret sistem ini beneran jalan (bukan cuma teks klaim). */}
+        {radarFeedData && (
+          <div className="-mx-6 md:-mx-16">
+            <RadarFeedPanel data={radarFeedData} />
+          </div>
         )}
 
         {/* 7. Proof / Screenshots */}

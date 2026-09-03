@@ -20,7 +20,6 @@ import HowIBuild from "@/components/HowIBuild";
 import ProjectNodeGraph, {
   EcosystemNode,
 } from "@/components/ProjectNodeGraph";
-import RadarFeedPanel, { RadarFeedData } from "@/components/RadarFeedPanel";
 import { createClient } from "@/lib/supabase-server";
 import {
   PortfolioParticles,
@@ -38,7 +37,6 @@ const PHOTO_TWO_URL =
   "https://i.ibb.co.com/6VPGgRD/file-00000000dbbc71fab99aec964e0b4894.png";
 const PHOTO_ONE_URL = PHOTO_TWO_URL;
 
-const FEED_ITEM_LIMIT = 10;
 
 async function getEcosystemStatus(): Promise<EcosystemNode[]> {
   try {
@@ -61,83 +59,8 @@ async function getEcosystemStatus(): Promise<EcosystemNode[]> {
 }
 
 // ============================================================
-// Fetch data untuk RadarFeedPanel: 10 item terbaru + total count +
-// count 24 jam terakhir, untuk ai_news dan jobs. Fetch SEKALI saat
-// page di-render (tidak polling), sesuai keputusan.
-// ============================================================
-async function getRadarFeedData(): Promise<RadarFeedData | null> {
-  try {
-    const supabase = createClient();
-    const since24h = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
-
-    const [
-      aiNewsItemsRes,
-      aiNewsTotalRes,
-      aiNewsTodayRes,
-      jobsItemsRes,
-      jobsTotalRes,
-      jobsTodayRes,
-    ] = await Promise.all([
-      supabase
-        .from("ai_news")
-        .select("id, title, source_name, source_url")
-        .order("ingested_at", { ascending: false })
-        .limit(FEED_ITEM_LIMIT),
-      supabase.from("ai_news").select("*", { count: "exact", head: true }),
-      supabase
-        .from("ai_news")
-        .select("*", { count: "exact", head: true })
-        .gte("ingested_at", since24h),
-      supabase
-        .from("jobs")
-        .select("id, title, source_name, source_url")
-        .eq("status", "active")
-        .order("created_at", { ascending: false })
-        .limit(FEED_ITEM_LIMIT),
-      supabase
-        .from("jobs")
-        .select("*", { count: "exact", head: true })
-        .eq("status", "active"),
-      supabase
-        .from("jobs")
-        .select("*", { count: "exact", head: true })
-        .eq("status", "active")
-        .gte("created_at", since24h),
-    ]);
-
-    if (aiNewsItemsRes.error || jobsItemsRes.error) {
-      console.error(
-        "Failed to fetch radar feed:",
-        aiNewsItemsRes.error?.message,
-        jobsItemsRes.error?.message
-      );
-      return null;
-    }
-
-    return {
-      aiNews: {
-        items: aiNewsItemsRes.data ?? [],
-        totalCount: aiNewsTotalRes.count ?? 0,
-        todayCount: aiNewsTodayRes.count ?? 0,
-      },
-      jobs: {
-        items: jobsItemsRes.data ?? [],
-        totalCount: jobsTotalRes.count ?? 0,
-        todayCount: jobsTodayRes.count ?? 0,
-      },
-      fetchedAt: new Date().toISOString(),
-    };
-  } catch (err) {
-    console.error("Unexpected error fetching radar feed:", err);
-    return null;
-  }
-}
-
 export default async function PortfolioPage() {
-  const [ecosystemNodes, radarFeedData] = await Promise.all([
-    getEcosystemStatus(),
-    getRadarFeedData(),
-  ]);
+  const ecosystemNodes = await getEcosystemStatus();
 
   return (
     <main className="relative w-full overflow-hidden bg-[#0a0a0a]">
@@ -157,17 +80,19 @@ export default async function PortfolioPage() {
       <HowIBuild />
 
       {/* #systems: anchor untuk Navbar "Systems". Supporting Proof --
-          AI Radar + satu diagram sistem (ProjectNodeGraph), sesuai IA
-          final. AIEcosystem (tree diagram statis, hardcoded) dilepas
-          dari homepage -- file TIDAK dihapus dari project, cuma tidak
-          di-render di sini. ProjectNodeGraph dipertahankan: data-driven
-          (Supabase ecosystem_status), terhubung ke nama sistem yang
-          sama di Selected Work. */}
+          satu diagram sistem (ProjectNodeGraph). UPDATE 4 Sep 2026:
+          RadarFeedPanel DIPINDAH ke app/portfolio/[slug]/page.tsx,
+          cuma tampil di case study "AI Radar" sendiri -- sebelumnya
+          nongol di listing umum, sekarang jadi bukti konkret khusus
+          project itu. AIEcosystem (tree diagram statis, hardcoded)
+          dilepas dari homepage -- file TIDAK dihapus dari project,
+          cuma tidak di-render di sini. ProjectNodeGraph dipertahankan:
+          data-driven (Supabase ecosystem_status), terhubung ke nama
+          sistem yang sama di Selected Work. */}
       <div id="systems" className="relative w-full">
         <p className="text-center font-mono text-[10px] tracking-[0.4em] text-neutral-600 uppercase pt-16 pb-2">
           Supporting Proof
         </p>
-        <RadarFeedPanel data={radarFeedData} />
         <ProjectNodeGraph nodes={ecosystemNodes} />
       </div>
 
