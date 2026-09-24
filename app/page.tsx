@@ -179,7 +179,10 @@ function HeroLeft() {
         {...fade(0.5)}
         className="max-w-sm text-2xl sm:text-3xl font-bold leading-snug text-white"
       >
-        I BUILD WEBSITES &amp; DIGITAL SYSTEMS FOR BUSINESSES.
+        I BUILD WEBSITES &amp; DIGITAL SYSTEMS.
+        <span className="mt-2 block font-mono text-xs sm:text-sm font-medium uppercase tracking-[0.3em] text-cyan-400/80">
+          FOR BUSINESSES.
+        </span>
       </motion.p>
 
       <motion.p
@@ -197,7 +200,7 @@ function HeroLeft() {
             href="/portfolio"
             className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan-400 transition-all hover:border-cyan-400 hover:bg-cyan-400/10"
           >
-            EXPLORE WEBSITES
+            EXPLORE 40+ WEBSITES
           </Link>
           <p className="hidden md:block font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-400/60">
             40+ Templates · Custom Development · Automation &amp; AI
