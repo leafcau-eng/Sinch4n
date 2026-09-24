@@ -17,6 +17,312 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  petshop: {
+    h1: "Jasa Pembuatan Website Petshop & Grooming",
+    metaTitle: "Jasa Pembuatan Website Petshop & Grooming | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk petshop, grooming, dan pet hotel. Layanan, harga, produk, galeri, FAQ, dan booking via WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk petshop, grooming, dan pet hotel. Layanan dan harga, katalog produk, kondisi penginapan, profil groomer, dan booking lewat WhatsApp tampil dalam satu halaman.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pemilik Hewan Ingin Tahu Siapa yang Merawat Peliharaannya",
+      paragraf: [
+        "Sebelum menitipkan atau membawa hewan grooming, pemilik ingin tahu layanan apa yang tersedia, kisaran harganya, bagaimana hewan dirawat selama di tempat, dan siapa yang menangani.",
+        "Website menjawabnya lewat daftar layanan dan produk dengan harga, penjelasan pengalaman menginap langkah demi langkah, profil groomer, galeri fasilitas, dan testimoni dari pemilik hewan lain.",
+        "Tombol booking membuka WhatsApp dengan pesan yang sudah terisi, sehingga pemilik hewan bisa langsung menanyakan ketersediaan.",
+      ],
+    },
+    features: [
+      "Layanan grooming dengan harga dan durasi",
+      "Katalog produk (makanan, snack, mainan, aksesoris) dengan harga",
+      "Pet hotel: tahapan penginapan dari check-in sampai check-out",
+      "Profil groomer",
+      "Galeri grooming, hotel, toko, dan area bermain",
+      "Testimoni pemilik hewan",
+      "FAQ",
+      "Booking via WhatsApp, alamat, dan jam buka",
+    ],
+    cocokUntuk: ["Petshop", "Pet grooming", "Pet hotel", "Toko perlengkapan hewan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga grooming dan produk bisa ditampilkan di website?",
+        a: "Bisa. Contoh website menampilkan harga tiap layanan grooming dan produk yang dijual.",
+      },
+      {
+        q: "Apakah kondisi pet hotel bisa dijelaskan ke pemilik hewan?",
+        a: "Bisa. Contoh website menjelaskan tahapan penginapan dari check-in, pemeriksaan kesehatan, waktu bermain dan makan, sampai check-out.",
+      },
+      {
+        q: "Bagaimana pemilik hewan booking lewat website?",
+        a: "Tombol booking membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah profil groomer bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan foto, pengalaman, dan keahlian tiap groomer.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan petshop saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama, layanan, harga, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  "klinik-hewan": {
+    h1: "Jasa Pembuatan Website Klinik Hewan",
+    metaTitle: "Jasa Pembuatan Website Klinik Hewan & Dokter Hewan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk klinik hewan. Layanan medis, jadwal vaksin, profil dokter hewan, fasilitas, FAQ, dan booking janji temu via WhatsApp.",
+    intro:
+      "Website untuk klinik hewan dan dokter hewan. Layanan medis dengan kisaran harga, panduan jadwal vaksin, profil dokter hewan, fasilitas medis, dan form janji temu yang terhubung ke WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pemilik Hewan Butuh Kepastian Sebelum ke Klinik",
+      paragraf: [
+        "Saat hewan peliharaan sakit, pemilik sering panik dan tidak tahu harus konsultasi dulu atau langsung datang. Mereka juga ingin tahu layanan apa saja yang tersedia dan kisaran biayanya sebelum memutuskan.",
+        "Website klinik hewan bisa membantu lewat panduan gejala umum, daftar layanan dengan kisaran harga, jadwal vaksin, profil dan spesialisasi dokter hewan, serta fasilitas medis yang tersedia seperti rontgen, laboratorium, dan rawat inap.",
+        "Untuk kondisi darurat, nomor kontak langsung yang mudah ditemukan sangat membantu. Form janji temu yang terhubung ke WhatsApp mempercepat proses booking.",
+      ],
+    },
+    features: [
+      "Layanan medis dengan kisaran harga",
+      "Panduan jadwal vaksin",
+      "Profil dan spesialisasi dokter hewan",
+      "Fasilitas medis: rontgen, laboratorium, rawat inap, ruang operasi",
+      "Artikel edukasi kesehatan hewan",
+      "Testimoni pemilik hewan",
+      "FAQ",
+      "Form janji temu dan kontak darurat via WhatsApp",
+    ],
+    cocokUntuk: ["Klinik hewan", "Dokter hewan", "Praktik dokter hewan", "Rawat inap hewan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah kisaran harga layanan medis bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan kisaran harga untuk general check-up, vaksinasi, dan grooming, dengan catatan biaya final ditentukan setelah pemeriksaan dokter.",
+      },
+      {
+        q: "Apakah jadwal vaksin bisa dijelaskan di website?",
+        a: "Bisa. Contoh website menampilkan panduan jadwal vaksin sebagai edukasi umum untuk pemilik hewan.",
+      },
+      {
+        q: "Bagaimana pemilik hewan membuat janji temu?",
+        a: "Contoh website punya form janji temu yang mengirim detail booking lewat WhatsApp, termasuk nama dokter yang dipilih.",
+      },
+      {
+        q: "Apakah kontak darurat bisa ditampilkan terpisah?",
+        a: "Bisa. Contoh website menampilkan tombol panggilan darurat dan WhatsApp darurat di bagian atas halaman.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan klinik saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama klinik, dokter, layanan, harga, dan kontak diganti sesuai klinik Anda.",
+      },
+    ],
+  },
+  klinik: {
+    h1: "Jasa Pembuatan Website Klinik",
+    metaTitle: "Jasa Pembuatan Website Klinik Kesehatan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk klinik kesehatan umum. Daftar layanan, fasilitas, promo, testimoni, dan buat janji konsultasi via WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk klinik kesehatan umum: konsultasi dokter umum dan spesialis, kesehatan gigi, mata, jantung, sampai laboratorium. Layanan, fasilitas, dan cara membuat janji tampil jelas.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pasien Ingin Tahu Layanan dan Fasilitas Sebelum Datang",
+      paragraf: [
+        "Calon pasien biasanya mencari klinik terdekat lalu ingin memastikan layanan yang mereka butuhkan tersedia, apakah ada dokter spesialis, dan bagaimana fasilitasnya.",
+        "Website menampilkan daftar layanan mulai dari konsultasi umum, spesialis, gigi, mata, jantung, sampai laboratorium, dilengkapi foto fasilitas seperti ruang tunggu, ruang periksa, laboratorium, dan apotek.",
+        "Promo untuk kunjungan pertama dan testimoni pasien membantu meyakinkan calon pasien baru, lalu mereka bisa membuat janji lewat WhatsApp.",
+      ],
+    },
+    features: [
+      "Daftar layanan: umum, spesialis, gigi, mata, jantung, laboratorium",
+      "Galeri fasilitas: ruang tunggu, ruang periksa, laboratorium, apotek",
+      "Promo untuk kunjungan pertama",
+      "Testimoni pasien",
+      "Buat janji via WhatsApp",
+      "Alamat dan jam operasional",
+    ],
+    cocokUntuk: ["Klinik umum", "Klinik keluarga", "Klinik dengan dokter spesialis"],
+    harga: null,
+    faqs: [
+      {
+        q: "Layanan apa saja yang bisa ditampilkan di website klinik?",
+        a: "Contoh website menampilkan konsultasi umum, konsultasi spesialis, kesehatan gigi, kesehatan mata, kesehatan jantung, dan laboratorium.",
+      },
+      {
+        q: "Bagaimana pasien membuat janji lewat website?",
+        a: "Tombol buat janji membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah fasilitas klinik bisa ditampilkan dalam bentuk foto?",
+        a: "Bisa. Contoh website punya galeri ruang tunggu, ruang periksa, laboratorium, dan apotek.",
+      },
+      {
+        q: "Apakah promo bisa dicantumkan di website?",
+        a: "Bisa. Contoh website menampilkan promo konsultasi gratis untuk kunjungan pertama sebagai contoh.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan klinik saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama klinik, layanan, foto, dan kontak diganti sesuai klinik Anda.",
+      },
+    ],
+  },
+  "klinik-gigi": {
+    h1: "Jasa Pembuatan Website Klinik Gigi",
+    metaTitle: "Jasa Pembuatan Website Klinik Gigi & Dokter Gigi | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk klinik gigi. Concern finder, before & after, profil dokter gigi, alur treatment, FAQ, dan booking via WhatsApp.",
+    intro:
+      "Website untuk klinik gigi dan dokter gigi: dari perawatan umum, estetik, ortodonti, sampai bedah mulut. Concern finder membantu pasien mengarahkan keluhan ke treatment yang tepat, lalu booking konsultasi lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pasien Sering Ragu Sebelum ke Dokter Gigi",
+      paragraf: [
+        "Banyak orang menunda ke dokter gigi karena tidak yakin keluhannya perlu treatment apa, atau merasa cemas dengan prosesnya. Website bisa mengurangi keraguan itu.",
+        "Contoh di bawah punya Concern Finder, tempat pasien memilih keluhannya (gigi berlubang, ngilu, kuning, dan sebagainya) untuk diarahkan ke treatment yang relevan. Ada juga galeri before & after, profil dokter gigi dan spesialisasinya, serta alur treatment dari konsultasi sampai follow-up.",
+        "FAQ menjawab kekhawatiran umum seperti dental anxiety dan kepastian harga, sebelum pasien membuat janji lewat form yang terhubung ke WhatsApp.",
+      ],
+    },
+    features: [
+      "Concern Finder: pilih keluhan gigi",
+      "Galeri before & after (whitening, behel)",
+      "Profil dokter gigi dan spesialisasi",
+      "Alur treatment: konsultasi sampai follow-up",
+      "Testimoni pasien",
+      "FAQ termasuk soal dental anxiety",
+      "Form janji temu via WhatsApp",
+    ],
+    cocokUntuk: ["Klinik gigi", "Dokter gigi umum", "Ortodonti (behel)", "Estetik gigi (whitening)"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apa itu Concern Finder di website klinik gigi?",
+        a: "Fitur di contoh website tempat pasien memilih keluhannya, misalnya gigi berlubang atau gigi tidak rapi, untuk diarahkan ke treatment yang sesuai.",
+      },
+      {
+        q: "Apakah hasil before & after bisa ditampilkan?",
+        a: "Bisa. Contoh website punya galeri before & after untuk whitening dan behel.",
+      },
+      {
+        q: "Bagaimana pasien membuat janji?",
+        a: "Contoh website punya form janji temu yang memilih dokter, tanggal, dan keluhan, lalu mengirim detailnya lewat WhatsApp.",
+      },
+      {
+        q: "Apakah website bisa membahas rasa takut ke dokter gigi?",
+        a: "Bisa. Contoh website punya FAQ yang menjelaskan cara klinik menangani pasien dengan dental anxiety.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan klinik saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama klinik, dokter, treatment, dan kontak diganti sesuai klinik Anda.",
+      },
+    ],
+  },
+  laundry: {
+    h1: "Jasa Pembuatan Website Laundry",
+    metaTitle: "Jasa Pembuatan Website Laundry Kiloan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk laundry kiloan. Kalkulator estimasi biaya, daftar layanan dan harga, area antar-jemput, dan order via WhatsApp.",
+    intro:
+      "Website untuk usaha laundry kiloan dan dry clean. Kalkulator estimasi biaya, daftar layanan dengan harga per kilo, area antar-jemput, dan tombol order yang mengirim rincian pesanan lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pelanggan Laundry Ingin Tahu Harga Sebelum Order",
+      paragraf: [
+        "Pertanyaan pertama calon pelanggan laundry hampir selalu sama: berapa harga per kilo, berapa lama selesai, dan apakah ada antar-jemput ke lokasi mereka.",
+        "Website bisa menjawabnya lewat kalkulator estimasi biaya: pelanggan memasukkan berat cucian dan memilih layanan, lalu langsung melihat estimasi harga dan waktu selesai. Daftar layanan, area antar-jemput, dan cara kerja juga ditampilkan.",
+        "Tombol order mengirim rincian pesanan (layanan, berat, estimasi biaya) langsung ke WhatsApp, jadi pemilik usaha tidak perlu bertanya ulang.",
+      ],
+    },
+    features: [
+      "Kalkulator estimasi biaya berdasarkan berat dan jenis layanan",
+      "Daftar layanan dengan harga per kilo: reguler, express, setrika saja, dry clean",
+      "Area layanan dan antar-jemput",
+      "Cara kerja: jemput, cuci, setrika, antar",
+      "Galeri fasilitas",
+      "Testimoni pelanggan",
+      "FAQ",
+      "Order via WhatsApp dengan rincian pesanan otomatis",
+    ],
+    cocokUntuk: ["Laundry kiloan", "Laundry express", "Dry clean", "Laundry dengan antar-jemput"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah pelanggan bisa menghitung estimasi biaya sebelum order?",
+        a: "Bisa. Contoh website punya kalkulator: pelanggan memasukkan berat cucian dan memilih layanan, lalu estimasi harga dan waktu selesai muncul otomatis.",
+      },
+      {
+        q: "Apakah area antar-jemput bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan daftar area yang mendapat layanan antar-jemput gratis.",
+      },
+      {
+        q: "Bagaimana pelanggan order lewat website?",
+        a: "Tombol order mengirim pesan WhatsApp yang sudah berisi rincian layanan, berat, dan estimasi biaya, jadi pelanggan tinggal mengirim.",
+      },
+      {
+        q: "Apakah harga per jenis layanan bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan harga per kilo untuk layanan reguler, express, setrika saja, dan dry clean.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan usaha laundry saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama usaha, harga, area layanan, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  parfum: {
+    h1: "Jasa Pembuatan Website Parfum",
+    metaTitle: "Jasa Pembuatan Website Toko Parfum | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk toko parfum dan brand parfum lokal. Katalog varian dengan harga, storytelling aroma, FAQ, dan order via WhatsApp.",
+    intro:
+      "Website untuk toko parfum dan brand parfum lokal. Katalog varian dengan harga, cerita di balik tiap aroma, dan tombol order atau konsultasi lewat WhatsApp. Dua gaya contoh di bawah menunjukkan pendekatan storytelling dan pendekatan katalog.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Parfum Dijual Lewat Cerita dan Kepercayaan",
+      paragraf: [
+        "Parfum sulit dijelaskan lewat foto saja karena pembeli tidak bisa mencium aromanya lewat layar. Karena itu website parfum biasanya mengandalkan storytelling: notes aroma (top, heart, base), karakter wangi, dan momen pemakaian yang cocok.",
+        "Selain cerita, pembeli online juga ingin kepastian soal keaslian produk, harga per varian atau per ukuran, dan kebijakan tukar jika aroma tidak cocok. FAQ soal originalitas dan pengiriman membantu meyakinkan pembeli baru.",
+        "Dua contoh di bawah menunjukkan dua gaya berbeda: satu fokus ke storytelling brand dengan satu produk unggulan, satu lagi fokus ke katalog dengan beberapa varian, harga, dan FAQ lengkap.",
+      ],
+    },
+    features: [
+      "Storytelling notes aroma: top, heart, base",
+      "Katalog varian dengan harga",
+      "Rating dan testimoni",
+      "FAQ keaslian produk dan pengiriman",
+      "Order atau konsultasi via WhatsApp",
+    ],
+    cocokUntuk: ["Toko parfum", "Brand parfum lokal", "Reseller parfum"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah website parfum bisa menampilkan notes aroma secara detail?",
+        a: "Bisa. Contoh website menampilkan notes top, heart, dan base untuk tiap varian, lengkap dengan cerita di balik aromanya.",
+      },
+      {
+        q: "Apakah harga tiap varian bisa ditampilkan?",
+        a: "Bisa. Salah satu contoh website menampilkan harga mulai dari untuk tiap varian parfum.",
+      },
+      {
+        q: "Bagaimana website meyakinkan pembeli soal keaslian produk?",
+        a: "Salah satu contoh website punya FAQ yang menjelaskan status reseller resmi dan kode batch untuk verifikasi keaslian.",
+      },
+      {
+        q: "Bagaimana pelanggan order atau konsultasi?",
+        a: "Tombol order dan konsultasi membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan brand parfum saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama brand, varian, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
   rental: {
     h1: "Jasa Pembuatan Website Rental Mobil",
     metaTitle: "Jasa Pembuatan Website Rental Mobil | SCH",

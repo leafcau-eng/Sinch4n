@@ -11,6 +11,55 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-petshop-flagship": {
+    nama: "SCH Pet Lifestyle Center",
+    jenis: "Petshop, Grooming & Pet Hotel",
+    deskripsi:
+      "Contoh website petshop lengkap: Pet Assistant untuk rekomendasi layanan, grooming dan produk berharga, tahapan pet hotel, profil groomer, galeri, dan booking WhatsApp.",
+    fitur: ["Pet Assistant", "Grooming + harga", "Pet hotel", "Profil groomer", "Booking WhatsApp"],
+  },
+  "contoh-vet-flagship": {
+    nama: "SCH Pet Clinic",
+    jenis: "Klinik Hewan",
+    deskripsi:
+      "Contoh website klinik hewan dengan Pet Care Assistant, layanan medis berharga, jadwal vaksin, profil dokter hewan, fasilitas medis, dan booking janji temu.",
+    fitur: ["Pet Care Assistant", "Layanan + harga", "Jadwal vaksin", "Profil dokter hewan", "Booking WhatsApp"],
+  },
+  "contoh-klinik": {
+    nama: "Klinik Sehat Bersama",
+    jenis: "Klinik Kesehatan Umum",
+    deskripsi:
+      "Contoh website klinik umum dengan daftar layanan (umum, spesialis, gigi, mata, jantung, lab), galeri fasilitas, promo kunjungan pertama, dan buat janji via WhatsApp.",
+    fitur: ["Daftar layanan", "Galeri fasilitas", "Promo", "Testimoni", "Buat janji WhatsApp"],
+  },
+  "contoh-klinik-gigi-flagship": {
+    nama: "SCH Dental Care",
+    jenis: "Klinik Gigi",
+    deskripsi:
+      "Contoh website klinik gigi dengan Concern Finder, galeri before & after, profil dokter gigi, alur treatment, FAQ dental anxiety, dan form janji temu WhatsApp.",
+    fitur: ["Concern Finder", "Before & after", "Profil dokter gigi", "Alur treatment", "Booking WhatsApp"],
+  },
+  "contoh-laundry-flagship": {
+    nama: "Fresh Laundry Bandung",
+    jenis: "Laundry Kiloan",
+    deskripsi:
+      "Contoh website laundry dengan kalkulator estimasi biaya, daftar layanan berharga per kilo, area antar-jemput, dan tombol order WhatsApp dengan rincian pesanan otomatis.",
+    fitur: ["Kalkulator estimasi", "Harga per kilo", "Area antar-jemput", "Order WhatsApp"],
+  },
+  "contoh-parfum": {
+    nama: "SCH Parfum",
+    jenis: "Toko Parfum (gaya storytelling)",
+    deskripsi:
+      "Contoh website parfum bergaya storytelling brand, menonjolkan satu produk unggulan lengkap dengan notes top, heart, dan base.",
+    fitur: ["Storytelling notes aroma", "Satu produk unggulan", "Kontak WhatsApp"],
+  },
+  "contoh-parfum-flagship": {
+    nama: "Lumière Parfum",
+    jenis: "Toko Parfum (gaya katalog)",
+    deskripsi:
+      "Contoh website parfum bergaya katalog dengan beberapa varian berharga, rating, testimoni, FAQ keaslian produk dan pengiriman, serta konsultasi via WhatsApp.",
+    fitur: ["Katalog varian + harga", "Testimoni", "FAQ keaslian", "Konsultasi WhatsApp"],
+  },
   "contoh-rental": {
     nama: "Bandung Car Rental",
     jenis: "Rental Mobil & Kendaraan",
