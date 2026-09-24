@@ -17,6 +17,163 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  "showroom-mobil": {
+    h1: "Jasa Pembuatan Website Showroom Mobil",
+    metaTitle: "Jasa Pembuatan Website Showroom & Jual Beli Mobil | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk showroom mobil bekas maupun baru. Katalog unit dengan harga, simulasi kredit, trade in, dan booking test drive via WhatsApp.",
+    intro:
+      "Website untuk showroom mobil bekas dan baru, rental mobil eksklusif, sampai dealer dengan simulasi kredit dan trade in. Katalog unit dengan harga dan spesifikasi, lalu calon pembeli booking test drive atau tanya unit lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pembeli Mobil Membandingkan Sebelum Datang",
+      paragraf: [
+        "Sebelum ke showroom, calon pembeli biasanya sudah membandingkan beberapa unit secara online: harga, tahun, kilometer, transmisi, dan kondisi. Website yang menampilkan katalog lengkap membuat showroom masuk daftar pertimbangan sejak tahap ini.",
+        "Untuk showroom yang menjual dengan kredit, simulasi cicilan dan opsi trade in membantu pembeli menghitung kemampuan mereka sebelum datang. Untuk showroom mobil mewah, sisi eksklusivitas dan concierge lebih ditonjolkan dibanding daftar harga panjang.",
+        "Tiga contoh di bawah menunjukkan tiga pendekatan: showroom mobil bekas sederhana, showroom lengkap dengan smart finder dan kalkulator kredit, dan showroom mobil mewah bergaya eksklusif.",
+      ],
+    },
+    features: [
+      "Katalog unit dengan filter tipe (MPV, SUV, sedan, hatchback)",
+      "Harga, tahun, kilometer, transmisi, dan bahan bakar tiap unit",
+      "Simulasi kredit dan estimasi cicilan",
+      "Trade in mobil lama",
+      "Booking test drive",
+      "Galeri showroom",
+      "Testimoni pembeli",
+      "FAQ",
+      "Chat WhatsApp per unit",
+    ],
+    cocokUntuk: ["Showroom mobil bekas", "Dealer mobil baru", "Rental mobil mewah", "Showroom dengan simulasi kredit"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga dan spesifikasi tiap unit bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan harga, tahun, kilometer, transmisi, dan bahan bakar untuk tiap unit di katalog.",
+      },
+      {
+        q: "Apakah website bisa membantu pembeli menghitung cicilan?",
+        a: "Bisa. Salah satu contoh website punya kalkulator kredit yang menghitung estimasi cicilan bulanan dari harga mobil, DP, dan tenor.",
+      },
+      {
+        q: "Apakah trade in mobil lama bisa ditampilkan sebagai layanan?",
+        a: "Bisa. Salah satu contoh website punya estimator trade in awal berdasarkan kondisi mobil.",
+      },
+      {
+        q: "Bagaimana calon pembeli booking test drive?",
+        a: "Tombol booking test drive dan tombol chat per unit membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan showroom saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama showroom, unit, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  bengkel: {
+    h1: "Jasa Pembuatan Website Bengkel",
+    metaTitle: "Jasa Pembuatan Website Bengkel Motor & Mobil | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk bengkel motor dan mobil. Daftar layanan dan harga, estimasi biaya servis, paket servis, dan booking via WhatsApp.",
+    intro:
+      "Website untuk bengkel motor dan mobil. Daftar layanan dengan kisaran harga, estimator biaya servis, paket servis, dan tombol booking yang membuka WhatsApp untuk kondisi darurat maupun servis terjadwal.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pelanggan Bengkel Ingin Tahu Biaya Sebelum Servis",
+      paragraf: [
+        "Kekhawatiran umum soal bengkel adalah biaya yang membengkak di luar perkiraan. Pelanggan ingin tahu kisaran harga sebelum kendaraan diperiksa, dan ingin update yang jelas selama proses servis.",
+        "Website bengkel bisa menampilkan kisaran harga per jenis servis, paket servis dengan rincian isi, dan alur kerja dari booking sampai kendaraan siap diambil. Kalkulator estimasi biaya membantu pelanggan memperkirakan biaya sebelum datang.",
+        "Untuk kondisi darurat seperti mogok, tombol panggilan langsung dan WhatsApp yang mudah ditemukan sangat membantu.",
+      ],
+    },
+    features: [
+      "Daftar layanan dengan kisaran harga: ganti oli, tune up, servis rem, servis AC, ganti aki, ganti ban",
+      "Kalkulator estimasi biaya servis",
+      "Paket servis (basic, standard, premium) dengan rincian isi",
+      "Galeri before & after",
+      "Alur servis dari booking sampai pengambilan",
+      "Testimoni pelanggan",
+      "FAQ",
+      "Booking via WhatsApp dan kontak darurat",
+    ],
+    cocokUntuk: ["Bengkel motor", "Bengkel mobil", "Bengkel umum", "Servis kendaraan darurat"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga servis bisa ditampilkan di website bengkel?",
+        a: "Bisa. Contoh website menampilkan kisaran harga untuk tiap jenis layanan, dari ganti oli sampai perbaikan kelistrikan.",
+      },
+      {
+        q: "Apakah ada fitur untuk menghitung estimasi biaya sebelum servis?",
+        a: "Bisa. Contoh website punya kalkulator yang menampilkan kisaran harga dan estimasi waktu pengerjaan untuk layanan yang dipilih.",
+      },
+      {
+        q: "Bagaimana pelanggan booking servis?",
+        a: "Tombol booking membuka WhatsApp dengan pesan yang sudah terisi. Untuk kondisi darurat, ada juga tombol panggilan langsung.",
+      },
+      {
+        q: "Apakah paket servis bisa ditampilkan lengkap dengan rinciannya?",
+        a: "Bisa. Contoh website menampilkan paket basic, standard, dan premium dengan daftar isi dan estimasi waktu pengerjaan.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan bengkel saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama bengkel, layanan, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  carwash: {
+    h1: "Jasa Pembuatan Website Cuci Kendaraan",
+    metaTitle: "Jasa Pembuatan Website Cuci Mobil & Motor (Car Wash) | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk usaha cuci mobil dan motor. Daftar paket dan harga, before & after, lokasi cabang, dan booking via WhatsApp.",
+    intro:
+      "Website untuk usaha cuci mobil dan motor, termasuk detailing dan coating. Daftar paket dengan harga, hasil before & after, lokasi cabang, dan tombol booking yang membuka WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pelanggan Car Wash Memilih dari Harga dan Hasil",
+      paragraf: [
+        "Pelanggan cuci kendaraan biasanya membandingkan harga per paket dan ingin tahu berapa lama prosesnya. Untuk layanan detailing dan coating yang lebih mahal, mereka juga ingin melihat hasil kerja sebelumnya.",
+        "Website menampilkan katalog paket dengan harga, dari cuci reguler sampai coating nano ceramic, galeri before & after, dan lokasi tiap cabang lengkap dengan kontak masing-masing.",
+        "Untuk usaha dengan banyak cabang, menampilkan alamat dan kontak tiap cabang secara terpisah memudahkan pelanggan memilih lokasi terdekat.",
+      ],
+    },
+    features: [
+      "Katalog paket dengan filter: motor, mobil, detailing, coating",
+      "Harga tiap paket",
+      "Galeri before & after",
+      "Lokasi dan kontak tiap cabang",
+      "Promo kunjungan pertama",
+      "Testimoni pelanggan",
+      "FAQ",
+      "Booking via WhatsApp",
+    ],
+    cocokUntuk: ["Cuci mobil", "Cuci motor", "Detailing kendaraan", "Coating kendaraan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga tiap paket cuci bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan harga untuk tiap paket, dari cuci motor reguler sampai coating nano ceramic.",
+      },
+      {
+        q: "Apakah hasil detailing bisa ditampilkan sebelum dan sesudah?",
+        a: "Bisa. Contoh website punya galeri before & after untuk layanan detailing dan cuci premium.",
+      },
+      {
+        q: "Bagaimana kalau usaha punya lebih dari satu cabang?",
+        a: "Contoh website menampilkan alamat dan kontak tiap cabang secara terpisah, sehingga pelanggan bisa memilih lokasi terdekat.",
+      },
+      {
+        q: "Bagaimana pelanggan booking?",
+        a: "Tombol booking membuka WhatsApp dengan pesan yang sudah terisi, dan beberapa paket punya tombol booking sendiri.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan usaha saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama usaha, paket, harga, lokasi, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
   petshop: {
     h1: "Jasa Pembuatan Website Petshop & Grooming",
     metaTitle: "Jasa Pembuatan Website Petshop & Grooming | SCH",

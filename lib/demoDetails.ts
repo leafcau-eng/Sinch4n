@@ -11,6 +11,41 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-car-elite": {
+    nama: "SCH Elite Showroom",
+    jenis: "Showroom Mobil Mewah",
+    deskripsi:
+      "Contoh website showroom mobil mewah bergaya eksklusif, menampilkan unit supercar dengan spesifikasi performa dan booking concierge via WhatsApp.",
+    fitur: ["Unit supercar", "Spesifikasi performa", "Concierge", "Booking WhatsApp"],
+  },
+  "contoh-showroom-premium": {
+    nama: "Prime Auto Showroom",
+    jenis: "Showroom Mobil Bekas",
+    deskripsi:
+      "Contoh website showroom mobil bekas dengan katalog unit berfilter tipe, harga, kondisi, galeri showroom, testimoni, FAQ, dan chat WhatsApp per unit.",
+    fitur: ["Katalog berfilter", "Harga + kondisi", "Galeri", "FAQ", "Chat per unit"],
+  },
+  "contoh-car-showroom-flagship": {
+    nama: "Prima Motor Showroom",
+    jenis: "Showroom Mobil (Lengkap)",
+    deskripsi:
+      "Contoh website showroom mobil paling lengkap: Smart Car Finder, kalkulator kredit, estimator trade in, katalog unit dengan cicilan, dan booking test drive.",
+    fitur: ["Smart Car Finder", "Kalkulator kredit", "Trade in", "Katalog + cicilan", "Booking test drive"],
+  },
+  "contoh-bengkel": {
+    nama: "Bengkel Jaya Motor",
+    jenis: "Bengkel Motor & Mobil",
+    deskripsi:
+      "Contoh website bengkel dengan Digital Service Advisor, kalkulator estimasi biaya servis, paket servis berjenjang, before & after, dan booking WhatsApp.",
+    fitur: ["Service Advisor", "Estimasi biaya", "Paket servis", "Before & after", "Booking WhatsApp"],
+  },
+  "contoh-carwash": {
+    nama: "Sparkle Car Wash",
+    jenis: "Cuci & Detailing Kendaraan",
+    deskripsi:
+      "Contoh website cuci kendaraan dengan katalog paket berharga (motor, mobil, detailing, coating), before & after, tiga lokasi cabang, dan booking WhatsApp.",
+    fitur: ["Katalog paket + harga", "Before & after", "Multi-cabang", "Booking WhatsApp"],
+  },
   "contoh-petshop-flagship": {
     nama: "SCH Pet Lifestyle Center",
     jenis: "Petshop, Grooming & Pet Hotel",
