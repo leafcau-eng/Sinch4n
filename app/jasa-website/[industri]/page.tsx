@@ -146,6 +146,23 @@ export default async function IndustriPage({ params }: Props) {
           </section>
         )}
 
+        <section className="mt-16 rounded-2xl border border-cyan-400/20 p-6 text-center">
+          <h2 className="font-display text-xl text-white">
+            Butuh website {group.label}?
+          </h2>
+          <p className="mt-2 text-sm text-neutral-400">
+            Ceritakan kebutuhan bisnis Anda, kami bantu dari template hingga custom.
+          </p>
+          <a
+            href={`https://wa.me/6283870880997?text=${encodeURIComponent(`Halo, saya tertarik dengan jasa website ${group.label}.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex rounded-full bg-cyan-400 px-8 py-3 font-mono text-sm uppercase tracking-wide text-black transition-transform hover:scale-105"
+          >
+            Mulai Project →
+          </a>
+        </section>
+
         {jsonLd && (
           <script
             type="application/ld+json"
