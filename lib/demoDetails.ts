@@ -11,6 +11,34 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-property-elite": {
+    nama: "Neo-Dago Group",
+    jenis: "Developer Properti Mewah",
+    deskripsi:
+      "Contoh website developer properti mewah bergaya futuristik: unit aktif dengan spesifikasi, fasilitas smart home, daftar harga per tipe, dan konsultasi agent via WhatsApp.",
+    fitur: ["Unit + spesifikasi", "Fasilitas unggulan", "Harga per tipe", "Konsultasi WhatsApp"],
+  },
+  "contoh-villa": {
+    nama: "The Sayan Villa",
+    jenis: "Villa & Penginapan",
+    deskripsi:
+      "Contoh website villa di Ubud dengan tipe kamar berharga per malam, fasilitas lengkap, galeri, destinasi wisata terdekat, FAQ, dan booking via WhatsApp.",
+    fitur: ["Tipe kamar + harga", "Fasilitas", "Destinasi terdekat", "FAQ", "Booking WhatsApp"],
+  },
+  "contoh-wedding-premium": {
+    nama: "Elysian Wedding Organizer",
+    jenis: "Wedding Organizer",
+    deskripsi:
+      "Contoh website wedding organizer dengan paket layanan (WO penuh, dekorasi, dokumentasi, MUA), portofolio momen pasangan, testimoni, dan konsultasi gratis via WhatsApp.",
+    fitur: ["Paket layanan", "Portofolio", "Testimoni", "Konsultasi gratis WhatsApp"],
+  },
+  "contoh-undangan": {
+    nama: "Undangan Digital by SCH",
+    jenis: "Undangan Pernikahan Digital",
+    deskripsi:
+      "Contoh undangan pernikahan digital dengan profil mempelai, love story, rangkaian acara, hitung mundur, galeri, RSVP, dan amplop digital.",
+    fitur: ["Profil mempelai", "Rangkaian acara", "Hitung mundur", "RSVP", "Amplop digital"],
+  },
   "contoh-car-elite": {
     nama: "SCH Elite Showroom",
     jenis: "Showroom Mobil Mewah",

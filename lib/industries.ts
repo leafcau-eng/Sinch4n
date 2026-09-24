@@ -17,6 +17,210 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  properti: {
+    h1: "Jasa Pembuatan Website Properti",
+    metaTitle: "Jasa Pembuatan Website Developer Properti | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk developer properti dan proyek hunian. Unit dan harga, fasilitas unggulan, lokasi proyek, dan konsultasi agent via WhatsApp.",
+    intro:
+      "Website untuk developer properti dan proyek hunian, dari apartemen sampai kompleks residensial. Unit dan harga, fasilitas unggulan, dan lokasi proyek tampil jelas, lalu calon pembeli bisa konsultasi dengan agent lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pembeli Properti Menilai dari Fasilitas dan Lokasi",
+      paragraf: [
+        "Keputusan membeli properti besar dan butuh waktu. Calon pembeli ingin tahu tipe unit dan luasnya, fasilitas yang membedakan proyek ini dari yang lain, harga tiap tipe, dan lokasi proyeknya.",
+        "Website menampilkan unit aktif dengan spesifikasi (luas tanah, luas bangunan, jumlah kamar), fasilitas unggulan yang jadi nilai jual, daftar harga per tipe, dan lokasi proyek. Testimoni penghuni menambah kepercayaan.",
+        "Karena nilai transaksinya besar, calon pembeli biasanya tidak langsung memutuskan dari website saja, jadi tombol konsultasi dengan agent penting untuk menindaklanjuti minat mereka.",
+      ],
+    },
+    features: [
+      "Unit aktif dengan spesifikasi: luas tanah, luas bangunan, jumlah kamar",
+      "Fasilitas unggulan proyek",
+      "Daftar harga per tipe unit",
+      "Lokasi proyek (bisa lebih dari satu cluster)",
+      "Testimoni penghuni",
+      "Konsultasi via WhatsApp dengan agent",
+    ],
+    cocokUntuk: ["Developer properti", "Proyek apartemen", "Kompleks residensial", "Perumahan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah website properti bisa menampilkan harga tiap tipe unit?",
+        a: "Bisa. Contoh website menampilkan daftar harga untuk tiap tipe unit yang tersedia.",
+      },
+      {
+        q: "Apakah spesifikasi unit seperti luas dan jumlah kamar bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan luas tanah, luas bangunan, dan jumlah kamar untuk unit yang sedang ditawarkan.",
+      },
+      {
+        q: "Apakah fasilitas proyek bisa ditonjolkan di website?",
+        a: "Bisa. Contoh website punya bagian khusus untuk menampilkan fasilitas unggulan yang menjadi nilai jual proyek.",
+      },
+      {
+        q: "Bagaimana calon pembeli menghubungi developer?",
+        a: "Tombol konsultasi membuka WhatsApp dengan pesan yang sudah terisi, untuk diteruskan ke agent properti.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan proyek saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama proyek, unit, fasilitas, harga, dan kontak diganti sesuai proyek Anda.",
+      },
+    ],
+  },
+  villa: {
+    h1: "Jasa Pembuatan Website Villa",
+    metaTitle: "Jasa Pembuatan Website Villa & Penginapan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk villa dan penginapan. Tipe kamar dengan harga per malam, fasilitas, galeri, destinasi sekitar, dan booking via WhatsApp.",
+    intro:
+      "Website untuk villa, homestay, dan penginapan. Tipe kamar dengan harga per malam, fasilitas, galeri, destinasi wisata di sekitar, dan tombol booking yang membuka WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Tamu Villa Memutuskan dari Foto dan Kejelasan Harga",
+      paragraf: [
+        "Sebelum booking, calon tamu ingin melihat suasana villa lewat foto, membandingkan tipe kamar dan fasilitasnya, serta tahu harga per malam dan jam check-in/check-out.",
+        "Website menampilkan pilihan kamar dengan kapasitas, ukuran, fasilitas kamar, dan harga per malam, disertai galeri kolam renang, taman, dan kamar. Destinasi wisata terdekat membantu tamu menilai lokasi.",
+        "Karena keputusan biasanya cepat, tombol booking yang langsung ke WhatsApp memudahkan tamu menanyakan ketersediaan tanggal.",
+      ],
+    },
+    features: [
+      "Tipe kamar dengan kapasitas, ukuran, dan fasilitas kamar",
+      "Harga per malam",
+      "Fasilitas villa: kolam renang, taman, sarapan, WiFi, parkir, airport transfer",
+      "Galeri villa",
+      "Destinasi wisata terdekat dengan estimasi waktu tempuh",
+      "Testimoni tamu",
+      "FAQ check-in dan fasilitas",
+      "Booking via WhatsApp",
+    ],
+    cocokUntuk: ["Villa", "Homestay", "Guest house", "Penginapan harian"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga kamar per malam bisa ditampilkan di website?",
+        a: "Bisa. Contoh website menampilkan harga mulai dari untuk tiap tipe kamar.",
+      },
+      {
+        q: "Apakah fasilitas villa bisa ditampilkan lengkap?",
+        a: "Bisa. Contoh website menampilkan daftar fasilitas seperti kolam renang, sarapan, WiFi, parkir, dan airport transfer.",
+      },
+      {
+        q: "Apakah destinasi wisata di sekitar villa bisa dicantumkan?",
+        a: "Bisa. Contoh website menampilkan destinasi terdekat lengkap dengan estimasi waktu tempuh dari villa.",
+      },
+      {
+        q: "Bagaimana tamu booking lewat website?",
+        a: "Tombol booking membuka WhatsApp dengan pesan yang sudah terisi untuk menanyakan ketersediaan.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan villa saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama villa, kamar, harga, foto, dan kontak diganti sesuai villa Anda.",
+      },
+    ],
+  },
+  wedding: {
+    h1: "Jasa Pembuatan Website Wedding Organizer",
+    metaTitle: "Jasa Pembuatan Website Wedding Organizer | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk wedding organizer. Paket layanan, portofolio, testimoni pasangan, dan konsultasi gratis via WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk wedding organizer dan vendor pernikahan. Paket layanan dari perencanaan penuh sampai dekorasi dan dokumentasi, portofolio momen pasangan sebelumnya, dan tombol konsultasi gratis lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Calon Pengantin Mencari Kepercayaan Sebelum Konsultasi",
+      paragraf: [
+        "Memilih wedding organizer adalah keputusan emosional sekaligus finansial. Calon pengantin ingin melihat hasil kerja sebelumnya dan membaca pengalaman pasangan lain sebelum menghubungi.",
+        "Website menampilkan paket layanan (wedding organizer penuh, dekorasi, dokumentasi, MUA dan bridal), portofolio foto dari acara sebelumnya, dan testimoni pasangan yang sudah memakai jasa mereka.",
+        "Karena tiap pernikahan berbeda kebutuhan dan budget, harga biasanya tidak dipasang terbuka, dan tombol konsultasi gratis dipakai untuk memulai percakapan.",
+      ],
+    },
+    features: [
+      "Paket layanan: wedding organizer penuh, dekorasi, dokumentasi, MUA dan bridal",
+      "Portofolio foto acara",
+      "Testimoni pasangan",
+      "Konsultasi gratis via WhatsApp",
+      "Alamat dan jam layanan (by appointment)",
+    ],
+    cocokUntuk: ["Wedding organizer", "Vendor dekorasi pernikahan", "Vendor dokumentasi pernikahan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah paket layanan wedding organizer bisa ditampilkan di website?",
+        a: "Bisa. Contoh website menampilkan beberapa paket seperti wedding organizer penuh, dekorasi, dokumentasi, dan MUA, dengan tombol tanya detail per paket.",
+      },
+      {
+        q: "Apakah portofolio pernikahan sebelumnya bisa ditampilkan?",
+        a: "Bisa. Contoh website punya galeri momen dari acara-acara sebelumnya.",
+      },
+      {
+        q: "Bagaimana calon pengantin memulai konsultasi?",
+        a: "Tombol konsultasi gratis membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah harga paket bisa dicantumkan di website?",
+        a: "Bisa, tapi banyak wedding organizer memilih tidak memasang harga terbuka karena tiap acara berbeda kebutuhan. Contoh website ini mengarahkan calon klien untuk konsultasi harga lewat WhatsApp.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan usaha saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama usaha, paket, portofolio, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  undangan: {
+    h1: "Jasa Pembuatan Undangan Pernikahan Digital",
+    metaTitle: "Jasa Pembuatan Undangan Pernikahan Digital (Website) | SCH",
+    metaDescription:
+      "Jasa pembuatan undangan pernikahan digital berbentuk website. Profil mempelai, rangkaian acara, galeri, RSVP, dan amplop digital dalam satu halaman.",
+    intro:
+      "Undangan pernikahan digital dalam bentuk website: profil mempelai, cerita perjalanan, rangkaian acara akad dan resepsi, galeri foto, konfirmasi kehadiran (RSVP), dan amplop digital dalam satu halaman yang bisa dibagikan lewat link.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Undangan Digital Memudahkan Tamu dan Mempelai",
+      paragraf: [
+        "Undangan digital memudahkan mempelai membagikan informasi acara lewat satu link, tanpa mencetak dan mengantar undangan fisik satu per satu. Tamu juga bisa langsung mengonfirmasi kehadiran dari halaman yang sama.",
+        "Halaman undangan biasanya memuat profil kedua mempelai beserta orang tua, cerita perjalanan hubungan, detail acara akad dan resepsi lengkap dengan lokasi di peta, galeri foto, dan link live streaming untuk tamu yang tidak bisa hadir.",
+        "Fitur RSVP dan amplop digital membantu mempelai mendata kehadiran tamu dan menerima ucapan tanpa perlu buku tamu fisik.",
+      ],
+    },
+    features: [
+      "Profil mempelai dan orang tua",
+      "Cerita perjalanan hubungan (love story)",
+      "Rangkaian acara akad dan resepsi dengan lokasi di peta",
+      "Hitung mundur menuju hari-H",
+      "Galeri foto",
+      "Link live streaming",
+      "RSVP konfirmasi kehadiran via WhatsApp",
+      "Amplop digital",
+      "Kolom ucapan dan doa dari tamu",
+    ],
+    cocokUntuk: ["Undangan pernikahan digital", "Undangan akad dan resepsi", "Wedding invitation website"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apa saja yang ada di undangan pernikahan digital?",
+        a: "Contoh halaman ini menampilkan profil mempelai, love story, rangkaian acara, galeri foto, hitung mundur, RSVP, dan kolom ucapan.",
+      },
+      {
+        q: "Bagaimana tamu mengonfirmasi kehadiran?",
+        a: "Tombol RSVP membuka WhatsApp dengan format pesan yang sudah berisi nama, jumlah tamu, dan status kehadiran.",
+      },
+      {
+        q: "Apakah undangan digital bisa punya amplop digital?",
+        a: "Bisa. Contoh halaman punya bagian khusus untuk tanda kasih atau amplop digital bagi tamu yang ingin memberi hadiah.",
+      },
+      {
+        q: "Apakah lokasi acara bisa langsung menuju Google Maps?",
+        a: "Bisa. Tiap acara (akad dan resepsi) punya tombol yang mengarah ke lokasi di Google Maps.",
+      },
+      {
+        q: "Apakah undangan ini bisa disesuaikan dengan acara saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama mempelai, tanggal, lokasi, foto, dan cerita diganti sesuai acara Anda.",
+      },
+    ],
+  },
   "showroom-mobil": {
     h1: "Jasa Pembuatan Website Showroom Mobil",
     metaTitle: "Jasa Pembuatan Website Showroom & Jual Beli Mobil | SCH",
