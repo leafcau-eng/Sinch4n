@@ -4,12 +4,13 @@ import ClientOnly from "@/components/ClientOnly";
 import CustomCursor from "@/components/CustomCursor";
 
 const SITE_URL = "https://sinch4n.vercel.app";
-const SITE_TITLE = "SCH — Rian Riyandi | AI-Powered Systems for Business";
+const SITE_TITLE = "SCH — Website & Digital Systems for Business | Rian Riyandi";
 const SITE_DESCRIPTION =
-  "I build AI-powered systems for business — websites, automation, AI, and data, built end to end.";
+  "Website bisnis, automation, dan custom digital systems untuk membantu bisnis membangun kehadiran digital dan workflow yang lebih terstruktur.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: {
     default: SITE_TITLE,
     template: "%s | SCH",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "SCH",
     images: [{ url: "/images/rian-portrait.png", alt: "Rian Riyandi" }],
-    locale: "en_US",
+    locale: "id_ID",
     type: "website",
   },
   twitter: {
@@ -38,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body className="bg-[#0a0a0a] antialiased cursor-none">
         <ClientOnly>
           <CustomCursor />
