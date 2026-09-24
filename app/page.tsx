@@ -197,7 +197,7 @@ function HeroLeft() {
         <div className="flex flex-col gap-3">
           <EnterButton href="/portfolio" label="START A PROJECT →" />
           <Link
-            href="/portfolio"
+            href="/jasa-website"
             className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan-400 transition-all hover:border-cyan-400 hover:bg-cyan-400/10"
           >
             EXPLORE 40+ WEBSITES
