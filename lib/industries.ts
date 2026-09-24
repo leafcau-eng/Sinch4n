@@ -17,6 +17,220 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  bakery: {
+    h1: "Jasa Pembuatan Website Bakery",
+    metaTitle: "Jasa Pembuatan Website Bakery & Toko Kue | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk bakery, toko kue, dan catering. Katalog produk, harga, galeri, FAQ pemesanan, dan tombol order WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk bakery, toko kue, dessert shop, dan usaha catering. Produk, harga, galeri, dan cara pemesanan tampil jelas, dan pelanggan bisa langsung memesan atau bertanya lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Kenapa Bakery Perlu Website Sendiri?",
+      paragraf: [
+        "Pelanggan bakery biasanya mencari kue untuk sebuah momen: ulang tahun, pernikahan, atau acara kantor. Mereka perlu melihat pilihan produk, kisaran harga, dan seberapa jauh hari harus memesan sebelum memutuskan.",
+        "Website menyusun semua itu dalam satu tempat: kategori produk dari kue ulang tahun sampai catering, produk unggulan lengkap dengan harga, galeri, testimoni, dan jawaban pertanyaan yang sering muncul seperti waktu pemesanan, desain custom, pengiriman, dan pembayaran.",
+        "Contoh di bawah memadukan bakery dan catering dalam satu website, dengan tombol pesan dan tombol tanya admin lewat WhatsApp.",
+      ],
+    },
+    features: [
+      "Kategori produk: kue ulang tahun, wedding cake, dessert box, snack box, catering",
+      "Produk unggulan dengan harga",
+      "Galeri produk",
+      "Keunggulan bisnis: bahan, custom design, pengiriman",
+      "Testimoni pelanggan",
+      "FAQ pemesanan",
+      "Tombol pesan dan tanya admin via WhatsApp",
+      "Alamat dan jam buka",
+    ],
+    cocokUntuk: ["Bakery", "Toko kue", "Custom cake", "Dessert shop", "Snack box dan lunch box", "Catering"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah website bakery bisa menampilkan harga produk?",
+        a: "Bisa. Contoh website menampilkan produk unggulan lengkap dengan harga, dari kue reguler sampai wedding cake dan snack box.",
+      },
+      {
+        q: "Bagaimana pelanggan memesan lewat website bakery?",
+        a: "Contoh website memakai tombol pesan dan tombol tanya admin yang membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah bisa menjelaskan aturan pemesanan seperti waktu pesan dan pembayaran?",
+        a: "Bisa. Contoh website punya FAQ yang menjelaskan waktu pemesanan, desain custom, delivery, pesanan korporat, dan metode pembayaran.",
+      },
+      {
+        q: "Apakah satu website bisa untuk bakery sekaligus catering?",
+        a: "Bisa. Contoh di halaman ini menampilkan kue, dessert box, snack box, lunch catering, dan buffet catering dalam satu website.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan bisnis saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama bisnis, produk, harga, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  "baby-spa": {
+    h1: "Jasa Pembuatan Website Baby Spa",
+    metaTitle: "Jasa Pembuatan Website Baby Spa | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk baby spa dan mom & baby care. Program, paket, profil terapis, panduan kunjungan pertama, dan booking WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk baby spa dan layanan perawatan bayi. Program, paket sesi, profil terapis, standar kebersihan, dan panduan kunjungan pertama dijelaskan dengan tenang, lalu orang tua bisa booking lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Apa yang Ingin Diketahui Orang Tua Sebelum Booking?",
+      paragraf: [
+        "Orang tua yang mencari baby spa biasanya ingin kepastian sebelum membawa bayinya: program apa yang cocok untuk usia bayi, siapa terapisnya, bagaimana kebersihan ruangan, dan apa yang akan terjadi selama sesi.",
+        "Website bisa menjawab itu di awal. Contoh di bawah punya pemilih usia dan tujuan sesi, daftar program dengan harga, paket, alur sesi, profil terapis, penjelasan sterilisasi dan kontrol suhu, serta panduan kunjungan pertama.",
+        "Dengan begitu orang tua datang dengan tahu apa yang perlu dibawa dan apa yang akan dilakukan, dan booking cukup lewat satu pesan WhatsApp.",
+      ],
+    },
+    features: [
+      "Baby Care Journey: pilih usia bayi dan tujuan sesi",
+      "Program populer dengan harga",
+      "Paket sesi",
+      "Alur sesi (What To Expect)",
+      "Profil terapis",
+      "Standar kebersihan dan keamanan",
+      "Panduan kunjungan pertama",
+      "Tips perawatan bayi",
+      "Galeri fasilitas",
+      "Testimoni orang tua",
+      "FAQ",
+      "Booking WhatsApp, alamat, dan jam buka",
+    ],
+    cocokUntuk: ["Baby spa", "Baby massage", "Baby swim", "Kelas sensory play", "Newborn care"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apa yang tampil di website baby spa?",
+        a: "Contoh website menampilkan program dan harga, paket sesi, profil terapis, alur sesi, standar kebersihan, panduan kunjungan pertama, galeri, testimoni, dan FAQ.",
+      },
+      {
+        q: "Bagaimana orang tua menemukan program yang cocok?",
+        a: "Contoh website punya Baby Care Journey: orang tua memilih usia bayi dan tujuan sesi, lalu melihat program yang sesuai.",
+      },
+      {
+        q: "Bagaimana orang tua booking lewat website?",
+        a: "Tombol booking membuka WhatsApp dengan pesan yang sudah terisi. Alamat dan jam buka juga tampil di halaman yang sama.",
+      },
+      {
+        q: "Apakah bisa menampilkan paket langganan atau paket beberapa sesi?",
+        a: "Bisa. Contoh website menampilkan paket 4 sesi, 8 sesi, dan paket newborn care satu bulan beserta isinya.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan bisnis saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama, program, harga, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  florist: {
+    h1: "Jasa Pembuatan Website Florist",
+    metaTitle: "Jasa Pembuatan Website Florist & Toko Bunga | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk florist dan toko bunga. Katalog bouquet, pilihan momen, info pengiriman, dan order via WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk florist dan toko bunga. Bouquet unggulan, pilihan bunga berdasarkan momen, info batas pengiriman hari yang sama, dan tombol tanya admin lewat WhatsApp ada dalam satu halaman.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Bunga Dicari Berdasarkan Momen",
+      paragraf: [
+        "Orang biasanya membeli bunga untuk momen tertentu: ulang tahun, wisuda, pernikahan, kelahiran, atau ucapan duka cita. Pertanyaan pertama mereka bukan nama bunganya, tapi bunga apa yang pantas untuk momen itu.",
+        "Karena itu contoh di bawah menyusun bunga berdasarkan momen, lalu menampilkan bouquet unggulan dengan harga, galeri, testimoni, dan FAQ soal pengiriman, custom warna, pembayaran, dan kesegaran bunga.",
+        "Untuk florist, jam batas pemesanan juga penting. Contoh ini menampilkan info pengiriman hari yang sama dan kapan pengiriman berikutnya tersedia.",
+      ],
+    },
+    features: [
+      "Pilihan bunga berdasarkan momen: birthday, graduation, anniversary, wedding, sympathy, new baby",
+      "Bouquet unggulan dengan harga dan label Best Seller",
+      "Info pengiriman hari yang sama dan batas jam pesan",
+      "Custom rangkaian",
+      "Galeri rangkaian",
+      "Testimoni pelanggan",
+      "FAQ pemesanan dan pengiriman",
+      "Tombol tanya admin via WhatsApp",
+      "Alamat dan jam buka",
+    ],
+    cocokUntuk: ["Florist", "Toko bunga", "Bouquet wedding", "Karangan duka cita", "Hampers bunga"],
+    harga: null,
+    faqs: [
+      {
+        q: "Bisakah website florist menampilkan katalog bouquet dengan harga?",
+        a: "Bisa. Contoh website menampilkan bouquet unggulan dengan nama, deskripsi singkat, dan harga mulai dari.",
+      },
+      {
+        q: "Bisakah pelanggan memilih bunga berdasarkan momen?",
+        a: "Bisa. Contoh website menyediakan pilihan momen seperti birthday, graduation, anniversary, wedding, sympathy, dan new baby.",
+      },
+      {
+        q: "Bisakah website menampilkan info same-day delivery?",
+        a: "Bisa. Contoh website menampilkan batas jam pemesanan untuk pengiriman hari yang sama dan info kapan pengiriman berikutnya tersedia.",
+      },
+      {
+        q: "Bagaimana pelanggan memesan?",
+        a: "Contoh website memakai tombol tanya admin yang membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan bisnis saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama toko, bouquet, harga, area pengiriman, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  fotografer: {
+    h1: "Jasa Pembuatan Website Fotografer",
+    metaTitle: "Jasa Pembuatan Website Fotografer & Studio Foto | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk fotografer dan studio foto. Portofolio berfilter, paket harga, testimoni, FAQ, dan booking WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk fotografer dan studio foto. Portofolio yang bisa difilter, paket dan harga yang jelas, testimoni, dan tombol booking WhatsApp untuk tiap paket.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Portofolio Menjual, Paket yang Jelas Mempercepat Keputusan",
+      paragraf: [
+        "Klien fotografer memilih dari hasil kerja. Portofolio yang tertata per jenis, seperti wedding, prewedding, portrait, family, commercial, dan event, membantu mereka menemukan foto yang mirip dengan yang mereka butuhkan.",
+        "Setelah itu mereka perlu tahu paketnya: berapa lama sesi, berapa foto yang diedit, berapa lokasi, dan kapan hasilnya dikirim. Contoh di bawah menampilkan tiga paket lengkap dengan isinya.",
+        "Tiap paket punya tombol booking sendiri yang membuka WhatsApp dengan pesan yang menyebut paket yang dipilih, sehingga percakapan langsung dimulai dari kebutuhan yang jelas.",
+      ],
+    },
+    features: [
+      "Portofolio dengan filter: wedding, prewedding, portrait, family, commercial, event",
+      "Proyek pilihan dengan cerita singkat",
+      "Paket dan harga dengan rincian isi",
+      "Tombol booking per paket via WhatsApp",
+      "Profil studio",
+      "Testimoni klien",
+      "Link Instagram",
+      "FAQ",
+      "Alamat dan jam operasional",
+    ],
+    cocokUntuk: ["Fotografer wedding", "Studio foto", "Fotografer prewedding", "Foto portrait dan keluarga", "Fotografer komersial"],
+    harga: null,
+    faqs: [
+      {
+        q: "Bisakah portofolio fotografer difilter per jenis pemotretan?",
+        a: "Bisa. Contoh website punya filter wedding, prewedding, portrait, family, commercial, dan event.",
+      },
+      {
+        q: "Bisakah paket dan harga ditampilkan?",
+        a: "Bisa. Contoh website menampilkan tiga paket dengan harga, durasi sesi, jumlah foto edited, jumlah lokasi, dan waktu pengiriman.",
+      },
+      {
+        q: "Bagaimana klien booking lewat website?",
+        a: "Setiap paket punya tombol booking yang membuka WhatsApp dengan pesan yang menyebut nama paketnya.",
+      },
+      {
+        q: "Bisakah website terhubung ke Instagram?",
+        a: "Contoh website menampilkan link ke akun Instagram studio dan menyiapkan bagian untuk cuplikan foto.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan studio saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama studio, foto, paket, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
   salon: {
     h1: "Jasa Pembuatan Website Salon & Beauty",
     metaTitle: "Jasa Pembuatan Website Salon & Beauty | SCH",

@@ -11,6 +11,34 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-bakery-flagship": {
+    nama: "SCH Bakery & Catering",
+    jenis: "Bakery & Catering",
+    deskripsi:
+      "Contoh website bakery dan catering: kategori dari kue ulang tahun sampai buffet, produk unggulan dengan harga, galeri, testimoni, FAQ pemesanan, dan tombol pesan via WhatsApp.",
+    fitur: ["Kategori produk", "Harga produk", "Galeri", "FAQ pemesanan", "Order WhatsApp"],
+  },
+  "contoh-baby-spa": {
+    nama: "Little Bloom Baby Spa",
+    jenis: "Baby Spa",
+    deskripsi:
+      "Contoh website baby spa dengan pemilih usia dan tujuan sesi, program dan paket berharga, profil terapis, standar kebersihan, panduan kunjungan pertama, dan booking WhatsApp.",
+    fitur: ["Baby Care Journey", "Program + paket", "Profil terapis", "Kebersihan", "Booking WhatsApp"],
+  },
+  "contoh-florist-flagship": {
+    nama: "SCH Florist",
+    jenis: "Florist",
+    deskripsi:
+      "Contoh website florist dengan pilihan bunga berdasarkan momen, bouquet unggulan berharga, info pengiriman hari yang sama, galeri, testimoni, dan FAQ.",
+    fitur: ["Pilih momen", "Bouquet + harga", "Info same-day delivery", "Galeri", "FAQ"],
+  },
+  "contoh-fotografer": {
+    nama: "Lumina Studio",
+    jenis: "Fotografer & Studio Foto",
+    deskripsi:
+      "Contoh website fotografer dengan portofolio berfilter, proyek pilihan, tiga paket dengan rincian harga, testimoni klien, FAQ, dan booking WhatsApp per paket.",
+    fitur: ["Portofolio berfilter", "Paket + harga", "Booking per paket", "Testimoni", "FAQ"],
+  },
   "contoh-salon": {
     nama: "Miin Beauty Studio",
     jenis: "Salon & Beauty Studio",
