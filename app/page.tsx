@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import { Suspense, useEffect, useRef, useState } from "react";
 import {
   motion,
@@ -66,7 +67,7 @@ function HeroPhoto() {
     // FIX #6: cursor-none dihapus
     <motion.div
       ref={containerRef}
-      className="relative w-full max-w-[200px] sm:max-w-[280px] md:max-w-[380px]"
+      className="relative w-full max-w-[150px] sm:max-w-[280px] md:max-w-[380px]"
       style={{ perspective: 1000 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -90,7 +91,7 @@ function HeroPhoto() {
         />
 
         {/* Foto: next/image, host lokal */}
-        <div className="relative h-[260px] sm:h-[360px] md:h-[460px] w-full overflow-hidden rounded-2xl">
+        <div className="relative h-[190px] sm:h-[360px] md:h-[460px] w-full overflow-hidden rounded-2xl">
           <Image
             src={PHOTO_PORTRAIT}
             alt="Rian Riyandi"
@@ -147,7 +148,7 @@ function HeroLeft() {
         {...fade(0.1)}
         className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/60"
       >
-        Websites • Automation • AI • Data
+        Website • Automation • AI • Custom Systems
       </motion.p>
 
       <h1
@@ -178,11 +179,30 @@ function HeroLeft() {
         {...fade(0.5)}
         className="max-w-sm text-2xl sm:text-3xl font-bold leading-snug text-white"
       >
-        I BUILD DIGITAL SYSTEMS FOR BUSINESSES.
+        I BUILD WEBSITES &amp; DIGITAL SYSTEMS FOR BUSINESSES.
+      </motion.p>
+
+      <motion.p
+        {...fade(0.6)}
+        className="max-w-sm text-sm sm:text-base leading-relaxed text-neutral-400"
+      >
+        Jasa pembuatan website untuk bisnis &amp; UMKM dengan 40+ template siap
+        dikustomisasi — plus automation dan custom systems.
       </motion.p>
 
       <motion.div {...fade(0.7)}>
-        <EnterButton href="/portfolio" label="START A PROJECT →" />
+        <div className="flex flex-col gap-3">
+          <EnterButton href="/portfolio" label="START A PROJECT →" />
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan-400 transition-all hover:border-cyan-400 hover:bg-cyan-400/10"
+          >
+            EXPLORE WEBSITES
+          </Link>
+          <p className="hidden md:block font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-400/60">
+            40+ Templates · Custom Development · Automation &amp; AI
+          </p>
+        </div>
       </motion.div>
     </div>
   );
@@ -266,6 +286,10 @@ export default function Home() {
             <HeroPhoto />
           </div>
         </div>
+
+        <p className="absolute bottom-5 left-0 right-0 z-10 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-400/60 md:hidden">
+          40+ Templates · Custom Dev · Automation
+        </p>
 
         {isMobile === false && <ScrollCue />}
       </section>
