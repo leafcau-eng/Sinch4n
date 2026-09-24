@@ -9,6 +9,11 @@ export type IndustryContent = {
   cocokUntuk: string[] | null;
   harga: string | null;
   faqs: { q: string; a: string }[] | null;
+  metaTitle?: string | null;
+  metaDescription?: string | null;
+  heroImage?: string | null;
+  heroAlt?: string | null;
+  edukasi?: { judul: string; paragraf: string[] } | null;
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
