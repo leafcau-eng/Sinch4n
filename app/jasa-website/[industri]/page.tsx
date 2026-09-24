@@ -69,7 +69,7 @@ export default async function IndustriPage({ params }: Props) {
           <span className="text-neutral-300">{group.label}</span>
         </nav>
 
-        <h1 className="font-display text-3xl font-bold text-white md:text-4xl">
+        <h1 className="bg-gradient-to-r from-white via-cyan-300 to-purple-400 bg-clip-text font-display text-3xl font-bold text-transparent md:text-4xl">
           {content?.h1 ?? `Jasa Pembuatan Website ${group.label}`}
         </h1>
 
@@ -92,7 +92,7 @@ export default async function IndustriPage({ params }: Props) {
 
         {content?.edukasi && content.edukasi.paragraf.length > 0 && (
           <section className="mt-12">
-            <h2 className="font-display text-xl text-white">{content.edukasi.judul}</h2>
+            <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">{content.edukasi.judul}</h2>
             <div className="mt-4 grid gap-4 text-neutral-300 leading-relaxed">
               {content.edukasi.paragraf.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -102,7 +102,7 @@ export default async function IndustriPage({ params }: Props) {
         )}
 
         <section className="mt-12">
-          <h2 className="font-display text-xl text-white">Contoh Website {group.label}</h2>
+          <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">Contoh Website {group.label}</h2>
           <ul className="mt-4 grid gap-4">
             {group.demos.map((d) => {
               const detail = DEMO_DETAILS[d];
@@ -127,7 +127,7 @@ export default async function IndustriPage({ params }: Props) {
                     href={detail.url ?? demoUrl(d)}
                     target="_blank"
                     rel="noopener"
-                    className="group block overflow-hidden rounded-xl border border-white/10 transition-colors hover:border-cyan-400"
+                    className="group block overflow-hidden rounded-xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/[0.06] via-transparent to-purple-500/[0.06] transition-colors hover:border-cyan-400"
                   >
                     {detail.image && (
                       <div className="relative aspect-video w-full">
@@ -141,23 +141,26 @@ export default async function IndustriPage({ params }: Props) {
                       </div>
                     )}
                     <div className="p-4">
-                      <p className="font-mono text-[11px] uppercase tracking-wide text-cyan-400/70">
-                        {detail.jenis}
-                      </p>
-                      <h3 className="mt-1 text-lg text-white">{detail.nama}</h3>
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="font-mono text-[11px] uppercase tracking-wide text-purple-300/90">
+                          {detail.jenis}
+                        </p>
+                        <span className="rounded-full bg-cyan-400 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide text-black">
+                          Lihat Website ↗
+                        </span>
+                      </div>
+                      <h3 className="mt-3 bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-400 bg-clip-text text-xl font-bold text-transparent">{detail.nama}</h3>
                       <p className="mt-2 text-sm text-neutral-400">{detail.deskripsi}</p>
                       {detail.fitur && detail.fitur.length > 0 && (
                         <ul className="mt-3 flex flex-wrap gap-2 font-mono text-[11px]">
                           {detail.fitur.map((x) => (
-                            <li key={x} className="rounded-full border border-white/10 px-2.5 py-1">
+                            <li key={x} className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2.5 py-1 text-cyan-100">
                               {x}
                             </li>
                           ))}
                         </ul>
                       )}
-                      <span className="mt-4 inline-block font-mono text-sm text-cyan-400">
-                        Lihat Website →
-                      </span>
+                      <span className="mt-5 flex w-full items-center justify-center rounded-full bg-cyan-400 px-6 py-3 font-mono text-sm font-bold uppercase tracking-wide text-black shadow-[0_0_20px_rgba(0,245,255,0.35)] transition-transform group-hover:scale-[1.02]">Lihat Website →</span>
                     </div>
                   </a>
                 </li>
@@ -168,7 +171,7 @@ export default async function IndustriPage({ params }: Props) {
 
         {content?.features && content.features.length > 0 && (
           <section className="mt-12">
-            <h2 className="font-display text-xl text-white">
+            <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">
               Fitur Website {group.label}
             </h2>
             <ul className="mt-4 grid gap-2 font-mono text-sm sm:grid-cols-2">
@@ -183,7 +186,7 @@ export default async function IndustriPage({ params }: Props) {
 
         {content?.cocokUntuk && content.cocokUntuk.length > 0 && (
           <section className="mt-12">
-            <h2 className="font-display text-xl text-white">
+            <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">
               Website {group.label} Cocok untuk
             </h2>
             <ul className="mt-4 flex flex-wrap gap-2 font-mono text-xs">
@@ -198,14 +201,14 @@ export default async function IndustriPage({ params }: Props) {
 
         {content?.harga && (
           <section className="mt-12">
-            <h2 className="font-display text-xl text-white">Harga</h2>
+            <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">Harga</h2>
             <p className="mt-3 text-neutral-300">{content.harga}</p>
           </section>
         )}
 
         {content?.faqs && content.faqs.length > 0 && (
           <section className="mt-12">
-            <h2 className="font-display text-xl text-white">FAQ</h2>
+            <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">FAQ</h2>
             <div className="mt-4 grid gap-4">
               {content.faqs.map((f) => (
                 <div key={f.q}>
@@ -218,7 +221,7 @@ export default async function IndustriPage({ params }: Props) {
         )}
 
         <section className="mt-16 rounded-2xl border border-cyan-400/20 p-6 text-center">
-          <h2 className="font-display text-xl text-white">
+          <h2 className="font-display text-xl font-bold text-white">
             Butuh website {group.label}?
           </h2>
           <p className="mt-2 text-sm text-neutral-400">
