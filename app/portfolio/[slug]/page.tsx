@@ -56,6 +56,7 @@ export async function generateMetadata({
     return {
       title: project.title,
       description: project.shortDescription,
+      alternates: { canonical: `/portfolio/${slug}` },
     };
   }
 
@@ -65,6 +66,7 @@ export async function generateMetadata({
     return {
       title: categoryLabel,
       description: `${categoryLabel} projects and templates.`,
+      alternates: { canonical: `/portfolio/${slug}` },
     };
   }
 

@@ -10,7 +10,6 @@ const SITE_DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  alternates: { canonical: "/" },
   title: {
     default: SITE_TITLE,
     template: "%s | SCH",

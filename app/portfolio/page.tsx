@@ -29,6 +29,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Portfolio",
+  alternates: { canonical: "/portfolio" },
   description:
     "Selected work, systems, and business websites built by Rian Riyandi -- AI automation, prospecting, and conversion-focused websites, built end to end.",
 };
