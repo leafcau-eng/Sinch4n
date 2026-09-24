@@ -11,6 +11,41 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-rental": {
+    nama: "Bandung Car Rental",
+    jenis: "Rental Mobil & Kendaraan",
+    deskripsi:
+      "Contoh website rental dengan katalog armada dari city car sampai bus, harga per hari, status ketersediaan, area layanan, alur booking, dan booking via WhatsApp.",
+    fitur: ["Katalog armada", "Harga per hari", "Status ketersediaan", "Area layanan", "Booking WhatsApp"],
+  },
+  "contoh-peternakan-flagship": {
+    nama: "Peternakan Barokah Qurban",
+    jenis: "Peternakan Qurban & Aqiqah",
+    deskripsi:
+      "Contoh website peternakan dengan paket domba dan sapi berbobot dan berharga, paket aqiqah, alur pemesanan, galeri kandang, FAQ, dan pesan via WhatsApp.",
+    fitur: ["Paket + bobot + harga", "Alur pemesanan", "Galeri kandang", "FAQ", "Pesan WhatsApp"],
+  },
+  "contoh-advokat-flagship": {
+    nama: "Kantor Hukum Wijaya & Rekan",
+    jenis: "Advokat & Kantor Hukum",
+    deskripsi:
+      "Contoh website kantor hukum dengan Konsultasi Finder, bidang praktik, profil tim advokat, alur konsultasi empat langkah, FAQ, dan konsultasi via WhatsApp.",
+    fitur: ["Konsultasi Finder", "Bidang praktik", "Profil tim", "Alur konsultasi", "WhatsApp"],
+  },
+  "contoh-las-fabrikasi-flagship": {
+    nama: "Las Perkasa Jaya",
+    jenis: "Las & Fabrikasi",
+    deskripsi:
+      "Contoh website bengkel las dengan daftar layanan, kisaran harga per meter, alur kerja, galeri hasil kerja berketerangan proyek, FAQ, dan estimasi via WhatsApp.",
+    fitur: ["Daftar layanan", "Kisaran harga", "Alur kerja", "Galeri hasil kerja", "Estimasi WhatsApp"],
+  },
+  "contoh-percetakan-kemasan-flagship": {
+    nama: "Cetak Cepat Jaya",
+    jenis: "Percetakan & Kemasan",
+    deskripsi:
+      "Contoh website percetakan dengan katalog berfilter kategori, harga per lembar dan per pcs, cara pesan tiga langkah, promo, FAQ, dan order via WhatsApp.",
+    fitur: ["Katalog berfilter", "Harga per satuan", "Cara pesan", "Promo", "Order WhatsApp"],
+  },
   "contoh-bakery-flagship": {
     nama: "SCH Bakery & Catering",
     jenis: "Bakery & Catering",

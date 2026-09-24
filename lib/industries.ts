@@ -17,6 +17,269 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  rental: {
+    h1: "Jasa Pembuatan Website Rental Mobil",
+    metaTitle: "Jasa Pembuatan Website Rental Mobil | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk rental mobil dan kendaraan. Katalog armada dengan harga per hari, status ketersediaan, area layanan, dan booking WhatsApp.",
+    intro:
+      "Website untuk rental mobil, van, dan bus pariwisata. Katalog armada lengkap dengan harga per hari dan status ketersediaan, cara booking yang jelas, dan tombol booking lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Apa yang Dicari Penyewa Sebelum Menghubungi Rental?",
+      paragraf: [
+        "Orang yang mencari rental biasanya ingin cepat tahu: unit apa yang tersedia, berapa harga per hari, berapa kapasitas dan jenis transmisinya, serta apakah bisa dengan sopir. Kalau semua itu harus ditanyakan lewat chat, prosesnya lambat.",
+        "Website menampilkan katalog per jenis kendaraan (city car, MPV, SUV, van, luxury, bus) dengan kapasitas, transmisi, bahan bakar, tahun, harga, dan status tersedia atau sedang disewa.",
+        "Cara booking dijelaskan langkah demi langkah, area layanan ditampilkan, dan penyewa cukup menekan tombol WhatsApp untuk menanyakan ketersediaan.",
+      ],
+    },
+    features: [
+      "Katalog armada dengan filter jenis kendaraan",
+      "Spesifikasi tiap unit: kapasitas, transmisi, bahan bakar, tahun",
+      "Harga per hari",
+      "Status ketersediaan dan label promo",
+      "Alur booking langkah demi langkah",
+      "Area layanan dan antar-jemput",
+      "Promo spesial",
+      "Testimoni pelanggan",
+      "FAQ sewa",
+      "Booking via WhatsApp, alamat, dan jam layanan",
+    ],
+    cocokUntuk: ["Rental mobil", "Rental kendaraan", "Sewa van dan bus", "Rental dengan sopir", "Transfer bandara"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah website rental bisa menampilkan harga per unit?",
+        a: "Bisa. Contoh website menampilkan harga per hari untuk tiap unit, dari city car sampai bus pariwisata.",
+      },
+      {
+        q: "Apakah status ketersediaan unit bisa ditampilkan?",
+        a: "Bisa. Contoh website memberi label Tersedia, Disewa, atau Promo pada tiap unit.",
+      },
+      {
+        q: "Bagaimana penyewa memesan lewat website?",
+        a: "Contoh website memakai tombol booking yang membuka WhatsApp dengan pesan yang sudah terisi, serta penjelasan alur booking empat langkah.",
+      },
+      {
+        q: "Apakah area layanan dan antar-jemput bisa dicantumkan?",
+        a: "Bisa. Contoh website menampilkan daftar area layanan, termasuk transfer bandara dan hotel.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan rental saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama rental, armada, harga, foto, area, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  peternakan: {
+    h1: "Jasa Pembuatan Website Peternakan",
+    metaTitle: "Jasa Pembuatan Website Peternakan & Ternak Qurban | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk peternakan dan penjual ternak qurban dan aqiqah. Paket ternak dengan bobot dan harga, alur pesan, galeri kandang, dan WhatsApp.",
+    intro:
+      "Website untuk peternakan dan penjual ternak qurban dan aqiqah. Paket domba dan sapi dengan bobot dan harga, alur pemesanan, kondisi kandang, dan tombol pesan lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pembeli Ternak Ingin Yakin Sebelum Bayar",
+      paragraf: [
+        "Membeli ternak qurban atau aqiqah adalah keputusan besar. Pembeli ingin tahu jenis dan bobot ternak, harganya, bagaimana ternak dirawat, apakah bisa dilihat langsung, dan kapan diantar.",
+        "Website menjawabnya dengan paket ternak yang menampilkan bobot dan harga, bagian standar dan sertifikasi, galeri kandang, alur pemesanan dari pilih ternak sampai kirim, serta FAQ tentang kunjungan ke kandang dan jadwal pengiriman.",
+        "Pembeli lalu bisa memesan atau menanyakan ketersediaan lewat WhatsApp.",
+      ],
+    },
+    features: [
+      "Paket ternak dengan bobot dan harga",
+      "Paket aqiqah",
+      "Alur pemesanan: pilih ternak, booking dan DP, cek kandang, kirim",
+      "Bagian standar dan sertifikasi peternakan",
+      "Galeri kandang dan ternak",
+      "Testimoni pembeli",
+      "FAQ kunjungan kandang dan pengiriman",
+      "Pesan via WhatsApp, alamat, dan jam kunjungan",
+    ],
+    cocokUntuk: ["Peternakan domba", "Peternakan sapi", "Penjual ternak qurban", "Paket aqiqah"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah website peternakan bisa menampilkan paket dan harga ternak?",
+        a: "Bisa. Contoh website menampilkan paket domba dan sapi dengan kisaran bobot dan harga, serta paket aqiqah.",
+      },
+      {
+        q: "Bagaimana pembeli memesan lewat website?",
+        a: "Contoh website menjelaskan alur empat langkah, dan tombol pesan membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah bisa menampilkan sertifikasi dan standar kesehatan ternak?",
+        a: "Bisa. Contoh website punya bagian khusus untuk standar dan sertifikasi, yang isinya Anda sesuaikan dengan kondisi peternakan Anda.",
+      },
+      {
+        q: "Apakah kondisi kandang bisa ditampilkan?",
+        a: "Bisa. Contoh website punya galeri kawanan ternak dan fasilitas kandang, serta info alamat dan jam kunjungan.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan peternakan saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama, paket, harga, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  advokat: {
+    h1: "Jasa Pembuatan Website Advokat & Kantor Hukum",
+    metaTitle: "Jasa Pembuatan Website Advokat & Kantor Hukum | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk advokat dan kantor hukum. Bidang praktik, profil tim, alur konsultasi, FAQ, dan tombol konsultasi via WhatsApp.",
+    intro:
+      "Website untuk advokat, kantor hukum, dan konsultan hukum. Bidang praktik, profil tim, alur konsultasi, dan FAQ dijelaskan dengan jelas, lalu calon klien bisa mengajukan konsultasi lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Calon Klien Hukum Mencari Kejelasan",
+      paragraf: [
+        "Orang yang sedang menghadapi masalah hukum biasanya belum tahu harus ke siapa. Mereka perlu memahami bidang apa yang ditangani, siapa advokatnya, bagaimana proses konsultasi, dan bagaimana menghubungi kantor.",
+        "Contoh di bawah membantu dengan Konsultasi Finder: calon klien memilih situasinya (pidana, perdata, korporat, atau keluarga), lalu melihat bidang praktik yang sesuai. Bidang praktik, profil tim, dan alur konsultasi empat langkah tampil di halaman yang sama.",
+        "Untuk kantor hukum, isi website sebaiknya disesuaikan dengan ketentuan kode etik profesi advokat.",
+      ],
+    },
+    features: [
+      "Konsultasi Finder: pilih situasi hukum",
+      "Bidang praktik dengan tombol konsultasi per bidang",
+      "Profil tim advokat dan bidang keahlian",
+      "Alur konsultasi empat langkah",
+      "Wilayah praktik",
+      "Galeri kantor",
+      "FAQ konsultasi",
+      "Konsultasi via WhatsApp, alamat, dan jam kerja",
+    ],
+    cocokUntuk: ["Advokat", "Kantor hukum", "Firma hukum", "Konsultan hukum"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apa yang tampil di website kantor hukum?",
+        a: "Contoh website menampilkan bidang praktik, profil tim, alur konsultasi, wilayah praktik, galeri kantor, FAQ, dan kontak.",
+      },
+      {
+        q: "Apa itu Konsultasi Finder?",
+        a: "Fitur di contoh website tempat calon klien memilih situasinya, misalnya pidana, perdata, korporat, atau keluarga, untuk menemukan bidang praktik yang tepat.",
+      },
+      {
+        q: "Bagaimana calon klien menghubungi kantor?",
+        a: "Tombol konsultasi membuka WhatsApp dengan pesan yang sudah terisi. Alamat dan jam kerja juga tampil di halaman.",
+      },
+      {
+        q: "Apakah isi website bisa disesuaikan dengan kode etik advokat?",
+        a: "Bisa. Semua teks di template bisa diganti, sehingga Anda dapat menyesuaikan klaim dan bagian yang ditampilkan dengan ketentuan profesi.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan kantor saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama kantor, tim, bidang praktik, foto, dan kontak diganti sesuai kantor Anda.",
+      },
+    ],
+  },
+  "las-fabrikasi": {
+    h1: "Jasa Pembuatan Website Las & Fabrikasi",
+    metaTitle: "Jasa Pembuatan Website Las & Fabrikasi | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk bengkel las dan fabrikasi. Daftar layanan, kisaran harga per meter, alur kerja, galeri hasil, dan estimasi via WhatsApp.",
+    intro:
+      "Website untuk bengkel las dan fabrikasi: pagar besi, canopy, railing, teralis, dan pekerjaan custom. Layanan, kisaran harga, alur kerja, dan hasil kerja tampil jelas, dan calon pelanggan bisa meminta estimasi lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pelanggan Las Ingin Tahu Harga dan Prosesnya",
+      paragraf: [
+        "Pelanggan pekerjaan las biasanya membandingkan beberapa bengkel. Mereka ingin tahu jenis pekerjaan yang diterima, kisaran harga per meter, bagaimana prosesnya, dan seperti apa hasil kerja sebelumnya.",
+        "Website menampilkan daftar layanan, kisaran harga per meter atau per meter persegi dengan catatan bahwa harga akhir tergantung model dan material, alur kerja dari kirim ukuran sampai pemasangan, dan galeri hasil kerja dengan keterangan proyek.",
+        "Calon pelanggan cukup mengirim ukuran dan foto lokasi lewat WhatsApp untuk meminta estimasi.",
+      ],
+    },
+    features: [
+      "Daftar layanan: pagar, canopy, railing, teralis, fabrikasi custom",
+      "Kisaran harga per meter atau per meter persegi",
+      "Alur kerja: kirim ukuran, estimasi, pengerjaan, pemasangan",
+      "Galeri hasil kerja dengan keterangan proyek",
+      "Testimoni pelanggan",
+      "FAQ pengerjaan",
+      "Tombol hitung estimasi via WhatsApp",
+      "Alamat bengkel",
+    ],
+    cocokUntuk: ["Bengkel las", "Fabrikasi besi", "Pagar dan canopy", "Railing dan teralis", "Konstruksi baja ringan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Bisakah website bengkel las menampilkan kisaran harga?",
+        a: "Bisa. Contoh website menampilkan kisaran harga per meter atau per meter persegi untuk pagar, canopy, dan railing, dengan catatan harga akhir tergantung model dan material.",
+      },
+      {
+        q: "Bagaimana pelanggan meminta estimasi?",
+        a: "Tombol hitung estimasi membuka WhatsApp dengan pesan yang sudah terisi, lalu pelanggan mengirim ukuran dan foto lokasi.",
+      },
+      {
+        q: "Bisakah hasil kerja ditampilkan?",
+        a: "Bisa. Contoh website punya galeri hasil kerja lengkap dengan keterangan jenis pekerjaan dan lokasi.",
+      },
+      {
+        q: "Bisakah alur kerja dijelaskan di website?",
+        a: "Bisa. Contoh website menjelaskan empat langkah: kirim ukuran, terima estimasi, proses pengerjaan, lalu pasang dan cek.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan bengkel saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama bengkel, layanan, harga, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  percetakan: {
+    h1: "Jasa Pembuatan Website Percetakan & Kemasan",
+    metaTitle: "Jasa Pembuatan Website Percetakan & Kemasan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk percetakan dan kemasan custom. Katalog dengan harga per lembar dan per pcs, cara pesan, promo, FAQ, dan order via WhatsApp.",
+    intro:
+      "Website untuk percetakan, fotocopy, dan kemasan custom. Katalog produk dengan harga per lembar, per pcs, atau per meter persegi, cara pesan yang jelas, dan tombol order lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pelanggan Cetak Ingin Harga yang Jelas",
+      paragraf: [
+        "Pelanggan percetakan datang dengan kebutuhan yang berbeda: dokumen, stiker, banner, undangan, atau kemasan produk. Yang mereka tanyakan hampir selalu sama: berapa harganya, minimal order berapa, dan berapa lama jadi.",
+        "Website menampilkan katalog per kategori dengan harga per lembar, per pcs, per meter persegi, atau per box, cara pesan tiga langkah, promo, dan FAQ tentang minimal order, format file, dan lama pengerjaan.",
+        "Pelanggan bisa langsung mengirim desain atau bertanya lewat WhatsApp.",
+      ],
+    },
+    features: [
+      "Katalog dengan filter kategori: dokumen, kemasan, stiker dan label, foto dan banner, undangan dan kartu nama",
+      "Harga per lembar, per pcs, per meter persegi, atau per box",
+      "Label Bestseller dan Baru",
+      "Galeri hasil cetak dan kemasan",
+      "Cara pesan tiga langkah",
+      "Promo",
+      "Testimoni pelanggan",
+      "FAQ minimal order, format file, dan lama pengerjaan",
+      "Order via WhatsApp, alamat toko",
+    ],
+    cocokUntuk: ["Percetakan", "Fotocopy dan print", "Kemasan custom UMKM", "Stiker dan label", "Banner dan undangan"],
+    harga: null,
+    faqs: [
+      {
+        q: "Bisakah website percetakan menampilkan daftar harga?",
+        a: "Bisa. Contoh website menampilkan harga per lembar, per pcs, per meter persegi, dan per box, dikelompokkan per kategori produk.",
+      },
+      {
+        q: "Bagaimana pelanggan memesan?",
+        a: "Contoh website menjelaskan tiga langkah: kirim desain, konfirmasi harga dan jumlah, lalu cetak dan ambil atau kirim. Tombol order membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Bisakah minimal order dan waktu pengerjaan dijelaskan?",
+        a: "Bisa. Contoh website punya bagian FAQ untuk minimal order kemasan, format file desain, dan lama pengerjaan.",
+      },
+      {
+        q: "Bisakah hasil cetak ditampilkan?",
+        a: "Bisa. Contoh website punya galeri proses cetak, finishing kemasan, dan hasil kemasan custom.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan percetakan saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama toko, produk, harga, foto, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
   bakery: {
     h1: "Jasa Pembuatan Website Bakery",
     metaTitle: "Jasa Pembuatan Website Bakery & Toko Kue | SCH",
