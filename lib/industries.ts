@@ -17,6 +17,362 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  kuliner: {
+    h1: "Jasa Pembuatan Website Kuliner & Catering",
+    metaTitle: "Jasa Pembuatan Website Kuliner & Catering | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk usaha kuliner dan catering. Menu berfilter dengan harga, promo, testimoni, dan pesan via WhatsApp. Lihat contohnya.",
+    intro:
+      "Website untuk usaha kuliner dan catering: nasi box, rice bowl, sampai paket acara. Menu berfilter kategori dengan harga, promo, dan tombol pesan yang mengarah ke WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pemesan Catering Membandingkan Menu dan Harga",
+      paragraf: [
+        "Pemesan catering, baik untuk acara kantor maupun keluarga, biasanya membandingkan beberapa penyedia berdasarkan menu, harga per porsi, dan area pengiriman sebelum memutuskan.",
+        "Website menampilkan menu berfilter kategori (ayam, sapi, seafood, rice bowl, vegetarian, snack, dessert) dengan harga per item, promo ongkir, dan testimoni dari pemesan acara besar maupun kecil.",
+        "Tombol pesan membuka WhatsApp dengan pesan yang sudah terisi, sehingga pemesan bisa langsung konsultasi jumlah porsi dan tanggal acara.",
+      ],
+    },
+    features: [
+      "Menu berfilter kategori dengan harga",
+      "Promo ongkir atau minimal pemesanan",
+      "Testimoni dari pemesan acara",
+      "Pesan via WhatsApp",
+      "Alamat, jam operasional, dan kontak email/Instagram",
+    ],
+    cocokUntuk: ["Catering acara kantor", "Nasi box", "Catering pernikahan", "Rice bowl dan makanan sehat"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah menu dan harga bisa ditampilkan lengkap di website?",
+        a: "Bisa. Contoh website menampilkan menu berfilter kategori lengkap dengan harga per item.",
+      },
+      {
+        q: "Apakah website bisa menampilkan promo pengiriman?",
+        a: "Bisa. Contoh website menampilkan promo gratis ongkir untuk minimal pemesanan tertentu.",
+      },
+      {
+        q: "Bagaimana cara memesan lewat website?",
+        a: "Tombol pesan membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah bisa menampilkan testimoni dari acara besar seperti acara kantor?",
+        a: "Bisa. Contoh website menampilkan testimoni dari pemesan acara kantor dengan jumlah porsi besar.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan usaha catering saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama usaha, menu, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  kafe: {
+    h1: "Jasa Pembuatan Website Kafe",
+    metaTitle: "Jasa Pembuatan Website Kafe & Coffee Shop | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk kafe dan coffee shop. Menu andalan, fasilitas workspace, jadwal event komunitas, galeri interior, dan kontak WhatsApp.",
+    intro:
+      "Website untuk kafe dan coffee shop. Menu andalan dengan harga, fasilitas untuk kerja atau nongkrong, jadwal event komunitas, dan galeri interior untuk menunjukkan suasana tempat.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pengunjung Kafe Mencari Suasana, Bukan Cuma Menu",
+      paragraf: [
+        "Berbeda dari resto pada umumnya, pengunjung kafe sering memilih tempat berdasarkan suasana dan fasilitas: apakah nyaman untuk kerja, ada WiFi kencang, colokan cukup, atau ramah untuk bawa hewan peliharaan.",
+        "Website kafe bisa menonjolkan galeri interior, fasilitas workspace, dan jadwal event komunitas seperti live musik atau workshop, selain menu andalan dengan harga.",
+        "Cerita di balik kafe juga membantu membangun koneksi dengan pengunjung yang mencari tempat langganan, bukan sekadar transaksi satu kali.",
+      ],
+    },
+    features: [
+      "Menu andalan dan seasonal dengan harga",
+      "Fasilitas workspace: WiFi, colokan, AC, ramah meeting, pet friendly",
+      "Galeri interior berfilter",
+      "Jadwal event komunitas (workshop, live musik, cupping session)",
+      "Cerita tentang kafe",
+      "Lokasi, jam buka, dan kontak WhatsApp",
+    ],
+    cocokUntuk: ["Kafe", "Coffee shop", "Kafe untuk kerja (coworking-friendly)", "Kafe dengan event komunitas"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah menu kafe bisa ditampilkan lengkap dengan harga?",
+        a: "Bisa. Contoh website menampilkan menu andalan dan menu musiman dengan harga masing-masing.",
+      },
+      {
+        q: "Apakah fasilitas seperti WiFi dan colokan bisa dicantumkan?",
+        a: "Bisa. Contoh website punya bagian khusus fasilitas workspace: WiFi kencang, colokan tiap meja, AC, dan ramah untuk meeting.",
+      },
+      {
+        q: "Apakah jadwal event kafe bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan jadwal event rutin seperti latte art workshop dan acoustic night.",
+      },
+      {
+        q: "Bagaimana pengunjung menghubungi kafe?",
+        a: "Contoh website menyediakan tombol hubungi kami yang membuka WhatsApp.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan kafe saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama kafe, menu, fasilitas, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  "makanan-ringan": {
+    h1: "Jasa Pembuatan Website Makanan Ringan",
+    metaTitle: "Jasa Pembuatan Website Produsen Makanan Ringan & Camilan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk produsen makanan ringan dan camilan rumahan. Katalog varian berharga, info produksi, promo reseller, dan pesan via WhatsApp.",
+    intro:
+      "Website untuk produsen makanan ringan, camilan rumahan, dan reseller. Katalog varian dengan harga, informasi proses produksi, promo untuk pembelian partai besar, dan tombol pesan lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pembeli Camilan dan Reseller Punya Kebutuhan Berbeda",
+      paragraf: [
+        "Pembeli perorangan biasanya mencari rasa dan harga per pak, sedangkan reseller ingin tahu harga partai besar, minimal order, dan apakah kemasan bisa dicustom dengan brand mereka sendiri.",
+        "Website bisa melayani keduanya: katalog varian dengan harga eceran, promo untuk pembelian jumlah besar, dan FAQ khusus soal custom kemasan dan pengiriman luar kota untuk reseller.",
+        "Menampilkan proses produksi dan sertifikasi (jika ada) membantu meyakinkan pembeli soal kebersihan dan keamanan produk.",
+      ],
+    },
+    features: [
+      "Katalog varian berfilter rasa dengan harga",
+      "Promo untuk pembelian partai besar / reseller",
+      "Galeri proses produksi",
+      "FAQ custom kemasan dan pengiriman luar kota",
+      "Testimoni pembeli dan reseller",
+      "Pesan via WhatsApp",
+    ],
+    cocokUntuk: ["Produsen camilan rumahan", "Keripik dan snack kering", "Reseller makanan ringan", "Kue kering"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga tiap varian camilan bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan harga tiap varian, termasuk harga coret untuk produk promo.",
+      },
+      {
+        q: "Apakah website bisa melayani reseller dengan harga khusus?",
+        a: "Bisa. Contoh website punya promo khusus reseller dan partai besar, serta FAQ soal custom kemasan.",
+      },
+      {
+        q: "Apakah proses produksi bisa ditampilkan untuk meyakinkan pembeli?",
+        a: "Bisa. Contoh website punya galeri proses produksi dari pengeringan bahan sampai pengemasan.",
+      },
+      {
+        q: "Apakah info pengiriman luar kota bisa dijelaskan?",
+        a: "Bisa. Contoh website punya FAQ yang menjelaskan apakah produk bisa dikirim ke luar kota.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan produk saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama usaha, varian, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  kursus: {
+    h1: "Jasa Pembuatan Website Lembaga Kursus",
+    metaTitle: "Jasa Pembuatan Website Lembaga Kursus & Pelatihan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk lembaga kursus dan pelatihan skill. Program dengan harga dan durasi, profil pengajar, paket belajar, dan konsultasi via WhatsApp.",
+    intro:
+      "Website untuk lembaga kursus dan pelatihan skill, dari digital marketing sampai bahasa asing. Program dengan harga dan durasi, profil pengajar, paket belajar, dan tombol konsultasi gratis lewat WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Calon Peserta Kursus Membandingkan Program dan Pengajar",
+      paragraf: [
+        "Sebelum mendaftar, calon peserta ingin tahu program apa yang tersedia, berapa lama durasinya, berapa biayanya, dan siapa yang mengajar. Kredibilitas pengajar sering jadi faktor penentu, terutama untuk skill yang berhubungan dengan karir.",
+        "Website menampilkan program dengan harga dan durasi, profil pengajar beserta sertifikasi atau pengalamannya, paket belajar berjenjang dengan fasilitas berbeda, dan testimoni alumni yang sudah bekerja.",
+        "FAQ yang menjawab soal metode belajar, sertifikat, dan opsi cicilan membantu calon peserta yang masih ragu sebelum menghubungi admin.",
+      ],
+    },
+    features: [
+      "Program dengan harga dan durasi",
+      "Profil pengajar dan sertifikasi",
+      "Paket belajar berjenjang (basic, standard, premium)",
+      "Galeri suasana kelas",
+      "Testimoni alumni",
+      "FAQ metode belajar, sertifikat, dan cicilan",
+      "Konsultasi gratis via WhatsApp",
+    ],
+    cocokUntuk: ["Lembaga kursus skill", "Bimbingan belajar", "Kursus bahasa", "Pelatihan digital marketing dan IT"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah program kursus bisa ditampilkan lengkap dengan harga dan durasi?",
+        a: "Bisa. Contoh website menampilkan tiap program dengan durasi dan harga.",
+      },
+      {
+        q: "Apakah profil pengajar bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan foto, keahlian, dan sertifikasi tiap pengajar.",
+      },
+      {
+        q: "Apakah paket belajar dengan fasilitas berbeda bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan tiga paket dengan rincian fasilitas dan harga masing-masing.",
+      },
+      {
+        q: "Bagaimana calon peserta konsultasi sebelum mendaftar?",
+        a: "Tombol konsultasi gratis dan daftar sekarang membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan lembaga saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama lembaga, program, pengajar, dan kontak diganti sesuai lembaga Anda.",
+      },
+    ],
+  },
+  sekolah: {
+    h1: "Jasa Pembuatan Website Sekolah",
+    metaTitle: "Jasa Pembuatan Website Sekolah (PPDB) | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk sekolah dan pendaftaran siswa baru (PPDB). Program per jenjang dengan biaya, alur pendaftaran, ekstrakurikuler, dan FAQ orang tua.",
+    intro:
+      "Website untuk sekolah dan pendaftaran siswa baru (PPDB). Program per jenjang dengan biaya, alur pendaftaran langkah demi langkah, profil tenaga pendidik, ekstrakurikuler, dan FAQ yang sering ditanyakan orang tua.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Orang Tua Membutuhkan Kejelasan Saat Memilih Sekolah",
+      paragraf: [
+        "Memilih sekolah adalah keputusan penting bagi orang tua. Mereka ingin tahu kurikulum yang dipakai, biaya per tahun, syarat pendaftaran, jadwal gelombang pendaftaran, dan bagaimana sekolah berkomunikasi soal perkembangan anak.",
+        "Website sekolah menjawab itu lewat program per jenjang dengan biaya, alur pendaftaran dari isi formulir sampai hari pertama masuk, profil tenaga pendidik, ekstrakurikuler, dan galeri kegiatan serta prestasi.",
+        "FAQ soal jadwal pendaftaran, syarat dokumen, biaya, dan beasiswa membantu orang tua mendapat jawaban cepat sebelum menghubungi sekolah.",
+      ],
+    },
+    features: [
+      "Program per jenjang dengan biaya per tahun",
+      "Alur pendaftaran langkah demi langkah",
+      "Profil tenaga pendidik",
+      "Ekstrakurikuler per kategori",
+      "Galeri fasilitas, kegiatan, dan prestasi",
+      "Testimoni orang tua murid",
+      "FAQ jadwal, syarat, biaya, dan beasiswa",
+      "Kontak dan lokasi kampus via WhatsApp",
+    ],
+    cocokUntuk: ["Sekolah dasar", "Sekolah dengan program tahfidz atau keagamaan", "Sekolah dengan lebih dari satu kampus"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah biaya pendidikan per jenjang bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan biaya per tahun untuk tiap program, dari kelas rendah sampai program tahfidz tambahan.",
+      },
+      {
+        q: "Apakah alur pendaftaran bisa dijelaskan langkah demi langkah?",
+        a: "Bisa. Contoh website menjelaskan lima langkah pendaftaran dari isi formulir sampai hari pertama masuk sekolah.",
+      },
+      {
+        q: "Apakah profil guru dan ekstrakurikuler bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan profil tenaga pendidik dan daftar ekstrakurikuler per kategori.",
+      },
+      {
+        q: "Apakah informasi beasiswa bisa dicantumkan di FAQ?",
+        a: "Bisa. Contoh website punya FAQ yang menjelaskan ketersediaan beasiswa dan cara pengajuannya, sesuai kebijakan sekolah masing-masing.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan sekolah saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama sekolah, program, biaya, dan kontak diganti sesuai sekolah Anda.",
+      },
+    ],
+  },
+  gym: {
+    h1: "Jasa Pembuatan Website Gym & Fitness",
+    metaTitle: "Jasa Pembuatan Website Gym & Fitness Club | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk gym dan fitness club. Paket membership dengan harga, program latihan, jadwal kelas, kalkulator BMI, dan join via WhatsApp.",
+    intro:
+      "Website untuk gym dan fitness club. Paket membership dengan harga, program latihan, profil trainer, jadwal kelas mingguan, kalkulator BMI, dan tombol join yang mengarah ke WhatsApp.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Calon Member Membandingkan Paket dan Fasilitas",
+      paragraf: [
+        "Calon member gym biasanya membandingkan harga membership antar tempat, fasilitas yang didapat, dan apakah ada trainer yang bisa membantu mereka mencapai target tertentu.",
+        "Website menampilkan paket membership berjenjang dengan rincian fasilitas, program latihan dengan harga per bulan, profil trainer, dan jadwal kelas mingguan supaya calon member tahu kapan kelas yang mereka minati berlangsung.",
+        "Kalkulator BMI sederhana bisa jadi alat interaktif yang membuat pengunjung website betah lebih lama sebelum akhirnya menghubungi admin untuk join.",
+      ],
+    },
+    features: [
+      "Paket membership berjenjang dengan rincian fasilitas dan harga",
+      "Program latihan dengan harga per bulan",
+      "Profil trainer",
+      "Jadwal kelas mingguan",
+      "Kalkulator BMI",
+      "Galeri fasilitas",
+      "Testimoni member",
+      "Join via WhatsApp",
+    ],
+    cocokUntuk: ["Gym", "Fitness club", "Studio yoga dan pilates", "Personal training"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah paket membership bisa ditampilkan lengkap dengan harga?",
+        a: "Bisa. Contoh website menampilkan beberapa paket membership dengan rincian fasilitas dan harga per bulan.",
+      },
+      {
+        q: "Apakah jadwal kelas gym bisa ditampilkan di website?",
+        a: "Bisa. Contoh website menampilkan jadwal kelas mingguan lengkap dengan nama instruktur dan durasi.",
+      },
+      {
+        q: "Apa itu kalkulator BMI di website gym?",
+        a: "Fitur interaktif di contoh website tempat pengunjung memasukkan tinggi dan berat badan untuk mengetahui kategori BMI mereka.",
+      },
+      {
+        q: "Bagaimana calon member join?",
+        a: "Tombol join dan pilih paket membuka WhatsApp dengan pesan yang sudah terisi.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan gym saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama gym, paket, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
+  "sports-club": {
+    h1: "Jasa Pembuatan Website Sports Club & Booking Lapangan",
+    metaTitle: "Jasa Pembuatan Website Sports Club & Booking Lapangan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk sports club dan penyewaan lapangan (padel, badminton, futsal). Booking lapangan, harga per jam, membership, dan event komunitas.",
+    intro:
+      "Website untuk sports club dan penyewaan lapangan olahraga seperti padel, badminton, dan futsal. Booking lapangan dengan harga per jam, paket membership, sewa alat, dan jadwal event komunitas.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Pemain Ingin Booking Cepat Tanpa Telepon Bolak-balik",
+      paragraf: [
+        "Pemain olahraga seperti padel, badminton, dan futsal ingin tahu lapangan mana yang kosong, harga per jamnya, dan bisa langsung booking tanpa harus menelepon dan menunggu balasan.",
+        "Website sports club menampilkan daftar lapangan per cabang olahraga dengan harga per jam dan fasilitasnya (indoor/outdoor, AC, kapasitas), paket membership dengan diskon booking, serta sewa alat untuk yang tidak bawa perlengkapan sendiri.",
+        "Jadwal event komunitas seperti turnamen atau main bareng mingguan membantu membangun komunitas pemain tetap di sekitar sports club.",
+      ],
+    },
+    features: [
+      "Daftar lapangan per cabang olahraga dengan harga per jam",
+      "Paket membership dengan diskon booking",
+      "Sewa alat (raket, bola, shuttlecock, loker)",
+      "Program coaching untuk pemula dan anak-anak",
+      "Jadwal event dan turnamen komunitas",
+      "Fasilitas: parkir, cafe, shower, musholla",
+      "Testimoni pemain",
+      "FAQ booking dan reschedule",
+    ],
+    cocokUntuk: ["Lapangan padel", "Lapangan badminton", "Lapangan futsal", "Sports club multi-cabang olahraga"],
+    harga: null,
+    faqs: [
+      {
+        q: "Apakah harga sewa lapangan per jam bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan harga per jam untuk tiap lapangan, dibedakan per cabang olahraga.",
+      },
+      {
+        q: "Apakah ada paket membership dengan diskon booking?",
+        a: "Bisa. Contoh website menampilkan paket guest, member, dan premium member dengan diskon booking yang berbeda.",
+      },
+      {
+        q: "Apakah sewa alat olahraga bisa dicantumkan?",
+        a: "Bisa. Contoh website menampilkan daftar sewa alat seperti raket, bola, shuttlecock, dan loker beserta harganya.",
+      },
+      {
+        q: "Apakah jadwal turnamen atau event komunitas bisa ditampilkan?",
+        a: "Bisa. Contoh website menampilkan jadwal event rutin dan turnamen komunitas.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan sports club saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama club, lapangan, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
   properti: {
     h1: "Jasa Pembuatan Website Properti",
     metaTitle: "Jasa Pembuatan Website Developer Properti | SCH",

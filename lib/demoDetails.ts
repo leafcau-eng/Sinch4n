@@ -11,6 +11,55 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-kuliner": {
+    nama: "SCH Culinary",
+    jenis: "Kuliner & Catering",
+    deskripsi:
+      "Contoh website catering dengan menu berfilter kategori dan harga, promo ongkir, testimoni pemesan acara kantor, dan pesan via WhatsApp.",
+    fitur: ["Menu berfilter + harga", "Promo ongkir", "Testimoni acara", "Pesan WhatsApp"],
+  },
+  "contoh-kafe": {
+    nama: "Kopi Rumaja",
+    jenis: "Kafe & Coffee Shop",
+    deskripsi:
+      "Contoh website kafe dengan Coffee Finder, menu andalan dan musiman, fasilitas workspace, galeri interior, dan jadwal event komunitas.",
+    fitur: ["Coffee Finder", "Menu + harga", "Fasilitas workspace", "Jadwal event"],
+  },
+  "contoh-makanan-ringan-flagship": {
+    nama: "Snack House Nusantara",
+    jenis: "Produsen Makanan Ringan",
+    deskripsi:
+      "Contoh website produsen camilan dengan katalog varian berfilter rasa dan harga, promo reseller, galeri proses produksi, dan pesan via WhatsApp.",
+    fitur: ["Katalog + harga", "Promo reseller", "Galeri produksi", "Pesan WhatsApp"],
+  },
+  "contoh-kursus": {
+    nama: "Cendekia Course Center",
+    jenis: "Lembaga Kursus & Pelatihan",
+    deskripsi:
+      "Contoh website lembaga kursus dengan program berharga dan durasi, profil pengajar, paket belajar berjenjang, testimoni alumni, dan konsultasi WhatsApp.",
+    fitur: ["Program + harga", "Profil pengajar", "Paket berjenjang", "Konsultasi WhatsApp"],
+  },
+  "contoh-sekolah": {
+    nama: "SDIT Al-Hikmah Bandung",
+    jenis: "Sekolah (PPDB)",
+    deskripsi:
+      "Contoh website sekolah dengan program per jenjang berbiaya, alur pendaftaran lima langkah, profil pendidik, ekstrakurikuler, dan FAQ pendaftaran.",
+    fitur: ["Program + biaya", "Alur pendaftaran", "Profil pendidik", "FAQ PPDB"],
+  },
+  "contoh-gym": {
+    nama: "Elite Fitness Club",
+    jenis: "Gym & Fitness Club",
+    deskripsi:
+      "Contoh website gym dengan paket membership berjenjang, program latihan berharga, profil trainer, jadwal kelas mingguan, dan kalkulator BMI.",
+    fitur: ["Membership + harga", "Jadwal kelas", "Profil trainer", "Kalkulator BMI"],
+  },
+  "contoh-sports-club-flagship": {
+    nama: "SCH Sports Club",
+    jenis: "Sports Club & Booking Lapangan",
+    deskripsi:
+      "Contoh website booking lapangan padel, badminton, dan futsal dengan harga per jam, paket membership, sewa alat, coaching, dan jadwal event.",
+    fitur: ["Booking lapangan", "Harga per jam", "Membership", "Coaching", "Event komunitas"],
+  },
   "contoh-property-elite": {
     nama: "Neo-Dago Group",
     jenis: "Developer Properti Mewah",
