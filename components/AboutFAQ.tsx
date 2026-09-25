@@ -1,26 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ABOUT_FAQS } from "@/lib/aboutFaqs";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
-
-export const ABOUT_FAQS = [
-  {
-    q: "Apa itu SCH Digital Agency?",
-    a: "SCH Digital Agency adalah agensi digital yang didirikan oleh Rian Riyandi, berfokus pada pembuatan website bisnis, AI automation, dan custom digital systems.",
-  },
-  {
-    q: "Di mana lokasi SCH Digital Agency?",
-    a: "SCH Digital Agency berlokasi di Kp. Haurwangi, Kec. Haurwangi, Kabupaten Cianjur, Jawa Barat.",
-  },
-  {
-    q: "Layanan apa saja yang ditawarkan SCH Digital Agency?",
-    a: "SCH Digital Agency menawarkan pembuatan website bisnis, AI automation, prospecting systems, dan custom digital systems untuk berbagai jenis usaha.",
-  },
-];
 
 export default function AboutFAQ() {
   return (

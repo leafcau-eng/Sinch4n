@@ -1,4 +1,4 @@
-import { ABOUT_FAQS } from "@/components/AboutFAQ";
+import { ABOUT_FAQS } from "@/lib/aboutFaqs";
 
 const SITE_URL = "https://sinch4n.vercel.app";
 
