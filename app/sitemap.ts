@@ -13,7 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   return [
     { url: `${BASE}/`, lastModified: now, priority: 1 },
-    { url: `${BASE}/portfolio`, lastModified: now, priority: 0.8 },
+    { url: `${BASE}/jasa-website`, lastModified: now, priority: 0.9 },
+    { url: `${BASE}/projects`, lastModified: now, priority: 0.8 },
     { url: `${BASE}/about`, lastModified: now, priority: 0.8 },
     ...industries,
   ];
