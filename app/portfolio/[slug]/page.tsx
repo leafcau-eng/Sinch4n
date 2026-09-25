@@ -109,7 +109,7 @@ export default async function PortfolioSlugPage({ params }: SlugPageProps) {
         <Navbar />
         <div className="px-6 pt-32 pb-8 md:px-12 text-center">
           <Link
-            href="/portfolio"
+            href="/projects"
             className="inline-block mb-6 font-mono text-[11px] text-cyan-400/70 hover:text-cyan-400 transition-colors"
           >
             ← Kembali ke Portfolio
@@ -151,7 +151,7 @@ function ProjectCaseStudy({
 
       <div className="px-6 py-24 md:px-16">
         <Link
-          href="/portfolio"
+          href="/projects"
           className="inline-block mb-8 font-mono text-[11px] text-cyan-400/70 hover:text-cyan-400 transition-colors"
         >
           ← Kembali ke Portfolio
