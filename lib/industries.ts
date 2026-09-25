@@ -17,6 +17,54 @@ export type IndustryContent = {
 };
 
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
+  umkm: {
+    h1: "Jasa Pembuatan Website UMKM & Jasa Umum",
+    metaTitle: "Jasa Pembuatan Website UMKM (Toko, Jasa, Custom) | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk UMKM: landing page usaha jasa, toko online dengan katalog, sampai order form interaktif. Lihat contoh berbagai gaya template.",
+    intro:
+      "Website untuk UMKM di luar kategori khusus di atas: usaha jasa serba guna, toko online, sampai landing page sederhana. Empat contoh di bawah menunjukkan gaya dan tingkat kompleksitas yang berbeda, dari landing page dasar sampai form order dengan kalkulasi harga otomatis.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: {
+      judul: "Website UMKM Tidak Harus Rumit untuk Efektif",
+      paragraf: [
+        "Tidak semua usaha butuh website dengan fitur kompleks. Usaha jasa cukup dengan landing page yang menjelaskan layanan, area kerja, dan cara menghubungi. Toko online butuh katalog produk dengan harga dan kategori. Sebagian usaha butuh form order dengan kalkulasi harga otomatis supaya pelanggan tahu total biaya sebelum mengirim pesan.",
+        "Empat contoh di bawah mewakili tingkat kebutuhan yang berbeda: landing page dasar, landing page dengan form order dan kalkulator harga, halaman usaha jasa dengan portofolio dan area layanan, serta toko online dengan katalog dan kategori produk.",
+        "Kalau usaha Anda tidak masuk kategori khusus di atas, salah satu gaya ini biasanya bisa jadi titik awal yang disesuaikan dengan kebutuhan Anda.",
+      ],
+    },
+    features: [
+      "Landing page dasar: hero, layanan, harga, testimoni, FAQ, kontak WhatsApp",
+      "Form order dengan kalkulator harga otomatis",
+      "Halaman usaha jasa: portofolio, cara kerja, area layanan",
+      "Toko online: katalog produk berkategori, harga, dan promo",
+    ],
+    cocokUntuk: ["Usaha jasa serba guna", "Toko online kelontong dan kebutuhan sehari-hari", "UMKM yang belum masuk kategori khusus"],
+    harga: null,
+    faqs: [
+      {
+        q: "Website mana yang cocok untuk usaha jasa seperti servis dan renovasi?",
+        a: "Contoh Maju Jaya Service menampilkan daftar layanan dengan harga mulai dari, area layanan, cara kerja, dan portofolio pekerjaan.",
+      },
+      {
+        q: "Website mana yang cocok untuk toko kelontong atau toko online?",
+        a: "Contoh Warung Hemat Online menampilkan katalog produk berkategori dengan harga dan promo.",
+      },
+      {
+        q: "Apakah bisa dibuatkan form order dengan hitungan harga otomatis?",
+        a: "Bisa. Salah satu contoh menampilkan form order yang menghitung total harga berdasarkan jumlah dan opsi tambahan, lalu mengirim rinciannya ke WhatsApp.",
+      },
+      {
+        q: "Kalau usaha saya tidak masuk kategori manapun di halaman jasa-website, bagaimana?",
+        a: "Empat contoh di halaman ini adalah gaya umum yang bisa disesuaikan dengan berbagai jenis UMKM. Sampaikan kebutuhan Anda lewat WhatsApp untuk didiskusikan.",
+      },
+      {
+        q: "Apakah contoh ini bisa disesuaikan dengan usaha saya?",
+        a: "Contoh di halaman ini adalah template demo dengan data contoh. Nama usaha, layanan atau produk, harga, dan kontak diganti sesuai bisnis Anda.",
+      },
+    ],
+  },
   kuliner: {
     h1: "Jasa Pembuatan Website Kuliner & Catering",
     metaTitle: "Jasa Pembuatan Website Kuliner & Catering | SCH",

@@ -11,6 +11,34 @@ export type DemoDetail = {
 };
 
 export const DEMO_DETAILS: Record<string, DemoDetail> = {
+  "contoh-basic": {
+    nama: "Bersih Laundry",
+    jenis: "Landing Page Dasar",
+    deskripsi:
+      "Contoh landing page dasar untuk usaha jasa (dicontohkan dengan laundry antar-jemput): daftar harga, cara pesan tiga langkah, testimoni, FAQ, dan chat WhatsApp.",
+    fitur: ["Daftar harga", "Cara pesan", "Testimoni", "FAQ", "Chat WhatsApp"],
+  },
+  "contoh-medium": {
+    nama: "Kilat Laundry",
+    jenis: "Landing Page + Form Order Otomatis",
+    deskripsi:
+      "Contoh landing page dengan form order interaktif (dicontohkan dengan laundry satuan): pilih layanan dan jumlah, harga terhitung otomatis, lalu kirim rincian ke WhatsApp.",
+    fitur: ["Form order interaktif", "Kalkulasi harga otomatis", "Before & after", "Kirim ke WhatsApp"],
+  },
+  "contoh-jasa": {
+    nama: "Maju Jaya Service",
+    jenis: "Usaha Jasa Serba Guna",
+    deskripsi:
+      "Contoh website usaha jasa (servis, renovasi, instalasi listrik, plumbing, AC) dengan harga mulai dari, cara kerja empat langkah, portofolio, area layanan, dan FAQ.",
+    fitur: ["Daftar layanan + harga", "Cara kerja", "Portofolio", "Area layanan", "FAQ"],
+  },
+  "contoh-toko-umkm": {
+    nama: "Warung Hemat Online",
+    jenis: "Toko Online / Retail",
+    deskripsi:
+      "Contoh toko online dengan katalog produk berkategori, harga dan promo diskon, keranjang belanja, ulasan pelanggan, dan info metode pembayaran.",
+    fitur: ["Katalog berkategori", "Harga + promo", "Keranjang belanja", "Metode pembayaran"],
+  },
   "contoh-kuliner": {
     nama: "SCH Culinary",
     jenis: "Kuliner & Catering",
