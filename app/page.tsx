@@ -195,7 +195,7 @@ function HeroLeft() {
 
       <motion.div {...fade(0.7)}>
         <div className="flex flex-col gap-3">
-          <EnterButton href="/portfolio" label="START A PROJECT →" />
+          <EnterButton href="/projects" label="START A PROJECT →" />
           <Link
             href="/jasa-website"
             className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan-400 transition-all hover:border-cyan-400 hover:bg-cyan-400/10"
@@ -332,7 +332,7 @@ export default function Home() {
               Motion graphics, interactive web experiences, and automation
               pipelines — crafted end to end.
             </p>
-            <EnterButton href="/portfolio" />
+            <EnterButton href="/projects" />
           </section>
         </>
       )}

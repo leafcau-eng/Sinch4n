@@ -13,10 +13,8 @@ import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Jasa Website", href: "/jasa-website" },
-  { label: "Work", href: "/portfolio#work" },
-  { label: "Systems", href: "/portfolio#systems" },
-  { label: "About", href: "/portfolio#about" },
-  { label: "Contact", href: "/portfolio#cta" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Navbar() {
