@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientOnly from "@/components/ClientOnly";
-import CustomCursor from "@/components/CustomCursor";
 import Script from "next/script";
 import { GA_MEASUREMENT_ID } from "@/lib/gtag";
 import Footer from "@/components/Footer";
@@ -42,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="bg-[#0a0a0a] antialiased cursor-none">
+      <body className="bg-[#0a0a0a] antialiased">
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
@@ -55,9 +53,6 @@ export default function RootLayout({
             gtag("config", "${GA_MEASUREMENT_ID}");
           `}
         </Script>
-        <ClientOnly>
-          <CustomCursor />
-        </ClientOnly>
         {children}
         <Footer />
       </body>
