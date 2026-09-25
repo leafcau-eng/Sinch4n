@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import CtaButton from "@/components/CtaButton";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -124,23 +125,8 @@ export default function HeroIntro() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-          <a
-            href="https://sch-demo.vercel.app/dashboard/new"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative px-8 py-3 rounded-full bg-cyan-400 text-black font-mono text-sm tracking-wide uppercase overflow-hidden transition-transform hover:scale-105"
-          >
-            <span className="relative z-10">Lihat Project</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </a>
-          <a
-            href="https://wa.me/6283870880997"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 rounded-full border border-cyan-400/40 text-cyan-400 font-mono text-sm tracking-wide uppercase transition-all hover:bg-cyan-400/10 hover:border-cyan-400"
-          >
-            Hubungi Saya
-          </a>
+          <CtaButton href="https://sch-demo.vercel.app/dashboard/new">Lihat Project</CtaButton>
+          <CtaButton href="https://wa.me/6283870880997" variant="secondary">Hubungi Saya</CtaButton>
         </div>
 
         <div className="flex items-center justify-center gap-4 flex-wrap">

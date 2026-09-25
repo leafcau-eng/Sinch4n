@@ -28,6 +28,7 @@
 // nggak punya navigasi sama sekali. Ditambahkan sekarang.
 
 import { notFound } from "next/navigation";
+import CtaButton from "@/components/CtaButton";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ProjectGrid from "@/components/ProjectGrid";
@@ -245,24 +246,10 @@ function ProjectCaseStudy({
           <div className="mt-10">
           <div className="flex gap-4">
             {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 rounded-full bg-cyan-400 text-black font-mono text-sm uppercase"
-              >
-                Live Demo →
-              </a>
+              <CtaButton href={project.liveUrl}>Live Demo →</CtaButton>
             )}
             {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 rounded-full border border-white/20 text-white font-mono text-sm uppercase"
-              >
-                GitHub →
-              </a>
+              <CtaButton href={project.githubUrl} variant="ghost">GitHub →</CtaButton>
             )}
           </div>
           {project.status === "draft" && project.liveUrl && (

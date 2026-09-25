@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import CtaButton from "@/components/CtaButton";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense, useEffect, useRef, useState } from "react";
@@ -196,12 +197,9 @@ function HeroLeft() {
       <motion.div {...fade(0.7)}>
         <div className="flex flex-col gap-3">
           <EnterButton href="/projects" label="START A PROJECT →" />
-          <Link
-            href="/jasa-website"
-            className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 px-8 py-3 font-mono text-sm uppercase tracking-[0.2em] text-cyan-400 transition-all hover:border-cyan-400 hover:bg-cyan-400/10"
-          >
+          <CtaButton href="/jasa-website" variant="secondary" external={false}>
             EXPLORE 40+ WEBSITES
-          </Link>
+          </CtaButton>
           <p className="hidden md:block font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-400/60">
             40+ Templates · Custom Development · Automation &amp; AI
           </p>

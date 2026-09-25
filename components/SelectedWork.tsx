@@ -22,6 +22,7 @@
 //   di baris atas, Business Website System / AI Radar di baris bawah.
 
 import Link from "next/link";
+import CtaButton from "@/components/CtaButton";
 import { motion } from "framer-motion";
 import { PROJECTS_V2, type ProjectV2 } from "@/lib/projects";
 
@@ -110,45 +111,21 @@ function WorkCardView({ card }: { card: WorkCard }) {
         {/* External URL -- <a target=_blank>, bukan <Link>, konsisten
             dengan liveUrl/githubUrl di bawah. */}
         {aggregate && (
-          <a
-            href={card.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[11px] px-4 py-2 rounded-full bg-cyan-400 text-black font-bold uppercase tracking-wide"
-          >
-            {card.ctaLabel}
-          </a>
+          <CtaButton href={card.href} size="sm">{card.ctaLabel}</CtaButton>
         )}
 
         {isPublicCaseStudy && (
-          <Link
-            href={`/portfolio/${card.slug}`}
-            className="font-mono text-[11px] px-4 py-2 rounded-full bg-cyan-400 text-black font-bold uppercase tracking-wide"
-          >
+          <CtaButton href={`/portfolio/${card.slug}`} size="sm" external={false}>
             View Case Study →
-          </Link>
+          </CtaButton>
         )}
 
         {!aggregate && card.liveUrl && (
-          <a
-            href={card.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[11px] px-4 py-2 rounded-full border border-cyan-400/40 text-cyan-300 uppercase tracking-wide"
-          >
-            Live
-          </a>
+          <CtaButton href={card.liveUrl} variant="secondary" size="sm">Live</CtaButton>
         )}
 
         {!aggregate && card.githubUrl && (
-          <a
-            href={card.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[11px] px-4 py-2 rounded-full border border-white/20 text-neutral-300 uppercase tracking-wide"
-          >
-            GitHub
-          </a>
+          <CtaButton href={card.githubUrl} variant="ghost" size="sm">GitHub</CtaButton>
         )}
       </div>
     </motion.div>

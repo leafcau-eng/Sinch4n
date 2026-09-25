@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CtaButton from "@/components/CtaButton";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -228,14 +229,12 @@ export default async function IndustriPage({ params }: Props) {
           <p className="mt-2 text-sm text-neutral-400">
             Ceritakan kebutuhan bisnis Anda, kami bantu dari template hingga custom.
           </p>
-          <a
+          <CtaButton
             href={`https://wa.me/6283870880997?text=${encodeURIComponent(`Halo, saya tertarik dengan jasa website ${group.label}.`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex rounded-full bg-cyan-400 px-8 py-3 font-mono text-sm uppercase tracking-wide text-black transition-transform hover:scale-105"
+            className="mt-5"
           >
             Mulai Project →
-          </a>
+          </CtaButton>
         </section>
 
         <FloatingWhatsApp
