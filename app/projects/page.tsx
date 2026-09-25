@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import SelectedWork from "@/components/SelectedWork";
 import ProjectNodeGraph, { EcosystemNode } from "@/components/ProjectNodeGraph";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { createClient } from "@/lib/supabase-server";
 
 export const metadata: Metadata = {
@@ -46,6 +47,10 @@ export default async function ProjectsPage() {
         </p>
         <ProjectNodeGraph nodes={ecosystemNodes} />
       </div>
+      <FloatingWhatsApp
+        phone="6283870880997"
+        message="Halo, saya tertarik dengan project SCH."
+      />
     </main>
   );
 }
