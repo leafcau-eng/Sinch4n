@@ -233,7 +233,7 @@ export default async function IndustriPage({ params }: Props) {
             href={`https://wa.me/6283870880997?text=${encodeURIComponent(`Halo, saya tertarik dengan jasa website ${group.label}.`)}`}
             className="mt-5"
           >
-            Mulai Project →
+            Konsultasi Gratis →
           </CtaButton>
         </section>
 
