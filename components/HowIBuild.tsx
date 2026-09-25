@@ -7,20 +7,19 @@
 // project selalu pakai urutan persis ini — makanya ada subtitle disclaimer
 // eksplisit ("not every project touches every step") daripada nge-hedge
 // tiap baris satu-satu, yang malah bikin section ini kepanjangan/ribet.
+//
+// Revisi klik: tiap step sekarang bisa dibuka jadi modal detail
+// (Untuk Apa / Keuntungan / Kelebihan / Contoh Nyata). Layout step +
+// panah tidak diubah, cuma ditambah onClick + state.
 
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { motion } from "framer-motion";
-
-const STEPS = [
-  { n: "01", title: "Problem", description: "Understand the constraint before proposing a solution." },
-  { n: "02", title: "Architecture", description: "Map the system — data, components, dependencies — before writing code." },
-  { n: "03", title: "AI / Automation", description: "Apply AI and automation where they remove repetitive work." },
-  { n: "04", title: "Database", description: "Structure data so it stays queryable and safe to build on." },
-  { n: "05", title: "Integration", description: "Connect systems and existing tools without duplicating logic." },
-  { n: "06", title: "Deployment", description: "Ship, verify, and monitor — a passing build isn't the finish line." },
-];
+import { STEPS } from "@/lib/howIBuildDetails";
+import DetailModal, { type DetailModalContent } from "@/components/DetailModal";
 
 export default function HowIBuild() {
+  const [active, setActive] = useState<DetailModalContent | null>(null);
+
   return (
     <section className="relative z-10 w-full max-w-5xl mx-auto px-4 py-20">
       <div className="text-center mb-4">
@@ -35,12 +34,14 @@ export default function HowIBuild() {
       <div className="flex flex-col lg:flex-row lg:items-stretch">
         {STEPS.map((step, i) => (
           <Fragment key={step.n}>
-            <motion.div
+            <motion.button
+              type="button"
+              onClick={() => setActive(step)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex-1 py-5 lg:py-0 lg:text-center border-t lg:border-t-0 border-white/5 first:border-t-0"
+              className="flex-1 py-5 lg:py-0 lg:text-center border-t lg:border-t-0 border-white/5 first:border-t-0 text-left lg:cursor-pointer transition-opacity hover:opacity-80"
             >
               <span className="font-mono text-[10px] text-cyan-400/60 block mb-1">
                 {step.n}
@@ -51,7 +52,7 @@ export default function HowIBuild() {
               <p className="text-xs text-neutral-500 leading-relaxed lg:max-w-[150px] lg:mx-auto">
                 {step.description}
               </p>
-            </motion.div>
+            </motion.button>
 
             {i < STEPS.length - 1 && (
               <div
@@ -64,6 +65,8 @@ export default function HowIBuild() {
           </Fragment>
         ))}
       </div>
+
+      <DetailModal content={active} onClose={() => setActive(null)} />
     </section>
   );
 }
