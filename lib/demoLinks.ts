@@ -38,7 +38,7 @@ export const DEMO_GROUPS: DemoGroup[] = [
   { industri: "sekolah",        label: "Sekolah",              thumbnail: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=70", demos: ["contoh-sekolah"] },
   { industri: "gym",            label: "Gym",                  thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=70", demos: ["contoh-gym"] },
   { industri: "sports-club",    label: "Sports Club",          thumbnail: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=70", demos: ["contoh-sports-club-flagship"] },
-  { industri: "rental",         label: "Rental Mobil",               thumbnail: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=70", demos: ["contoh-rental"] },
+  { industri: "rental",         label: "Rental",               thumbnail: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=70", demos: ["contoh-rental"] },
   { industri: "umkm",           label: "UMKM & Jasa Umum",     thumbnail: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&q=70", demos: ["contoh-basic","contoh-medium","contoh-jasa","contoh-toko-umkm"] },
   { industri: "peternakan",     label: "Peternakan",           thumbnail: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&q=70", demos: ["contoh-peternakan-flagship"] },
   { industri: "advokat",        label: "Advokat",              thumbnail: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=70", demos: ["contoh-advokat-flagship"] },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { DEMO_GROUPS } from "@/lib/demoLinks";
 
@@ -21,15 +22,27 @@ export default function JasaWebsitePage() {
         <p className="mt-5 text-neutral-300">
           Pilih jenis bisnis Anda untuk melihat contoh website yang sudah kami buat.
         </p>
-        <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2">
           {DEMO_GROUPS.map((g) => (
             <li key={g.industri}>
               <Link
                 href={`/jasa-website/${g.industri}`}
-                className="flex items-center justify-between rounded-lg border border-white/10 px-4 py-3 font-mono text-sm transition-colors hover:border-cyan-400 hover:text-cyan-400"
+                className="group flex flex-col overflow-hidden rounded-xl border border-white/10 transition-all hover:border-cyan-400"
               >
-                <span>{g.label}</span>
-                <span aria-hidden>→</span>
+                {g.thumbnail && (
+                  <div className="relative h-36 w-full overflow-hidden bg-neutral-800">
+                    <img
+                      src={g.thumbnail}
+                      alt={g.label}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  </div>
+                )}
+                <div className="flex items-center justify-between px-4 py-3 font-mono text-sm">
+                  <span className="text-white group-hover:text-cyan-400 transition-colors">{g.label}</span>
+                  <span aria-hidden className="text-neutral-500 group-hover:text-cyan-400 transition-colors">→</span>
+                </div>
               </Link>
             </li>
           ))}
