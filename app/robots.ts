@@ -10,6 +10,20 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/portfolio/demo-generator"],
       },
+      {
+        userAgent: [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-Web",
+          "anthropic-ai",
+          "PerplexityBot",
+          "Google-Extended",
+        ],
+        allow: "/",
+        disallow: ["/api/", "/portfolio/demo-generator"],
+      },
     ],
     sitemap: `${BASE}/sitemap.xml`,
   };

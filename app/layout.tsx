@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ClientOnly from "@/components/ClientOnly";
 import CustomCursor from "@/components/CustomCursor";
+import Script from "next/script";
+import { GA_MEASUREMENT_ID } from "@/lib/gtag";
 import Footer from "@/components/Footer";
 
 const SITE_URL = "https://sinch4n.vercel.app";
@@ -41,6 +43,18 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className="bg-[#0a0a0a] antialiased cursor-none">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag("js", new Date());
+            gtag("config", "${GA_MEASUREMENT_ID}");
+          `}
+        </Script>
         <ClientOnly>
           <CustomCursor />
         </ClientOnly>
