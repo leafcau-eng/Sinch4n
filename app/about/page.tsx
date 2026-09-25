@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import WhatIBuild from "@/components/WhatIBuild";
 import HowIBuild from "@/components/HowIBuild";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import AboutHero from "@/components/AboutHero";
 import AboutJourney from "@/components/AboutJourney";
 import AboutLocalInfo from "@/components/AboutLocalInfo";
@@ -59,6 +60,12 @@ export default function AboutPage() {
       </section>
 
       <AboutLocalBusinessSchema />
+
+      <FloatingWhatsApp
+        phone="6283870880997"
+        message="Halo, saya tertarik dengan jasa SCH."
+        hideWhenVisibleId="cta"
+      />
     </main>
   );
 }

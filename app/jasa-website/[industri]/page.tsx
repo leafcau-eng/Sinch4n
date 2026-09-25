@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import { DEMO_GROUPS, demoUrl } from "@/lib/demoLinks";
 import { DEMO_DETAILS } from "@/lib/demoDetails";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { getIndustryContent } from "@/lib/industries";
 
 type Props = { params: Promise<{ industri: string }> };
@@ -220,7 +221,7 @@ export default async function IndustriPage({ params }: Props) {
           </section>
         )}
 
-        <section className="mt-16 rounded-2xl border border-cyan-400/20 p-6 text-center">
+        <section id="cta" className="mt-16 rounded-2xl border border-cyan-400/20 p-6 text-center">
           <h2 className="font-display text-xl font-bold text-white">
             Butuh website {group.label}?
           </h2>
@@ -236,6 +237,12 @@ export default async function IndustriPage({ params }: Props) {
             Mulai Project →
           </a>
         </section>
+
+        <FloatingWhatsApp
+          phone="6283870880997"
+          message={`Halo, saya tertarik dengan jasa website ${group.label}.`}
+          hideWhenVisibleId="cta"
+        />
 
         {jsonLd && (
           <script
