@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 };
 
 const ACCENTS = [
-  { text: "text-cyan-400", border: "hover:border-cyan-400", pill: "bg-cyan-400" },
-  { text: "text-purple-400", border: "hover:border-purple-400", pill: "bg-purple-400" },
-  { text: "text-pink-400", border: "hover:border-pink-400", pill: "bg-pink-400" },
-  { text: "text-amber-400", border: "hover:border-amber-400", pill: "bg-amber-400" },
-  { text: "text-emerald-400", border: "hover:border-emerald-400", pill: "bg-emerald-400" },
+  { text: "text-cyan-400", border: "hover:border-cyan-400", pill: "bg-cyan-400", titleHover: "group-hover:text-cyan-400" },
+  { text: "text-purple-400", border: "hover:border-purple-400", pill: "bg-purple-400", titleHover: "group-hover:text-purple-400" },
+  { text: "text-pink-400", border: "hover:border-pink-400", pill: "bg-pink-400", titleHover: "group-hover:text-pink-400" },
+  { text: "text-amber-400", border: "hover:border-amber-400", pill: "bg-amber-400", titleHover: "group-hover:text-amber-400" },
+  { text: "text-emerald-400", border: "hover:border-emerald-400", pill: "bg-emerald-400", titleHover: "group-hover:text-emerald-400" },
 ];
 
 export default function JasaWebsitePage() {
@@ -52,7 +52,7 @@ export default function JasaWebsitePage() {
                     </div>
                   )}
                   <div className="flex flex-1 flex-col px-4 py-3">
-                    <span className={`font-mono text-sm font-bold text-white transition-colors group-hover:${accent.text}`}>
+                    <span className={`font-mono text-sm font-bold text-white transition-colors ${accent.titleHover}`}>
                       {g.label}
                     </span>
                     {content?.intro && (
