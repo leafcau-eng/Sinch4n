@@ -20,10 +20,10 @@ export default function WhatIBuild() {
 
   return (
     <section className="relative z-10 w-full max-w-5xl mx-auto px-4 py-20">
-      <div className="text-center mb-10">
-        <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] text-cyan-400/70 uppercase border border-cyan-400/20 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.02]">
+      <div className="mb-10">
+        <h2 className="font-display border-l-4 border-cyan-400 pl-3 text-2xl font-bold text-white md:text-3xl">
           What I Build
-        </span>
+        </h2>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
@@ -36,9 +36,9 @@ export default function WhatIBuild() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4 }}
-            className="rounded-[20px] p-7 border border-cyan-400/20 bg-white/[0.03] backdrop-blur-md text-left transition-colors hover:border-cyan-400/50 cursor-pointer"
+            className="rounded-[20px] p-7 border border-cyan-400/20 bg-gradient-to-br from-cyan-400/[0.06] via-transparent to-purple-500/[0.06] backdrop-blur-md text-left transition-colors hover:border-cyan-400/50 cursor-pointer"
           >
-            <h3 className="font-mono text-sm font-bold text-cyan-300 uppercase tracking-wide mb-2">
+            <h3 className="font-mono text-sm font-bold uppercase tracking-wide mb-2 bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
               {c.title}
             </h3>
             <p className="text-sm text-neutral-400 leading-relaxed">

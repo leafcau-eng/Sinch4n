@@ -21,7 +21,7 @@ export default function AboutFAQ() {
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400/60">
           FAQ
         </p>
-        <h2 className="font-display mt-3 text-2xl font-bold text-white md:text-3xl">
+        <h2 className="font-display mt-3 border-l-4 border-cyan-400 pl-3 text-2xl font-bold text-white md:text-3xl">
           Pertanyaan Umum
         </h2>
         <div className="mt-6 space-y-6">

@@ -22,12 +22,12 @@ export default function HowIBuild() {
 
   return (
     <section className="relative z-10 w-full max-w-5xl mx-auto px-4 py-20">
-      <div className="text-center mb-4">
-        <span className="font-mono text-[10px] sm:text-xs tracking-[0.4em] text-cyan-400/70 uppercase border border-cyan-400/20 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.02]">
+      <div className="mb-4">
+        <h2 className="font-display border-l-4 border-cyan-400 pl-3 text-2xl font-bold text-white md:text-3xl">
           How I Build
-        </span>
+        </h2>
       </div>
-      <p className="text-center text-xs text-neutral-500 mb-12 max-w-md mx-auto">
+      <p className="text-xs text-neutral-500 mb-12 max-w-md">
         A general shape, not a fixed formula — not every project touches every step.
       </p>
 

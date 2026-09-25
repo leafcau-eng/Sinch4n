@@ -21,7 +21,7 @@ export default function AboutHero() {
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400/60">
             Digital Agency &amp; AI Automation
           </p>
-          <h1 className="font-display mt-4 text-3xl font-bold leading-tight text-white md:text-5xl">
+          <h1 className="font-display mt-4 bg-gradient-to-r from-white via-cyan-300 to-purple-400 bg-clip-text text-3xl font-bold leading-tight text-transparent md:text-5xl">
             Membangun Sistem Digital dari Haurwangi untuk Bisnis Anda.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-neutral-300 md:text-lg">

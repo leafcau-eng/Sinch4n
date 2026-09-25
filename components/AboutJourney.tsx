@@ -20,7 +20,7 @@ export default function AboutJourney() {
         <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400/60">
           The Journey
         </p>
-        <h2 className="font-display mt-3 text-2xl font-bold text-white md:text-3xl">
+        <h2 className="font-display mt-3 border-l-4 border-cyan-400 pl-3 text-2xl font-bold text-white md:text-3xl">
           Mengapa Saya Membangun SCH?
         </h2>
         <p className="mt-5 leading-relaxed text-neutral-300">

@@ -25,7 +25,7 @@ export default function AboutLocalInfo() {
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-cyan-400/60">
             Kontak &amp; Lokasi
           </p>
-          <h2 className="font-display mt-3 text-2xl font-bold text-white">
+          <h2 className="font-display mt-3 border-l-4 border-cyan-400 pl-3 text-2xl font-bold text-white">
             SCH Digital Agency
           </h2>
           <ul className="mt-5 space-y-3 text-sm text-neutral-300">
@@ -51,7 +51,7 @@ export default function AboutLocalInfo() {
           </ul>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-white/10">
+        <div className="overflow-hidden rounded-lg border border-cyan-400/20">
           <iframe
             title="Lokasi SCH Digital Agency"
             src={MAPS_EMBED_SRC}
