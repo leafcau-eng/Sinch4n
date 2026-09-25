@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ClientOnly from "@/components/ClientOnly";
 import CustomCursor from "@/components/CustomCursor";
+import Footer from "@/components/Footer";
 
 const SITE_URL = "https://sinch4n.vercel.app";
 const SITE_TITLE = "SCH — Website & Digital Systems for Business | Rian Riyandi";
@@ -44,6 +45,7 @@ export default function RootLayout({
           <CustomCursor />
         </ClientOnly>
         {children}
+        <Footer />
       </body>
     </html>
   );
