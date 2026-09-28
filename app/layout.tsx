@@ -2,6 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 import { GA_MEASUREMENT_ID } from "@/lib/gtag";
+import { Orbitron, Space_Mono } from "next/font/google";
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-orbitron",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-space-mono",
+  display: "swap",
+});
 import Footer from "@/components/Footer";
 
 const SITE_URL = "https://sinch4n.vercel.app";
@@ -39,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="id" className={`${orbitron.variable} ${spaceMono.variable}`}>
       <body className="bg-[#0a0a0a] antialiased">
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
