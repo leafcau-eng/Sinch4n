@@ -123,19 +123,17 @@ function HeroPhoto() {
           />
         ))}
 
-        {/* Nama + link ke About, selalu tampil (FIX #3) */}
-        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 whitespace-nowrap">
-          <span className="font-mono text-xs uppercase tracking-widest text-cyan-400/80">
-            Rian Riyandi
-          </span>
-          <Link
-            href="/about"
-            className="font-mono text-[11px] uppercase tracking-widest text-cyan-300/90 underline underline-offset-2 transition-colors hover:text-cyan-200"
-          >
-            Siapa di Balik SCH? →
-          </Link>
-        </div>
       </motion.div>
+
+      {/* Nama + link ke About — di luar frame, tidak lagi absolute (fix overflow) */}
+      <div className="mt-4 flex flex-col items-center gap-2">
+        <span className="font-mono text-xs uppercase tracking-widest text-cyan-400/80">
+          Rian Riyandi
+        </span>
+        <CtaButton href="/about" variant="secondary" size="sm" external={false}>
+          Siapa di Balik SCH? →
+        </CtaButton>
+      </div>
     </motion.div>
   );
 }
