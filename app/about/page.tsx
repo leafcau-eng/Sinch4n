@@ -5,6 +5,7 @@ import HowIBuild from "@/components/HowIBuild";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import AboutHero from "@/components/AboutHero";
 import AboutJourney from "@/components/AboutJourney";
+import AboutProofOfWork from "@/components/AboutProofOfWork";
 import AboutLocalInfo from "@/components/AboutLocalInfo";
 import AboutFAQ from "@/components/AboutFAQ";
 import AboutLocalBusinessSchema from "@/components/AboutLocalBusinessSchema";
@@ -40,6 +41,7 @@ export default function AboutPage() {
       <article>
         <AboutHero />
         <AboutJourney />
+        <AboutProofOfWork />
         <WhatIBuild />
         <HowIBuild />
         <AboutLocalInfo />
