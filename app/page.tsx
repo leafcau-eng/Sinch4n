@@ -196,7 +196,7 @@ function HeroLeft() {
         {...fade(0.6)}
         className="max-w-sm text-sm sm:text-base leading-relaxed text-neutral-400"
       >
-        Jasa pembuatan website untuk bisnis &amp; UMKM dengan 40+ template siap
+        Jasa pembuatan website untuk bisnis &amp; UMKM dengan puluhan template siap
         dikustomisasi — plus automation dan custom systems.
       </motion.p>
 
@@ -204,10 +204,10 @@ function HeroLeft() {
         <div className="flex flex-col gap-3">
           <EnterButton href="/projects" label="START A PROJECT →" />
           <CtaButton href="/jasa-website" variant="secondary" external={false}>
-            EXPLORE 40+ WEBSITES
+            CARI TEMPLATE BISNIS ANDA
           </CtaButton>
           <p className="hidden md:block font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-400/60">
-            40+ Templates · Custom Development · Automation &amp; AI
+            Puluhan Template · Custom Development · Automation &amp; AI
           </p>
         </div>
       </motion.div>
@@ -295,7 +295,7 @@ export default function Home() {
         </div>
 
         <p className="absolute bottom-5 left-0 right-0 z-10 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-400/60 md:hidden">
-          40+ Templates · Custom Dev · Automation
+          Puluhan Template · Custom Dev · Automation
         </p>
 
         {isMobile === false && <ScrollCue />}
