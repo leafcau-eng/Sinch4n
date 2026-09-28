@@ -1674,6 +1674,186 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   // Contoh (isi kalau faktanya sudah ada):
   // bakery: { h1: null, intro: null, features: null, cocokUntuk: null, harga: null, faqs: null },
+  martabak: {
+    h1: "Jasa Pembuatan Website Martabak & Terang Bulan",
+    metaTitle: "Jasa Pembuatan Website Martabak & Terang Bulan | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk penjual martabak dan terang bulan. Martabak Finder, menu dengan pesanan via WhatsApp, dan paket untuk acara.",
+    intro:
+      "Website untuk penjual martabak dan terang bulan. Martabak Finder membantu pembeli memilih rasa dan ukuran, menu dengan pesanan yang dikirim langsung ke WhatsApp, paket untuk acara, dan proses dapur ditampilkan untuk membangun kepercayaan.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Martabak Finder — bantu pembeli pilih rasa & ukuran",
+      "Menu dengan pesanan langsung ke WhatsApp",
+      "Paket untuk keluarga & acara",
+      "Galeri proses & tim dapur",
+    ],
+    cocokUntuk: ["Martabak manis", "Martabak telur", "Terang bulan", "Martabak keliling & booth"],
+    harga: null,
+    faqs: null,
+  },
+  "fashion-aksesoris": {
+    h1: "Jasa Pembuatan Website Fashion & Aksesoris",
+    metaTitle: "Jasa Pembuatan Website Fashion & Aksesoris | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk butik, hijab, sepatu, tas, perhiasan, dan streetwear. Katalog produk dengan filter ukuran dan checkout via WhatsApp.",
+    intro:
+      "Website untuk butik, hijab, sepatu, tas, perhiasan, dan streetwear. Katalog produk dengan filter kategori dan ukuran, lookbook gaya, dan cart + checkout WhatsApp langsung dari halaman.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Cart & checkout WhatsApp",
+      "Filter kategori & ukuran",
+      "Lookbook gaya",
+      "Promo bundling",
+    ],
+    cocokUntuk: ["Butik", "Hijab & modest wear", "Sepatu & tas", "Perhiasan", "Streetwear"],
+    harga: null,
+    faqs: null,
+  },
+  "konter-hp": {
+    h1: "Jasa Pembuatan Website Konter HP & Pulsa",
+    metaTitle: "Jasa Pembuatan Website Konter HP & Pulsa | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk konter HP: pulsa/PPOB, jual-beli HP, servis, dan aksesoris. Katalog harga transparan dan chat WhatsApp instan.",
+    intro:
+      "Website untuk konter HP -- pulsa/PPOB, jual-beli HP, servis, dan aksesoris -- menonjolkan kelengkapan kategori dan harga yang transparan.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "4 kategori layanan dalam satu halaman",
+      "Katalog harga jelas",
+      "Produk & promo unggulan",
+      "Chat WhatsApp instan",
+    ],
+    cocokUntuk: ["Konter pulsa & PPOB", "Jual-beli HP", "Servis HP", "Toko aksesoris HP"],
+    harga: null,
+    faqs: null,
+  },
+  mebel: {
+    h1: "Jasa Pembuatan Website Mebel & Furnitur Custom",
+    metaTitle: "Jasa Pembuatan Website Mebel & Furnitur Custom | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk mebel dan furnitur custom jati: kursi, lemari, kitchen set. Proses produksi dan portofolio proyek nyata.",
+    intro:
+      "Website untuk mebel dan furnitur custom jati -- kursi, lemari, kitchen set -- menonjolkan proses produksi dan portofolio proyek nyata.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Proses produksi 5 langkah",
+      "Portofolio proyek custom",
+      "Sertifikasi material",
+      "Konsultasi via WhatsApp",
+    ],
+    cocokUntuk: ["Mebel jati custom", "Kitchen set", "Furnitur kantor", "Interior custom"],
+    harga: null,
+    faqs: null,
+  },
+  "kerajinan-rotan": {
+    h1: "Jasa Pembuatan Website Kerajinan Rotan & Anyaman",
+    metaTitle: "Jasa Pembuatan Website Kerajinan Rotan & Anyaman | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk kerajinan rotan & anyaman, melayani UMKM lokal sampai order korporat/partai besar.",
+    intro:
+      "Website untuk kerajinan rotan & anyaman -- melayani UMKM lokal sampai order korporat/partai besar -- menonjolkan keahlian pengrajin dan fleksibilitas skala produksi.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Galeri hasil kerja",
+      "Kapasitas satuan s/d partai besar",
+      "Custom desain / OEM",
+      "Chat WhatsApp instan",
+    ],
+    cocokUntuk: ["Kerajinan rotan", "Anyaman bambu", "Furnitur anyaman", "Souvenir & dekorasi"],
+    harga: null,
+    faqs: null,
+  },
+  marketplace: {
+    h1: "Jasa Pembuatan Website Marketplace Multi-Kategori",
+    metaTitle: "Jasa Pembuatan Website Marketplace Multi-Kategori | SCH",
+    metaDescription:
+      "Jasa pembuatan website toko online multi-kategori dengan Smart Product Finder, pilihan ukuran & warna, dan checkout WhatsApp.",
+    intro:
+      "Website untuk toko online multi-kategori -- Smart Product Finder membantu pembeli menemukan produk lintas kategori dengan cepat, lengkap pilihan ukuran & warna per produk.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Smart Product Finder",
+      "Multi-kategori dalam satu toko",
+      "Pilihan ukuran & warna per produk",
+      "Cart + checkout WhatsApp",
+    ],
+    cocokUntuk: ["Toko online multi-produk", "Reseller berbagai kategori", "UMKM dengan banyak lini produk"],
+    harga: null,
+    faqs: null,
+  },
+  "konstruksi-renovasi": {
+    h1: "Jasa Pembuatan Website Konstruksi & Renovasi",
+    metaTitle: "Jasa Pembuatan Website Konstruksi & Renovasi | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk kontraktor, renovasi rumah, interior, taman, dan instalasi. Portofolio proyek dan estimasi biaya transparan.",
+    intro:
+      "Website untuk kontraktor, renovasi rumah, interior, taman, dan instalasi -- menonjolkan portofolio proyek nyata dan estimasi biaya yang transparan.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Portofolio proyek berfilter",
+      "Estimasi biaya transparan",
+      "Proses kerja 4 langkah",
+      "Garansi pengerjaan 6 bulan",
+    ],
+    cocokUntuk: ["Kontraktor bangunan", "Renovasi rumah", "Desain interior", "Taman & lansekap"],
+    harga: null,
+    faqs: null,
+  },
+  konveksi: {
+    h1: "Jasa Pembuatan Website Konveksi & Garmen",
+    metaTitle: "Jasa Pembuatan Website Konveksi & Garmen | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk konveksi: kaos, jaket, seragam, merchandise. MOQ fleksibel dan alur produksi yang jelas.",
+    intro:
+      "Website untuk konveksi -- kaos, jaket, seragam, merchandise -- menonjolkan kapasitas produksi dan fleksibilitas MOQ dari UMKM sampai korporat.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "MOQ fleksibel 12-10.000 pcs",
+      "Alur produksi 5 langkah",
+      "Paket harga per skala",
+      "Studi kasus klien UMKM & korporat",
+    ],
+    cocokUntuk: ["Konveksi kaos & jaket", "Seragam korporat", "Merchandise event"],
+    harga: null,
+    faqs: null,
+  },
+  agribisnis: {
+    h1: "Jasa Pembuatan Website Agribisnis & Hasil Tani",
+    metaTitle: "Jasa Pembuatan Website Agribisnis & Hasil Tani | SCH",
+    metaDescription:
+      "Jasa pembuatan website untuk agribisnis & hasil tani: kopi, madu, rempah, gula semut, sayur organik, biofarmaka.",
+    intro:
+      "Website untuk agribisnis & hasil tani -- kopi, madu, rempah, gula semut, sayur organik, biofarmaka -- menonjolkan cerita asal-usul, sertifikasi, dan ketertelusuran produk.",
+    heroImage: null,
+    heroAlt: null,
+    edukasi: null,
+    features: [
+      "Katalog produk filterable",
+      "Cerita asal-usul & petani mitra",
+      "Sertifikasi organik/halal/BPOM",
+      "Chat WhatsApp instan",
+    ],
+    cocokUntuk: ["Kopi & rempah", "Madu", "Sayur organik", "Produk biofarmaka"],
+    harga: null,
+    faqs: null,
+  },
 };
 
 export function getIndustryContent(slug: string): IndustryContent | null {

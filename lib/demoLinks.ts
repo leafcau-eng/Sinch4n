@@ -44,6 +44,15 @@ export const DEMO_GROUPS: DemoGroup[] = [
   { industri: "advokat",        label: "Advokat",              thumbnail: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=70", demos: ["contoh-advokat-flagship"] },
   { industri: "las-fabrikasi",  label: "Las & Fabrikasi",      thumbnail: "https://images.unsplash.com/photo-1641893823219-38b433f736c0?w=600&q=70", demos: ["contoh-las-fabrikasi-flagship"] },
   { industri: "percetakan",     label: "Percetakan & Kemasan", thumbnail: "https://images.unsplash.com/photo-1503694978374-8a2fa686963a?w=600&q=70", demos: ["contoh-percetakan-kemasan-flagship"] },
+  { industri: "martabak",           label: "Martabak & Terang Bulan", thumbnail: "https://images.unsplash.com/photo-1776073976391-cefe3169481e?w=600&q=70", demos: ["contoh-martabak-flagship"] },
+  { industri: "fashion-aksesoris",  label: "Fashion & Aksesoris",     thumbnail: "https://images.unsplash.com/photo-1560869713-885c458366be?w=600&q=70", demos: ["contoh-fashion-aksesoris-flagship"] },
+  { industri: "konter-hp",          label: "Konter HP & Pulsa",       thumbnail: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=70", demos: ["contoh-konter-flagship"] },
+  { industri: "mebel",              label: "Mebel & Furnitur Custom", thumbnail: "https://images.unsplash.com/photo-1631396326646-c06a935ff3a6?w=600&q=70", demos: ["contoh-mebel-flagship"] },
+  { industri: "kerajinan-rotan",    label: "Kerajinan Rotan & Anyaman", thumbnail: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=70", demos: ["contoh-kerajinan-rotan-flagship"] },
+  { industri: "marketplace",        label: "Marketplace Multi-Kategori", thumbnail: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=70", demos: ["contoh-marketplace-flagship"] },
+  { industri: "konstruksi-renovasi", label: "Konstruksi & Renovasi",  thumbnail: "https://images.unsplash.com/photo-1607134541550-2994abb8077b?w=600&q=70", demos: ["contoh-konstruksi-renovasi-flagship"] },
+  { industri: "konveksi",           label: "Konveksi & Garmen",       thumbnail: "https://images.unsplash.com/photo-1625479142928-c2f2914318f2?w=600&q=70", demos: ["contoh-konveksi-flagship"] },
+  { industri: "agribisnis",         label: "Agribisnis & Hasil Tani", thumbnail: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=70", demos: ["contoh-agribisnis-flagship"] },
 ];
 
 export const demoUrl = (slug: string) => `${DEMO_BASE}/${slug}`;
