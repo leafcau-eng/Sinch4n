@@ -58,6 +58,20 @@ export default async function ProjectsPage() {
         phone="6283870880997"
         message="Halo, saya tertarik dengan project SCH."
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "SCH", item: "https://sinch4n.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Projects", item: "https://sinch4n.vercel.app/projects" },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

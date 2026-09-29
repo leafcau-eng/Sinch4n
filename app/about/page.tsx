@@ -68,6 +68,20 @@ export default function AboutPage() {
         message="Halo, saya tertarik dengan jasa SCH."
         hideWhenVisibleId="cta"
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "SCH", item: "https://sinch4n.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "About", item: "https://sinch4n.vercel.app/about" },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }
