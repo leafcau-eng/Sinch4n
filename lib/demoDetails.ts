@@ -235,6 +235,69 @@ export const DEMO_DETAILS: Record<string, DemoDetail> = {
       "Contoh website percetakan dengan katalog berfilter kategori, harga per lembar dan per pcs, cara pesan tiga langkah, promo, FAQ, dan order via WhatsApp.",
     fitur: ["Katalog berfilter", "Harga per satuan", "Cara pesan", "Promo", "Order WhatsApp"],
   },
+  "contoh-martabak-flagship": {
+    nama: "Martabak Juragan",
+    jenis: "Martabak & Terang Bulan",
+    deskripsi:
+      "Contoh website martabak dengan Martabak Finder untuk bantu pembeli pilih rasa dan ukuran, menu dengan pesanan ke WhatsApp, paket keluarga & acara, dan galeri proses dapur.",
+    fitur: ["Martabak Finder", "Menu + Pesanan WhatsApp", "Paket Keluarga & Acara", "Galeri Dapur"],
+  },
+  "contoh-fashion-aksesoris-flagship": {
+    nama: "Ruang Gaya Boutique",
+    jenis: "Fashion & Aksesoris",
+    deskripsi:
+      "Contoh website butik dengan katalog produk berfilter ukuran, lookbook gaya, promo bundling, dan cart + checkout langsung ke WhatsApp.",
+    fitur: ["Cart & Checkout WhatsApp", "Filter Kategori & Ukuran", "Lookbook Gaya", "Promo Bundling"],
+  },
+  "contoh-konter-flagship": {
+    nama: "Konter Jaya Cell",
+    jenis: "Konter HP & Pulsa",
+    deskripsi:
+      "Contoh website konter HP dengan 4 kategori layanan (pulsa/PPOB, jual-beli HP, servis, aksesoris), katalog harga jelas, dan chat WhatsApp instan.",
+    fitur: ["4 Kategori Layanan", "Katalog Harga Jelas", "Produk & Promo Unggulan", "Chat WhatsApp Instan"],
+  },
+  "contoh-mebel-flagship": {
+    nama: "Jati Mebel Custom",
+    jenis: "Mebel & Furnitur Custom",
+    deskripsi:
+      "Contoh website mebel custom jati dengan proses produksi 5 langkah, portofolio proyek nyata, sertifikasi material, dan konsultasi via WhatsApp.",
+    fitur: ["Proses Produksi 5 Langkah", "Portofolio Proyek Custom", "Sertifikasi Material", "Konsultasi WhatsApp"],
+  },
+  "contoh-kerajinan-rotan-flagship": {
+    nama: "Rotan Nusantara Craft",
+    jenis: "Kerajinan Rotan & Anyaman",
+    deskripsi:
+      "Contoh website kerajinan rotan dengan galeri hasil kerja, kapasitas satuan sampai partai besar, custom desain/OEM, dan chat WhatsApp instan.",
+    fitur: ["Galeri Hasil Kerja", "Kapasitas Satuan s/d Partai Besar", "Custom Desain / OEM", "Chat WhatsApp Instan"],
+  },
+  "contoh-marketplace-flagship": {
+    nama: "Pasar Digital Nusantara",
+    jenis: "Marketplace Multi-Kategori",
+    deskripsi:
+      "Contoh website marketplace multi-kategori dengan Smart Product Finder, pilihan ukuran & warna per produk, dan cart + checkout WhatsApp.",
+    fitur: ["Smart Product Finder", "Multi-Kategori", "Pilihan Ukuran & Warna", "Cart + Checkout WhatsApp"],
+  },
+  "contoh-konstruksi-renovasi-flagship": {
+    nama: "Karya Bangun Renovasi",
+    jenis: "Konstruksi & Renovasi",
+    deskripsi:
+      "Contoh website kontraktor renovasi dengan portofolio proyek berfilter, estimasi biaya transparan, proses kerja 4 langkah, dan garansi pengerjaan 6 bulan.",
+    fitur: ["Portofolio Proyek Berfilter", "Estimasi Biaya Transparan", "Proses Kerja 4 Langkah", "Garansi 6 Bulan"],
+  },
+  "contoh-konveksi-flagship": {
+    nama: "Konveksi Sinar Jaya",
+    jenis: "Konveksi & Garmen",
+    deskripsi:
+      "Contoh website konveksi dengan MOQ fleksibel 12-10.000 pcs, alur produksi 5 langkah, paket harga per skala, dan studi kasus klien UMKM & korporat.",
+    fitur: ["MOQ Fleksibel 12-10.000 Pcs", "Alur Produksi 5 Langkah", "Paket Harga per Skala", "Studi Kasus Klien"],
+  },
+  "contoh-agribisnis-flagship": {
+    nama: "Tani Makmur Agribisnis",
+    jenis: "Agribisnis & Hasil Tani",
+    deskripsi:
+      "Contoh website agribisnis (kopi, madu, rempah, sayur organik) dengan katalog produk filterable, cerita asal-usul & petani mitra, sertifikasi organik/halal/BPOM, dan chat WhatsApp instan.",
+    fitur: ["Katalog Produk Filterable", "Cerita Asal-Usul & Petani Mitra", "Sertifikasi Organik/Halal/BPOM", "Chat WhatsApp Instan"],
+  },
   "contoh-bakery-flagship": {
     nama: "SCH Bakery & Catering",
     jenis: "Bakery & Catering",
