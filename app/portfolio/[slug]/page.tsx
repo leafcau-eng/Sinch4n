@@ -135,6 +135,20 @@ export default async function PortfolioSlugPage({ params }: SlugPageProps) {
           </h1>
         </div>
         <ProjectGrid lockedCategory={slug} hideFilters hideTitle />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "SCH", item: "https://sinch4n.vercel.app" },
+                { "@type": "ListItem", position: 2, name: "Projects", item: "https://sinch4n.vercel.app/projects" },
+                { "@type": "ListItem", position: 3, name: categoryLabel, item: `https://sinch4n.vercel.app/portfolio/${slug}` },
+              ],
+            }),
+          }}
+        />
       </main>
     );
   }
@@ -272,6 +286,20 @@ function ProjectCaseStudy({
           </div>
         )}
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "SCH", item: "https://sinch4n.vercel.app" },
+              { "@type": "ListItem", position: 2, name: "Projects", item: "https://sinch4n.vercel.app/projects" },
+              { "@type": "ListItem", position: 3, name: project.title, item: `https://sinch4n.vercel.app/portfolio/${project.slug}` },
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }
