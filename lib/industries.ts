@@ -1683,7 +1683,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk penjual martabak dan terang bulan. Martabak Finder membantu pembeli memilih rasa dan ukuran, menu dengan pesanan yang dikirim langsung ke WhatsApp, paket untuk acara, dan proses dapur ditampilkan untuk membangun kepercayaan.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pembeli Ingin Tahu Rasa dan Ukuran Sebelum Pesan",
+      paragraf: [
+        "Martabak biasanya dipesan mendadak untuk acara keluarga atau kumpul-kumpul, jadi pembeli butuh info cepat: rasa apa saja yang tersedia, ukuran berapa yang cukup untuk berapa orang, dan berapa harganya.",
+        "Website menjawabnya dengan Martabak Finder yang membantu pembeli memilih rasa dan ukuran sesuai kebutuhan, menu lengkap dengan harga, serta paket untuk acara yang sudah dihitung porsinya.",
+        "Pembeli lalu tinggal kirim pesanan lewat WhatsApp, tanpa perlu telepon dan tanya-jawab manual soal rasa yang tersedia hari itu.",
+      ],
+    },
     features: [
       "Martabak Finder — bantu pembeli pilih rasa & ukuran",
       "Menu dengan pesanan langsung ke WhatsApp",
@@ -1692,7 +1699,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Martabak manis", "Martabak telur", "Terang bulan", "Martabak keliling & booth"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menampilkan semua varian rasa martabak?", a: "Bisa. Menu dibuat berfilter rasa dan ukuran lewat Martabak Finder, jadi pembeli mudah menemukan pilihan yang sesuai." },
+      { q: "Bagaimana pembeli memesan lewat website?", a: "Pembeli memilih rasa dan ukuran, lalu tombol WhatsApp membuka chat dengan pesan yang sudah terisi otomatis." },
+      { q: "Apakah bisa menampilkan paket untuk acara?", a: "Bisa. Ada bagian khusus paket keluarga dan acara dengan porsi dan harga yang sudah dihitung." },
+      { q: "Apakah harga bisa disesuaikan dengan harga bahan yang naik-turun?", a: "Bisa. Harga di halaman ini adalah contoh, dan akan disesuaikan dengan daftar harga bisnis Anda." },
+    ],
   },
   "fashion-aksesoris": {
     h1: "Jasa Pembuatan Website Fashion & Aksesoris",
