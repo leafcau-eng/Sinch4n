@@ -199,26 +199,26 @@ function ProjectCaseStudy({
         </h1>
 
         {/* 1. Overview */}
-        <Section title="Overview">{overviewText}</Section>
+        <Section title="Ringkasan">{overviewText}</Section>
 
         {/* 2. Problem */}
-        {project.problem && <Section title="Problem">{project.problem}</Section>}
+        {project.problem && <Section title="Masalah">{project.problem}</Section>}
 
         {/* 3. What I Built */}
         {project.solution && (
-          <Section title="What I Built">{project.solution}</Section>
+          <Section title="Yang Saya Bangun">{project.solution}</Section>
         )}
 
         {/* 4. How It Works / Architecture */}
         {project.architecture && (
-          <Section title="How It Works / Architecture">
+          <Section title="Cara Kerja / Arsitektur">
             {project.architecture}
           </Section>
         )}
 
         {/* 5. Key Features */}
         {project.features && project.features.length > 0 && (
-          <Section title="Key Features">
+          <Section title="Fitur Utama">
             <ul className="list-disc list-inside space-y-1">
               {project.features.map((f) => (
                 <li key={f}>{f}</li>
@@ -229,7 +229,7 @@ function ProjectCaseStudy({
 
         {/* 6. Technology */}
         {project.technologies.length > 0 && (
-          <Section title="Technology">
+          <Section title="Teknologi">
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((t) => (
                 <span
@@ -253,7 +253,7 @@ function ProjectCaseStudy({
 
         {/* 7. Proof / Screenshots */}
         {project.images.length > 0 && (
-          <Section title="Proof / Screenshots">
+          <Section title="Bukti / Screenshot">
             <div className="flex flex-col gap-4 max-w-2xl">
               {project.images.map((src) => (
                 <img
