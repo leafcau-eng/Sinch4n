@@ -58,6 +58,12 @@ export async function generateMetadata({
       title: project.title,
       description: project.shortDescription,
       alternates: { canonical: `/portfolio/${slug}` },
+      openGraph: {
+        title: project.title,
+        description: project.shortDescription,
+        url: `/portfolio/${slug}`,
+        images: [{ url: "/images/rian-portrait.png", alt: project.title }],
+      },
     };
   }
 
@@ -68,6 +74,12 @@ export async function generateMetadata({
       title: categoryLabel,
       description: `${categoryLabel} projects and templates.`,
       alternates: { canonical: `/portfolio/${slug}` },
+      openGraph: {
+        title: categoryLabel,
+        description: `${categoryLabel} projects and templates.`,
+        url: `/portfolio/${slug}`,
+        images: [{ url: "/images/rian-portrait.png", alt: categoryLabel }],
+      },
     };
   }
 
