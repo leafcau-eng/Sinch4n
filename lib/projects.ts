@@ -236,10 +236,10 @@ export const PROJECTS_V2: ProjectV2[] = [
   },
   {
     slug: "prospecting-engine",
-    title: "Prospecting Engine",
+    title: "SCHLABZ — AI Prospecting & Sales Platform",
     category: "automation",
     projectType: "Automation",
-    shortDescription: "AI-powered prospecting platform: discovers local businesses without websites via Google Places API, auto-generates personalized demo sites across 25+ industry templates, and automates outreach through a Discord bot and WhatsApp. Built solo, end-to-end — from Supabase auth/RLS architecture to production deployment.",
+    shortDescription: "AI-powered prospecting platform: discovers local businesses without websites via Google Places API, auto-generates personalized demo sites across 40+ industry templates, and automates outreach through a Discord bot and WhatsApp. Built solo, end-to-end — from Supabase auth/RLS architecture to production deployment.",
     description: null,
     problem: null,
     solution: null,
