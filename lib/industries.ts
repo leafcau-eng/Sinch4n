@@ -1715,7 +1715,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk butik, hijab, sepatu, tas, perhiasan, dan streetwear. Katalog produk dengan filter kategori dan ukuran, lookbook gaya, dan cart + checkout WhatsApp langsung dari halaman.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pembeli Ingin Lihat Detail Sebelum Checkout",
+      paragraf: [
+        "Belanja fashion online sering gagal checkout karena pembeli ragu soal ukuran, warna, atau bahan yang tidak terlihat jelas dari foto biasa.",
+        "Website menjawabnya dengan katalog berfilter kategori dan ukuran, lookbook yang menunjukkan produk dalam pemakaian nyata, serta cart yang bisa langsung dikirim ke WhatsApp untuk konfirmasi stok.",
+        "Promo bundling juga ditampilkan supaya pembeli terdorong menambah jumlah pesanan sebelum checkout.",
+      ],
+    },
     features: [
       "Cart & checkout WhatsApp",
       "Filter kategori & ukuran",
@@ -1724,7 +1731,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Butik", "Hijab & modest wear", "Sepatu & tas", "Perhiasan", "Streetwear"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menampilkan filter ukuran dan warna?", a: "Bisa. Katalog dibuat dengan filter kategori dan ukuran supaya pembeli cepat menemukan produk yang cocok." },
+      { q: "Bagaimana proses checkout-nya?", a: "Pembeli menambah produk ke cart, lalu tombol checkout membuka WhatsApp dengan rincian pesanan yang sudah terisi." },
+      { q: "Apakah bisa menampilkan lookbook atau gaya pemakaian?", a: "Bisa. Ada bagian lookbook untuk menunjukkan produk dalam gaya pemakaian nyata, bukan cuma foto produk polos." },
+      { q: "Apakah bisa menampilkan promo bundling?", a: "Bisa. Promo dan diskon bundling ditampilkan di halaman utama maupun halaman produk." },
+    ],
   },
   "konter-hp": {
     h1: "Jasa Pembuatan Website Konter HP & Pulsa",
@@ -1735,7 +1747,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk konter HP -- pulsa/PPOB, jual-beli HP, servis, dan aksesoris -- menonjolkan kelengkapan kategori dan harga yang transparan.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pelanggan Ingin Tahu Harga Sebelum Datang ke Konter",
+      paragraf: [
+        "Pelanggan konter HP sering ragu datang karena tidak tahu apakah layanan yang mereka butuhkan (isi pulsa, jual-beli HP, servis, atau aksesoris) tersedia dan berapa perkiraan harganya.",
+        "Website menjawabnya dengan 4 kategori layanan yang jelas dalam satu halaman, katalog harga yang transparan, serta produk dan promo unggulan yang selalu diperbarui.",
+        "Pelanggan lalu bisa langsung chat via WhatsApp untuk konfirmasi ketersediaan sebelum datang ke lokasi.",
+      ],
+    },
     features: [
       "4 kategori layanan dalam satu halaman",
       "Katalog harga jelas",
@@ -1744,7 +1763,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Konter pulsa & PPOB", "Jual-beli HP", "Servis HP", "Toko aksesoris HP"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menampilkan harga pulsa dan paket data?", a: "Bisa. Katalog harga ditampilkan dengan jelas per kategori layanan." },
+      { q: "Apakah bisa menampilkan layanan jual-beli dan servis HP sekaligus?", a: "Bisa. Halaman dibagi 4 kategori: pulsa/PPOB, jual-beli HP, servis, dan aksesoris, semuanya dalam satu website." },
+      { q: "Bagaimana cara menghubungi konter dari website?", a: "Ada tombol chat WhatsApp instan di setiap bagian, sehingga pelanggan bisa langsung bertanya ketersediaan." },
+      { q: "Apakah harga di contoh ini harga asli?", a: "Tidak. Harga di halaman ini adalah contoh, dan akan disesuaikan dengan daftar harga konter Anda." },
+    ],
   },
   mebel: {
     h1: "Jasa Pembuatan Website Mebel & Furnitur Custom",
@@ -1755,7 +1779,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk mebel dan furnitur custom jati -- kursi, lemari, kitchen set -- menonjolkan proses produksi dan portofolio proyek nyata.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pembeli Furnitur Custom Ingin Yakin Sebelum DP",
+      paragraf: [
+        "Furnitur custom biasanya bernilai besar dan dikerjakan dalam waktu lama, jadi calon pembeli ingin tahu prosesnya, kualitas materialnya, dan hasil kerja nyata sebelum berani DP.",
+        "Website menjawabnya dengan proses produksi yang dijelaskan langkah demi langkah, portofolio proyek custom yang pernah dikerjakan, dan sertifikasi material seperti jenis kayu yang digunakan.",
+        "Calon pembeli lalu bisa konsultasi kebutuhan spesifik lewat WhatsApp sebelum menentukan desain akhir.",
+      ],
+    },
     features: [
       "Proses produksi 5 langkah",
       "Portofolio proyek custom",
@@ -1764,7 +1795,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Mebel jati custom", "Kitchen set", "Furnitur kantor", "Interior custom"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menampilkan proses produksi furnitur?", a: "Bisa. Ada bagian yang menjelaskan proses produksi dari desain sampai pengiriman, langkah demi langkah." },
+      { q: "Apakah bisa menampilkan portofolio proyek yang sudah dikerjakan?", a: "Bisa. Portofolio proyek custom ditampilkan sebagai bukti hasil kerja nyata." },
+      { q: "Apakah bisa mencantumkan jenis material yang digunakan?", a: "Bisa. Sertifikasi dan jenis material bisa dicantumkan untuk meyakinkan calon pembeli." },
+      { q: "Bagaimana cara konsultasi desain custom?", a: "Calon pembeli bisa konsultasi langsung lewat tombol WhatsApp yang tersedia di halaman." },
+    ],
   },
   "kerajinan-rotan": {
     h1: "Jasa Pembuatan Website Kerajinan Rotan & Anyaman",
@@ -1775,7 +1811,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk kerajinan rotan & anyaman -- melayani UMKM lokal sampai order korporat/partai besar -- menonjolkan keahlian pengrajin dan fleksibilitas skala produksi.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pembeli Partai Besar Ingin Bukti Kapasitas Produksi",
+      paragraf: [
+        "Pembeli kerajinan rotan bervariasi dari perorangan yang butuh satu-dua item, sampai bisnis atau korporat yang butuh order dalam jumlah besar untuk souvenir atau dekorasi.",
+        "Website menjawabnya dengan galeri hasil kerja yang menunjukkan keahlian pengrajin, penjelasan kapasitas produksi dari satuan sampai partai besar, dan opsi custom desain atau kerja sama OEM.",
+        "Pembeli lalu bisa langsung chat WhatsApp untuk menanyakan harga sesuai jumlah dan desain yang dibutuhkan.",
+      ],
+    },
     features: [
       "Galeri hasil kerja",
       "Kapasitas satuan s/d partai besar",
@@ -1784,7 +1827,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Kerajinan rotan", "Anyaman bambu", "Furnitur anyaman", "Souvenir & dekorasi"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa melayani pesanan satuan dan partai besar sekaligus?", a: "Bisa. Website menjelaskan kapasitas produksi dari satuan sampai partai besar." },
+      { q: "Apakah bisa menampilkan hasil kerja sebelumnya?", a: "Bisa. Ada galeri hasil kerja untuk menunjukkan kualitas dan variasi produk yang pernah dibuat." },
+      { q: "Apakah bisa menerima desain custom dari pembeli?", a: "Bisa. Ada opsi custom desain maupun kerja sama OEM untuk kebutuhan khusus." },
+      { q: "Bagaimana cara menanyakan harga untuk jumlah tertentu?", a: "Pembeli bisa langsung chat WhatsApp dengan menyebutkan jumlah dan desain yang diinginkan." },
+    ],
   },
   marketplace: {
     h1: "Jasa Pembuatan Website Marketplace Multi-Kategori",
@@ -1795,7 +1843,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk toko online multi-kategori -- Smart Product Finder membantu pembeli menemukan produk lintas kategori dengan cepat, lengkap pilihan ukuran & warna per produk.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pembeli Bingung Cari Produk di Toko dengan Banyak Kategori",
+      paragraf: [
+        "Toko online yang menjual banyak kategori produk sekaligus sering membuat pembeli kesulitan menemukan barang yang dicari di antara puluhan atau ratusan produk lain.",
+        "Website menjawabnya dengan Smart Product Finder yang membantu pembeli menyaring produk lintas kategori dengan cepat, lengkap pilihan ukuran dan warna di setiap produk.",
+        "Setelah menemukan produk yang cocok, pembeli tinggal checkout dan rincian pesanan langsung terkirim ke WhatsApp.",
+      ],
+    },
     features: [
       "Smart Product Finder",
       "Multi-kategori dalam satu toko",
@@ -1804,7 +1859,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Toko online multi-produk", "Reseller berbagai kategori", "UMKM dengan banyak lini produk"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menjual produk dari banyak kategori sekaligus?", a: "Bisa. Marketplace ini dirancang untuk multi-kategori dalam satu toko." },
+      { q: "Bagaimana pembeli menemukan produk dengan cepat?", a: "Ada Smart Product Finder yang membantu menyaring produk berdasarkan kategori, ukuran, dan warna." },
+      { q: "Bagaimana proses checkout-nya?", a: "Pembeli menambah produk ke cart, lalu checkout membuka WhatsApp dengan rincian pesanan yang sudah terisi." },
+      { q: "Apakah cocok untuk reseller dengan banyak supplier?", a: "Cocok. Struktur multi-kategori memudahkan reseller menampilkan produk dari berbagai lini sekaligus." },
+    ],
   },
   "konstruksi-renovasi": {
     h1: "Jasa Pembuatan Website Konstruksi & Renovasi",
@@ -1815,7 +1875,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk kontraktor, renovasi rumah, interior, taman, dan instalasi -- menonjolkan portofolio proyek nyata dan estimasi biaya yang transparan.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Klien Ingin Yakin Sebelum Menyerahkan Rumah untuk Direnovasi",
+      paragraf: [
+        "Renovasi atau konstruksi melibatkan biaya besar dan rumah/properti milik klien sendiri, jadi mereka butuh bukti kualitas kerja dan kejelasan biaya sebelum deal.",
+        "Website menjawabnya dengan portofolio proyek yang bisa difilter jenis pekerjaan, estimasi biaya yang transparan di awal, proses kerja yang dijelaskan 4 langkah, dan garansi pengerjaan 6 bulan.",
+        "Klien lalu merasa lebih tenang menyerahkan proyek karena tahu persis apa yang akan dikerjakan dan berapa perkiraan biayanya.",
+      ],
+    },
     features: [
       "Portofolio proyek berfilter",
       "Estimasi biaya transparan",
@@ -1824,7 +1891,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Kontraktor bangunan", "Renovasi rumah", "Desain interior", "Taman & lansekap"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menampilkan proyek yang sudah dikerjakan?", a: "Bisa. Portofolio proyek ditampilkan dan bisa difilter berdasarkan jenis pekerjaan." },
+      { q: "Apakah bisa menampilkan estimasi biaya di website?", a: "Bisa. Ada bagian estimasi biaya yang transparan, meskipun angka final tetap dikonfirmasi lewat survei." },
+      { q: "Apakah ada garansi untuk hasil pengerjaan?", a: "Contoh ini menampilkan garansi pengerjaan 6 bulan, dan bisa disesuaikan dengan kebijakan bisnis Anda." },
+      { q: "Bagaimana proses kerja dari awal sampai selesai?", a: "Proses dijelaskan dalam 4 langkah di halaman, dari konsultasi awal sampai serah terima." },
+    ],
   },
   konveksi: {
     h1: "Jasa Pembuatan Website Konveksi & Garmen",
@@ -1835,7 +1907,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk konveksi -- kaos, jaket, seragam, merchandise -- menonjolkan kapasitas produksi dan fleksibilitas MOQ dari UMKM sampai korporat.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Klien Ingin Tahu MOQ dan Kapasitas Sebelum Order",
+      paragraf: [
+        "Klien konveksi bervariasi dari UMKM yang butuh puluhan pcs sampai korporat yang butuh ribuan pcs, dan keduanya butuh kejelasan MOQ dan kapasitas produksi sebelum order.",
+        "Website menjawabnya dengan MOQ yang fleksibel (12 sampai 10.000 pcs), alur produksi yang dijelaskan 5 langkah, paket harga per skala pesanan, dan studi kasus klien UMKM maupun korporat.",
+        "Klien lalu bisa langsung konsultasi kebutuhan lewat WhatsApp untuk mendapat perkiraan harga dan waktu produksi.",
+      ],
+    },
     features: [
       "MOQ fleksibel 12-10.000 pcs",
       "Alur produksi 5 langkah",
@@ -1844,7 +1923,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Konveksi kaos & jaket", "Seragam korporat", "Merchandise event"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Berapa minimal order (MOQ) untuk konveksi?", a: "Contoh ini menampilkan MOQ fleksibel dari 12 sampai 10.000 pcs, dan bisa disesuaikan dengan kebijakan bisnis Anda." },
+      { q: "Apakah cocok untuk pesanan UMKM maupun korporat?", a: "Cocok. Ada studi kasus klien UMKM dan korporat untuk menunjukkan fleksibilitas skala pesanan." },
+      { q: "Bagaimana proses produksinya?", a: "Alur produksi dijelaskan dalam 5 langkah, dari desain sampai pengiriman." },
+      { q: "Bagaimana cara konsultasi pesanan?", a: "Klien bisa langsung menghubungi lewat WhatsApp untuk konsultasi jumlah, desain, dan harga." },
+    ],
   },
   agribisnis: {
     h1: "Jasa Pembuatan Website Agribisnis & Hasil Tani",
@@ -1855,7 +1939,14 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       "Website untuk agribisnis & hasil tani -- kopi, madu, rempah, gula semut, sayur organik, biofarmaka -- menonjolkan cerita asal-usul, sertifikasi, dan ketertelusuran produk.",
     heroImage: null,
     heroAlt: null,
-    edukasi: null,
+    edukasi: {
+      judul: "Pembeli Ingin Tahu Asal-Usul dan Sertifikasi Produk",
+      paragraf: [
+        "Produk agribisnis seperti kopi, madu, rempah, atau sayur organik dinilai pembeli bukan cuma dari harga, tapi juga dari kepercayaan soal asal-usul dan cara produksinya.",
+        "Website menjawabnya dengan katalog produk yang bisa difilter, cerita asal-usul dan petani mitra di balik produk, serta sertifikasi seperti organik, halal, atau BPOM yang ditampilkan jelas.",
+        "Pembeli lalu bisa langsung memesan atau menanyakan ketersediaan lewat WhatsApp.",
+      ],
+    },
     features: [
       "Katalog produk filterable",
       "Cerita asal-usul & petani mitra",
@@ -1864,7 +1955,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
     cocokUntuk: ["Kopi & rempah", "Madu", "Sayur organik", "Produk biofarmaka"],
     harga: null,
-    faqs: null,
+    faqs: [
+      { q: "Apakah bisa menampilkan sertifikasi produk seperti organik atau halal?", a: "Bisa. Ada bagian khusus untuk menampilkan sertifikasi organik, halal, atau BPOM sesuai produk Anda." },
+      { q: "Apakah bisa menceritakan asal-usul produk dan petani mitra?", a: "Bisa. Ada bagian cerita asal-usul yang menjelaskan sumber produk dan petani yang bekerja sama." },
+      { q: "Bagaimana pembeli memesan produk?", a: "Pembeli bisa langsung chat WhatsApp dari katalog produk yang sudah difilter sesuai kebutuhan." },
+      { q: "Apakah katalog bisa difilter berdasarkan jenis produk?", a: "Bisa. Katalog dibuat filterable supaya pembeli mudah menemukan produk yang dicari." },
+    ],
   },
 };
 
