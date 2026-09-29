@@ -36,6 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       content?.intro ??
       `Contoh website ${group.label} yang sudah kami buat, lengkap dengan demo yang bisa dicoba.`,
     alternates: { canonical: `/jasa-website/${industri}` },
+    openGraph: {
+      title: content?.metaTitle ?? `Jasa Pembuatan Website ${group.label}`,
+      description:
+        content?.metaDescription ??
+        content?.intro ??
+        `Contoh website ${group.label} yang sudah kami buat, lengkap dengan demo yang bisa dicoba.`,
+      url: `/jasa-website/${industri}`,
+      images: [{ url: "/images/rian-portrait.png", alt: `Jasa Website ${group.label} — SCH` }],
+    },
     robots: content ? { index: true, follow: true } : { index: false, follow: true },
   };
 }

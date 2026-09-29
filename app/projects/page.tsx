@@ -8,6 +8,13 @@ import { createClient } from "@/lib/supabase-server";
 export const metadata: Metadata = {
   title: "Projects",
   alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Projects",
+    description:
+      "Selected work and systems built by Rian Riyandi -- AI automation, prospecting, and conversion-focused websites, built end to end.",
+    url: "/projects",
+    images: [{ url: "/images/rian-portrait.png", alt: "Rian Riyandi" }],
+  },
   description:
     "Selected work and systems built by Rian Riyandi -- AI automation, prospecting, and conversion-focused websites, built end to end.",
 };

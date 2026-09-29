@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   description:
     "Jasa pembuatan website untuk berbagai jenis bisnis, lengkap dengan contoh demo yang bisa dicoba.",
   alternates: { canonical: "/jasa-website" },
+  openGraph: {
+    title: "Jasa Pembuatan Website Bisnis",
+    description:
+      "Jasa pembuatan website untuk berbagai jenis bisnis, lengkap dengan contoh demo yang bisa dicoba.",
+    url: "/jasa-website",
+    images: [{ url: "/images/rian-portrait.png", alt: "SCH Digital Agency" }],
+  },
 };
 
 const ACCENTS = [

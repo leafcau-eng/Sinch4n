@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { getDemoProjects } from "@/lib/getDemoProjects";
+
+export const metadata: Metadata = {
+  title: "Demo Generator",
+  robots: { index: false, follow: false },
+};
 
 export default async function DemoGeneratorPage() {
   const demos = await getDemoProjects();
