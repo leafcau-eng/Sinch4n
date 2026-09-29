@@ -249,7 +249,7 @@ export const PROJECTS_V2: ProjectV2[] = [
     images: [],
     liveUrl: "https://schlabz.com",
     githubUrl: "https://github.com/leafcau-eng/sch-engineering-notes",
-    status: "draft",
+    status: "live",
     visibility: "public",
   },
   {

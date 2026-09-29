@@ -19,7 +19,7 @@ export type IndustryContent = {
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   umkm: {
     h1: "Jasa Pembuatan Website UMKM & Jasa Umum",
-    metaTitle: "Jasa Pembuatan Website UMKM (Toko, Jasa, Custom) | SCH",
+    metaTitle: "Jasa Pembuatan Website UMKM (Toko, Jasa, Custom)",
     metaDescription:
       "Jasa pembuatan website untuk UMKM: landing page usaha jasa, toko online dengan katalog, sampai order form interaktif. Lihat contoh berbagai gaya template.",
     intro:
@@ -67,7 +67,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   kuliner: {
     h1: "Jasa Pembuatan Website Kuliner & Catering",
-    metaTitle: "Jasa Pembuatan Website Kuliner & Catering | SCH",
+    metaTitle: "Jasa Pembuatan Website Kuliner & Catering",
     metaDescription:
       "Jasa pembuatan website untuk usaha kuliner dan catering. Menu berfilter dengan harga, promo, testimoni, dan pesan via WhatsApp. Lihat contohnya.",
     intro:
@@ -116,7 +116,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   kafe: {
     h1: "Jasa Pembuatan Website Kafe",
-    metaTitle: "Jasa Pembuatan Website Kafe & Coffee Shop | SCH",
+    metaTitle: "Jasa Pembuatan Website Kafe & Coffee Shop",
     metaDescription:
       "Jasa pembuatan website untuk kafe dan coffee shop. Menu andalan, fasilitas workspace, jadwal event komunitas, galeri interior, dan kontak WhatsApp.",
     intro:
@@ -166,7 +166,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "makanan-ringan": {
     h1: "Jasa Pembuatan Website Makanan Ringan",
-    metaTitle: "Jasa Pembuatan Website Produsen Makanan Ringan & Camilan | SCH",
+    metaTitle: "Jasa Pembuatan Website Produsen Makanan Ringan & Camilan",
     metaDescription:
       "Jasa pembuatan website untuk produsen makanan ringan dan camilan rumahan. Katalog varian berharga, info produksi, promo reseller, dan pesan via WhatsApp.",
     intro:
@@ -216,7 +216,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   kursus: {
     h1: "Jasa Pembuatan Website Lembaga Kursus",
-    metaTitle: "Jasa Pembuatan Website Lembaga Kursus & Pelatihan | SCH",
+    metaTitle: "Jasa Pembuatan Website Lembaga Kursus & Pelatihan",
     metaDescription:
       "Jasa pembuatan website untuk lembaga kursus dan pelatihan skill. Program dengan harga dan durasi, profil pengajar, paket belajar, dan konsultasi via WhatsApp.",
     intro:
@@ -267,7 +267,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   sekolah: {
     h1: "Jasa Pembuatan Website Sekolah",
-    metaTitle: "Jasa Pembuatan Website Sekolah (PPDB) | SCH",
+    metaTitle: "Jasa Pembuatan Website Sekolah (PPDB)",
     metaDescription:
       "Jasa pembuatan website untuk sekolah dan pendaftaran siswa baru (PPDB). Program per jenjang dengan biaya, alur pendaftaran, ekstrakurikuler, dan FAQ orang tua.",
     intro:
@@ -319,7 +319,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   gym: {
     h1: "Jasa Pembuatan Website Gym & Fitness",
-    metaTitle: "Jasa Pembuatan Website Gym & Fitness Club | SCH",
+    metaTitle: "Jasa Pembuatan Website Gym & Fitness Club",
     metaDescription:
       "Jasa pembuatan website untuk gym dan fitness club. Paket membership dengan harga, program latihan, jadwal kelas, kalkulator BMI, dan join via WhatsApp.",
     intro:
@@ -371,7 +371,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "sports-club": {
     h1: "Jasa Pembuatan Website Sports Club & Booking Lapangan",
-    metaTitle: "Jasa Pembuatan Website Sports Club & Booking Lapangan | SCH",
+    metaTitle: "Jasa Pembuatan Website Sports Club & Booking Lapangan",
     metaDescription:
       "Jasa pembuatan website untuk sports club dan penyewaan lapangan (padel, badminton, futsal). Booking lapangan, harga per jam, membership, dan event komunitas.",
     intro:
@@ -423,7 +423,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   properti: {
     h1: "Jasa Pembuatan Website Properti",
-    metaTitle: "Jasa Pembuatan Website Developer Properti | SCH",
+    metaTitle: "Jasa Pembuatan Website Developer Properti",
     metaDescription:
       "Jasa pembuatan website untuk developer properti dan proyek hunian. Unit dan harga, fasilitas unggulan, lokasi proyek, dan konsultasi agent via WhatsApp.",
     intro:
@@ -473,7 +473,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   villa: {
     h1: "Jasa Pembuatan Website Villa",
-    metaTitle: "Jasa Pembuatan Website Villa & Penginapan | SCH",
+    metaTitle: "Jasa Pembuatan Website Villa & Penginapan",
     metaDescription:
       "Jasa pembuatan website untuk villa dan penginapan. Tipe kamar dengan harga per malam, fasilitas, galeri, destinasi sekitar, dan booking via WhatsApp.",
     intro:
@@ -525,7 +525,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   wedding: {
     h1: "Jasa Pembuatan Website Wedding Organizer",
-    metaTitle: "Jasa Pembuatan Website Wedding Organizer | SCH",
+    metaTitle: "Jasa Pembuatan Website Wedding Organizer",
     metaDescription:
       "Jasa pembuatan website untuk wedding organizer. Paket layanan, portofolio, testimoni pasangan, dan konsultasi gratis via WhatsApp. Lihat contohnya.",
     intro:
@@ -574,7 +574,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   undangan: {
     h1: "Jasa Pembuatan Undangan Pernikahan Digital",
-    metaTitle: "Jasa Pembuatan Undangan Pernikahan Digital (Website) | SCH",
+    metaTitle: "Jasa Pembuatan Undangan Pernikahan Digital (Website)",
     metaDescription:
       "Jasa pembuatan undangan pernikahan digital berbentuk website. Profil mempelai, rangkaian acara, galeri, RSVP, dan amplop digital dalam satu halaman.",
     intro:
@@ -627,7 +627,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "showroom-mobil": {
     h1: "Jasa Pembuatan Website Showroom Mobil",
-    metaTitle: "Jasa Pembuatan Website Showroom & Jual Beli Mobil | SCH",
+    metaTitle: "Jasa Pembuatan Website Showroom & Jual Beli Mobil",
     metaDescription:
       "Jasa pembuatan website untuk showroom mobil bekas maupun baru. Katalog unit dengan harga, simulasi kredit, trade in, dan booking test drive via WhatsApp.",
     intro:
@@ -680,7 +680,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   bengkel: {
     h1: "Jasa Pembuatan Website Bengkel",
-    metaTitle: "Jasa Pembuatan Website Bengkel Motor & Mobil | SCH",
+    metaTitle: "Jasa Pembuatan Website Bengkel Motor & Mobil",
     metaDescription:
       "Jasa pembuatan website untuk bengkel motor dan mobil. Daftar layanan dan harga, estimasi biaya servis, paket servis, dan booking via WhatsApp.",
     intro:
@@ -732,7 +732,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   carwash: {
     h1: "Jasa Pembuatan Website Cuci Kendaraan",
-    metaTitle: "Jasa Pembuatan Website Cuci Mobil & Motor (Car Wash) | SCH",
+    metaTitle: "Jasa Pembuatan Website Cuci Mobil & Motor (Car Wash)",
     metaDescription:
       "Jasa pembuatan website untuk usaha cuci mobil dan motor. Daftar paket dan harga, before & after, lokasi cabang, dan booking via WhatsApp.",
     intro:
@@ -784,7 +784,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   petshop: {
     h1: "Jasa Pembuatan Website Petshop & Grooming",
-    metaTitle: "Jasa Pembuatan Website Petshop & Grooming | SCH",
+    metaTitle: "Jasa Pembuatan Website Petshop & Grooming",
     metaDescription:
       "Jasa pembuatan website untuk petshop, grooming, dan pet hotel. Layanan, harga, produk, galeri, FAQ, dan booking via WhatsApp. Lihat contohnya.",
     intro:
@@ -836,7 +836,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "klinik-hewan": {
     h1: "Jasa Pembuatan Website Klinik Hewan",
-    metaTitle: "Jasa Pembuatan Website Klinik Hewan & Dokter Hewan | SCH",
+    metaTitle: "Jasa Pembuatan Website Klinik Hewan & Dokter Hewan",
     metaDescription:
       "Jasa pembuatan website untuk klinik hewan. Layanan medis, jadwal vaksin, profil dokter hewan, fasilitas, FAQ, dan booking janji temu via WhatsApp.",
     intro:
@@ -888,7 +888,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   klinik: {
     h1: "Jasa Pembuatan Website Klinik",
-    metaTitle: "Jasa Pembuatan Website Klinik Kesehatan | SCH",
+    metaTitle: "Jasa Pembuatan Website Klinik Kesehatan",
     metaDescription:
       "Jasa pembuatan website untuk klinik kesehatan umum. Daftar layanan, fasilitas, promo, testimoni, dan buat janji konsultasi via WhatsApp. Lihat contohnya.",
     intro:
@@ -938,7 +938,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "klinik-gigi": {
     h1: "Jasa Pembuatan Website Klinik Gigi",
-    metaTitle: "Jasa Pembuatan Website Klinik Gigi & Dokter Gigi | SCH",
+    metaTitle: "Jasa Pembuatan Website Klinik Gigi & Dokter Gigi",
     metaDescription:
       "Jasa pembuatan website untuk klinik gigi. Concern finder, before & after, profil dokter gigi, alur treatment, FAQ, dan booking via WhatsApp.",
     intro:
@@ -989,7 +989,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   laundry: {
     h1: "Jasa Pembuatan Website Laundry",
-    metaTitle: "Jasa Pembuatan Website Laundry Kiloan | SCH",
+    metaTitle: "Jasa Pembuatan Website Laundry Kiloan",
     metaDescription:
       "Jasa pembuatan website untuk laundry kiloan. Kalkulator estimasi biaya, daftar layanan dan harga, area antar-jemput, dan order via WhatsApp.",
     intro:
@@ -1041,7 +1041,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   parfum: {
     h1: "Jasa Pembuatan Website Parfum",
-    metaTitle: "Jasa Pembuatan Website Toko Parfum | SCH",
+    metaTitle: "Jasa Pembuatan Website Toko Parfum",
     metaDescription:
       "Jasa pembuatan website untuk toko parfum dan brand parfum lokal. Katalog varian dengan harga, storytelling aroma, FAQ, dan order via WhatsApp.",
     intro:
@@ -1090,7 +1090,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   rental: {
     h1: "Jasa Pembuatan Website Rental Mobil",
-    metaTitle: "Jasa Pembuatan Website Rental Mobil | SCH",
+    metaTitle: "Jasa Pembuatan Website Rental Mobil",
     metaDescription:
       "Jasa pembuatan website untuk rental mobil dan kendaraan. Katalog armada dengan harga per hari, status ketersediaan, area layanan, dan booking WhatsApp.",
     intro:
@@ -1144,7 +1144,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   peternakan: {
     h1: "Jasa Pembuatan Website Peternakan",
-    metaTitle: "Jasa Pembuatan Website Peternakan & Ternak Qurban | SCH",
+    metaTitle: "Jasa Pembuatan Website Peternakan & Ternak Qurban",
     metaDescription:
       "Jasa pembuatan website untuk peternakan dan penjual ternak qurban dan aqiqah. Paket ternak dengan bobot dan harga, alur pesan, galeri kandang, dan WhatsApp.",
     intro:
@@ -1196,7 +1196,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   advokat: {
     h1: "Jasa Pembuatan Website Advokat & Kantor Hukum",
-    metaTitle: "Jasa Pembuatan Website Advokat & Kantor Hukum | SCH",
+    metaTitle: "Jasa Pembuatan Website Advokat & Kantor Hukum",
     metaDescription:
       "Jasa pembuatan website untuk advokat dan kantor hukum. Bidang praktik, profil tim, alur konsultasi, FAQ, dan tombol konsultasi via WhatsApp.",
     intro:
@@ -1248,7 +1248,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "las-fabrikasi": {
     h1: "Jasa Pembuatan Website Las & Fabrikasi",
-    metaTitle: "Jasa Pembuatan Website Las & Fabrikasi | SCH",
+    metaTitle: "Jasa Pembuatan Website Las & Fabrikasi",
     metaDescription:
       "Jasa pembuatan website untuk bengkel las dan fabrikasi. Daftar layanan, kisaran harga per meter, alur kerja, galeri hasil, dan estimasi via WhatsApp.",
     intro:
@@ -1300,7 +1300,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   percetakan: {
     h1: "Jasa Pembuatan Website Percetakan & Kemasan",
-    metaTitle: "Jasa Pembuatan Website Percetakan & Kemasan | SCH",
+    metaTitle: "Jasa Pembuatan Website Percetakan & Kemasan",
     metaDescription:
       "Jasa pembuatan website untuk percetakan dan kemasan custom. Katalog dengan harga per lembar dan per pcs, cara pesan, promo, FAQ, dan order via WhatsApp.",
     intro:
@@ -1353,7 +1353,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   bakery: {
     h1: "Jasa Pembuatan Website Bakery",
-    metaTitle: "Jasa Pembuatan Website Bakery & Toko Kue | SCH",
+    metaTitle: "Jasa Pembuatan Website Bakery & Toko Kue",
     metaDescription:
       "Jasa pembuatan website untuk bakery, toko kue, dan catering. Katalog produk, harga, galeri, FAQ pemesanan, dan tombol order WhatsApp. Lihat contohnya.",
     intro:
@@ -1405,7 +1405,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "baby-spa": {
     h1: "Jasa Pembuatan Website Baby Spa",
-    metaTitle: "Jasa Pembuatan Website Baby Spa | SCH",
+    metaTitle: "Jasa Pembuatan Website Baby Spa",
     metaDescription:
       "Jasa pembuatan website untuk baby spa dan mom & baby care. Program, paket, profil terapis, panduan kunjungan pertama, dan booking WhatsApp. Lihat contohnya.",
     intro:
@@ -1461,7 +1461,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   florist: {
     h1: "Jasa Pembuatan Website Florist",
-    metaTitle: "Jasa Pembuatan Website Florist & Toko Bunga | SCH",
+    metaTitle: "Jasa Pembuatan Website Florist & Toko Bunga",
     metaDescription:
       "Jasa pembuatan website untuk florist dan toko bunga. Katalog bouquet, pilihan momen, info pengiriman, dan order via WhatsApp. Lihat contohnya.",
     intro:
@@ -1514,7 +1514,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   fotografer: {
     h1: "Jasa Pembuatan Website Fotografer",
-    metaTitle: "Jasa Pembuatan Website Fotografer & Studio Foto | SCH",
+    metaTitle: "Jasa Pembuatan Website Fotografer & Studio Foto",
     metaDescription:
       "Jasa pembuatan website untuk fotografer dan studio foto. Portofolio berfilter, paket harga, testimoni, FAQ, dan booking WhatsApp. Lihat contohnya.",
     intro:
@@ -1567,7 +1567,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   salon: {
     h1: "Jasa Pembuatan Website Salon",
-    metaTitle: "Jasa Pembuatan Website Salon | SCH",
+    metaTitle: "Jasa Pembuatan Website Salon",
     metaDescription:
       "Jasa pembuatan website untuk salon rambut dan beauty studio. Menu layanan dengan harga dan durasi, before & after, profil stylist, dan booking WhatsApp.",
     intro:
@@ -1620,7 +1620,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "makeup-artist": {
     h1: "Jasa Pembuatan Website Makeup Artist",
-    metaTitle: "Jasa Pembuatan Website Makeup Artist (MUA) | SCH",
+    metaTitle: "Jasa Pembuatan Website Makeup Artist (MUA)",
     metaDescription:
       "Jasa pembuatan website untuk makeup artist dan beauty studio. Portofolio berfilter, paket per acara, Beauty Style Finder, FAQ, dan booking WhatsApp.",
     intro:
@@ -1676,7 +1676,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   // bakery: { h1: null, intro: null, features: null, cocokUntuk: null, harga: null, faqs: null },
   martabak: {
     h1: "Jasa Pembuatan Website Martabak & Terang Bulan",
-    metaTitle: "Jasa Pembuatan Website Martabak & Terang Bulan | SCH",
+    metaTitle: "Jasa Pembuatan Website Martabak & Terang Bulan",
     metaDescription:
       "Jasa pembuatan website untuk penjual martabak dan terang bulan. Martabak Finder, menu dengan pesanan via WhatsApp, dan paket untuk acara.",
     intro:
@@ -1708,7 +1708,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "fashion-aksesoris": {
     h1: "Jasa Pembuatan Website Fashion & Aksesoris",
-    metaTitle: "Jasa Pembuatan Website Fashion & Aksesoris | SCH",
+    metaTitle: "Jasa Pembuatan Website Fashion & Aksesoris",
     metaDescription:
       "Jasa pembuatan website untuk butik, hijab, sepatu, tas, perhiasan, dan streetwear. Katalog produk dengan filter ukuran dan checkout via WhatsApp.",
     intro:
@@ -1740,7 +1740,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "konter-hp": {
     h1: "Jasa Pembuatan Website Konter HP & Pulsa",
-    metaTitle: "Jasa Pembuatan Website Konter HP & Pulsa | SCH",
+    metaTitle: "Jasa Pembuatan Website Konter HP & Pulsa",
     metaDescription:
       "Jasa pembuatan website untuk konter HP: pulsa/PPOB, jual-beli HP, servis, dan aksesoris. Katalog harga transparan dan chat WhatsApp instan.",
     intro:
@@ -1772,7 +1772,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   mebel: {
     h1: "Jasa Pembuatan Website Mebel & Furnitur Custom",
-    metaTitle: "Jasa Pembuatan Website Mebel & Furnitur Custom | SCH",
+    metaTitle: "Jasa Pembuatan Website Mebel & Furnitur Custom",
     metaDescription:
       "Jasa pembuatan website untuk mebel dan furnitur custom jati: kursi, lemari, kitchen set. Proses produksi dan portofolio proyek nyata.",
     intro:
@@ -1804,7 +1804,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "kerajinan-rotan": {
     h1: "Jasa Pembuatan Website Kerajinan Rotan & Anyaman",
-    metaTitle: "Jasa Pembuatan Website Kerajinan Rotan & Anyaman | SCH",
+    metaTitle: "Jasa Pembuatan Website Kerajinan Rotan & Anyaman",
     metaDescription:
       "Jasa pembuatan website untuk kerajinan rotan & anyaman, melayani UMKM lokal sampai order korporat/partai besar.",
     intro:
@@ -1836,7 +1836,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   marketplace: {
     h1: "Jasa Pembuatan Website Marketplace Multi-Kategori",
-    metaTitle: "Jasa Pembuatan Website Marketplace Multi-Kategori | SCH",
+    metaTitle: "Jasa Pembuatan Website Marketplace Multi-Kategori",
     metaDescription:
       "Jasa pembuatan website toko online multi-kategori dengan Smart Product Finder, pilihan ukuran & warna, dan checkout WhatsApp.",
     intro:
@@ -1868,7 +1868,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   "konstruksi-renovasi": {
     h1: "Jasa Pembuatan Website Konstruksi & Renovasi",
-    metaTitle: "Jasa Pembuatan Website Konstruksi & Renovasi | SCH",
+    metaTitle: "Jasa Pembuatan Website Konstruksi & Renovasi",
     metaDescription:
       "Jasa pembuatan website untuk kontraktor, renovasi rumah, interior, taman, dan instalasi. Portofolio proyek dan estimasi biaya transparan.",
     intro:
@@ -1900,7 +1900,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   konveksi: {
     h1: "Jasa Pembuatan Website Konveksi & Garmen",
-    metaTitle: "Jasa Pembuatan Website Konveksi & Garmen | SCH",
+    metaTitle: "Jasa Pembuatan Website Konveksi & Garmen",
     metaDescription:
       "Jasa pembuatan website untuk konveksi: kaos, jaket, seragam, merchandise. MOQ fleksibel dan alur produksi yang jelas.",
     intro:
@@ -1932,7 +1932,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   },
   agribisnis: {
     h1: "Jasa Pembuatan Website Agribisnis & Hasil Tani",
-    metaTitle: "Jasa Pembuatan Website Agribisnis & Hasil Tani | SCH",
+    metaTitle: "Jasa Pembuatan Website Agribisnis & Hasil Tani",
     metaDescription:
       "Jasa pembuatan website untuk agribisnis & hasil tani: kopi, madu, rempah, gula semut, sayur organik, biofarmaka.",
     intro:

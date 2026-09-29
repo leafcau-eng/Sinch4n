@@ -28,7 +28,7 @@ export default function JasaWebsitePage() {
           Jasa Pembuatan Website Bisnis
         </h1>
         <p className="mt-5 text-neutral-300">
-          Pilih jenis bisnis Anda untuk melihat contoh website yang sudah kami buat, lengkap dengan fitur dan harga.
+          Pilih jenis bisnis Anda untuk melihat contoh website yang sudah kami buat, lengkap dengan fitur dan detail kebutuhan bisnis.
         </p>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2">
           {DEMO_GROUPS.map((g, i) => {
