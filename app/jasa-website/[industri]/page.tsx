@@ -13,6 +13,18 @@ type Props = { params: Promise<{ industri: string }> };
 
 const findGroup = (slug: string) => DEMO_GROUPS.find((g) => g.industri === slug);
 
+const getRelatedGroups = (currentIndustri: string, count = 4) => {
+  const idx = DEMO_GROUPS.findIndex((g) => g.industri === currentIndustri);
+  const others = DEMO_GROUPS.filter((g) => g.industri !== currentIndustri);
+  if (idx === -1) return others.slice(0, count);
+  // Ambil count kategori berikutnya secara melingkar, deterministik per slug.
+  const rotated = [
+    ...DEMO_GROUPS.slice(idx + 1),
+    ...DEMO_GROUPS.slice(0, idx),
+  ].filter((g) => g.industri !== currentIndustri);
+  return rotated.slice(0, count);
+};
+
 const prettify = (slug: string) =>
   slug
     .replace(/^contoh-/, "")
@@ -67,6 +79,19 @@ export default async function IndustriPage({ params }: Props) {
           })),
         }
       : null;
+
+  const SITE_URL = "https://sinch4n.vercel.app";
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "SCH", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Jasa Website", item: `${SITE_URL}/jasa-website` },
+      { "@type": "ListItem", position: 3, name: group.label, item: `${SITE_URL}/jasa-website/${industri}` },
+    ],
+  };
+
+  const relatedGroups = getRelatedGroups(industri);
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-neutral-200">
@@ -231,6 +256,34 @@ export default async function IndustriPage({ params }: Props) {
           </section>
         )}
 
+        {relatedGroups.length > 0 && (
+          <section className="mt-12">
+            <h2 className="border-l-4 border-cyan-400 pl-3 font-display text-xl font-bold text-white">
+              Lihat Kategori Lain
+            </h2>
+            <ul className="mt-4 flex flex-wrap gap-2 font-mono text-xs">
+              {relatedGroups.map((g) => (
+                <li key={g.industri}>
+                  <Link
+                    href={`/jasa-website/${g.industri}`}
+                    className="block rounded-full border border-white/10 px-3 py-1.5 text-neutral-300 transition-colors hover:border-cyan-400 hover:text-cyan-400"
+                  >
+                    {g.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-4 flex flex-wrap gap-4 font-mono text-xs text-cyan-400/70">
+              <Link href="/about" className="underline underline-offset-2 hover:text-cyan-300">
+                Tentang SCH Digital Agency →
+              </Link>
+              <Link href="/projects" className="underline underline-offset-2 hover:text-cyan-300">
+                Lihat project yang saya bangun →
+              </Link>
+            </div>
+          </section>
+        )}
+
         <section id="cta" className="mt-16 rounded-2xl border border-cyan-400/20 p-6 text-center">
           <h2 className="font-display text-xl font-bold text-white">
             Butuh website {group.label}?
@@ -258,6 +311,10 @@ export default async function IndustriPage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
         )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
       </div>
     </main>
   );
