@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     template: "%s | SCH",
   },
   description: SITE_DESCRIPTION,
+  verification: {
+    google: "OFywtvflFpypaN_KlSt9Aqe2bmfd9-sWsPtRUwS6VUw",
+  },
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
